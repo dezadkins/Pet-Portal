@@ -23,9 +23,9 @@ function App() {
           <Route path="/login">
             <LoginFormPage />
           </Route>
-          {/* <Route exact path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
-          </Route> */}
+          </Route>
           <Route path="/navbar">
             <NavBar />
           </Route>

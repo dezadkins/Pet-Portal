@@ -1,0 +1,78 @@
+.form-container__sign-up {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  /* transition: all 0.6s ease-in-out; */
+  left: 0;
+  width: 50%;
+  z-index: 2;
+  /* left: 0;
+  width: 50%;
+  opacity: 0; */
+  /* z-index: 1; */
+}
+
+.email-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.up-username-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.up-password-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.confirm-pass-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.sign-up__form-contain {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+.sign-in-button {
+  border-radius: 10px;
+  border: 1px solid #ff4b2b;
+  background-color: #ff4b2b;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.sign-in-button:active {
+  transform: scale(0.95);
+}
+.sign-in-button:focus {
+  outline: none;
+}
+.sign-in-button {
+}

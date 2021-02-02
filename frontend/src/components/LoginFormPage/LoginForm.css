@@ -12,15 +12,28 @@
   margin: 20px 0;
 }
 
-.social-signin a {
+.social-signin .social-fb {
   border: 1px solid #dddddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
+  border-radius: 22px;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
+  padding-left: 1rem;
   margin: 0 5px;
   height: 40px;
-  width: 40px;
+  width: 200px;
+}
+
+.social-goog {
+  border: 1px solid #dddddd;
+  border-radius: 22px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1rem;
+  margin: 0 5px;
+  height: 40px;
+  width: 200px;
 }
 
 .form__sign-in {
@@ -29,13 +42,32 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
   padding: 0 50px;
   height: 100%;
   text-align: center;
 }
 
 .username-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
 }
 
 .password-input {
+  background-color: #eee;
+  border: none;
+  padding: 12px 15px;
+  margin: 8px 0;
+  width: 100%;
+}
+
+.shadow {
+}
+
+.button .shadow {
+  background-color: transparent;
+  border-color: #fff;
 }

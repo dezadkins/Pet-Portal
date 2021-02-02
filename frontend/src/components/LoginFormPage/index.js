@@ -34,14 +34,16 @@ function LoginFormPage() {
           ))}
         </ul>
         <div className="social-signin">
-          <a href="#" class="social">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="social">
-            <i class="fab fa-google-plus-g"></i>
-          </a>
+          <NavLink className="social-fb" to="/login">
+            <i class="fab fa-facebook-f"> Sign in with Facebook</i>
+          </NavLink>
         </div>
-        <span>or use your account</span>
+        <div>
+          <NavLink className="social-goog" to="/login">
+            <i class="fab fa-google-plus-g"> Sign in with Google</i>
+          </NavLink>
+        </div>
+        <span>OR</span>
         <label>
           <input
             type="text"
@@ -62,7 +64,12 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Sign In</button>
+        <button className="shadow button" type="submit">
+          Sign In
+        </button>
+        <button className="shadow button" type="submit">
+          Demo
+        </button>
       </form>
     </div>
   );

@@ -4,10 +4,12 @@ import "./Homepage.css";
 
 export default function HomePage() {
   return (
-    <div className="homepage-container">
-      {/* <NavBar2 /> */}
-      <div className="pet-photo"> Hello</div>
-      <div className="pet-photo"> Hello</div>
-    </div>
+    <>
+      <NavBar2 />
+      <div className="homepage-container">
+        <div className="pet-photo"> Pet Image</div>
+        <div className="pet-photo"> Pet Image</div>
+      </div>
+    </>
   );
 }

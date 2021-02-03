@@ -1,13 +1,36 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Pet = sequelize.define('Pet', {
-    name: DataTypes.STRING,
-    species: DataTypes.STRING,
-    birthDate: DataTypes.DATE,
-    photoURL: DataTypes.STRING
-  }, {});
-  Pet.associate = function(models) {
-    // associations can be defined here
+  const Pet = sequelize.define(
+    "Pet",
+    {
+      userId: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Users",
+        },
+      },
+      name: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      species: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      birthDate: {
+        allowNull: false,
+        type: DataTypes.DATE,
+      },
+      photoURL: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+    },
+    {}
+  );
+  Pet.associate = function (models) {
+    Pet.belongsTo(models.User, { foreignKey: "userId" });
   };
   return Pet;
 };

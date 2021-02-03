@@ -5,7 +5,6 @@ import "./NavBar2.css";
 export default function NavBar2() {
   return (
     <div>
-      <div className="title">Navbar2</div>
       <nav className="navbar">
         <ul className="navbar__nav">
           <li className="logo">

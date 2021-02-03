@@ -41,7 +41,7 @@ function App() {
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/home">
+          <Route path="/">
             <ProfileButton />
           </Route>
         </Switch>

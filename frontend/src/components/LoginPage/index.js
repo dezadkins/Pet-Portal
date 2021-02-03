@@ -35,7 +35,7 @@ export default function LoginPage() {
           <LoginFormPage />
         </div>
 
-        {/* <div class="overlay-container">
+        <div class="overlay-container">
           <div class="overlay">
             <div class="overlay-panel overlay-left">
               <h1>Welcome Back!</h1>
@@ -51,7 +51,7 @@ export default function LoginPage() {
               </button>
             </div>
             <div class="overlay-panel overlay-right">
-              <h1>Greetings</h1>
+              <h1>Greetings!</h1>
               <p>Sign up to start your Pet Portal</p>
               <button
                 class="buddy ghost"
@@ -62,7 +62,7 @@ export default function LoginPage() {
               </button>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -31,69 +31,91 @@ function SignupFormPage() {
   };
 
   return (
-    <div className="form-container__sign-up">
-      <form className="sign-up__form-contain" onSubmit={handleSubmit}>
-        <h1>Sign Up</h1>
-        <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
-        <div className="social-signin">
-          <NavLink className="social-fb" to="/login">
-            <i class="fab fa-facebook-f"> Sign in with Facebook</i>
-          </NavLink>
+    <div className="container">
+      <div className="form-container sign-up-container">
+        <form className="sign-up__form-contain" onSubmit={handleSubmit}>
+          <h1>Sign Up</h1>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
+          <div className="social-signin">
+            <NavLink className="social-fb tag" to="/login">
+              <i class="fab fa-facebook-f"> Sign in with Facebook</i>
+            </NavLink>
+          </div>
+          <div>
+            <NavLink className="social-goog tag" to="/login">
+              <i class="fab fa-google-plus-g"> Sign in with Google</i>
+            </NavLink>
+          </div>
+          <span>OR</span>
+          <label>
+            <input
+              type="text"
+              value={email}
+              className="email-input"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="text"
+              value={username}
+              className="up-username-input"
+              placeholder="Username"
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="password"
+              value={password}
+              className="up-password-input"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="password"
+              value={confirmPassword}
+              className="confirm-pass-input"
+              placeholder="Confirm Password"
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
+          <button className="sign-in-button shadow" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="shadow" id="signIn">
+              Sign In
+            </button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">
+              Sign Up
+            </button>
+          </div>
         </div>
-        <div>
-          <NavLink className="social-goog" to="/login">
-            <i class="fab fa-google-plus-g"> Sign in with Google</i>
-          </NavLink>
-        </div>
-        <span>OR</span>
-        <label>
-          <input
-            type="text"
-            value={email}
-            className="email-input"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          <input
-            type="text"
-            value={username}
-            className="up-username-input"
-            placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          <input
-            type="password"
-            value={password}
-            className="up-password-input"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <label>
-          <input
-            type="password"
-            value={confirmPassword}
-            className="confirm-pass-input"
-            placeholder="Confirm Passowrd"
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button className="sign-in-button" type="submit">
-          Sign Up
-        </button>
-      </form>
+      </div>
     </div>
   );
 }

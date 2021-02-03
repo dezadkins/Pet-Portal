@@ -26,7 +26,7 @@ function LoginFormPage() {
 
   return (
     <form className="form__sign-in" onSubmit={handleSubmit}>
-      <h1>Sign In</h1>
+      <h1 className="signin-title">Sign In</h1>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
@@ -34,15 +34,15 @@ function LoginFormPage() {
       </ul>
       <div className="social-signin">
         <NavLink className="social-fb tag" to="/login">
-          <i class="fab fa-facebook-f "> Sign in with Facebook</i>
+          <i className="fab fa-facebook-f "> Sign in with Facebook</i>
         </NavLink>
       </div>
       <div>
         <NavLink className="social-goog tag" to="/login">
-          <i class="fab fa-google-plus-g"> Sign in with Google</i>
+          <i className="fab fa-google-plus-g"> Sign in with Google</i>
         </NavLink>
       </div>
-      <span>OR</span>
+      <span className="or-this">OR</span>
       <label>
         <input
           type="text"

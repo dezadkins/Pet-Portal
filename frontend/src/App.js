@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar/NavBar";
 import NavBar2 from "./components/NavBar2/NavBar2";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage/Homepage";
+import ProfileButton from "./components/Navigation/ProfileButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ function App() {
       {/* <Navigation isLoaded={isLoaded} /> */}
       {isLoaded && (
         <Switch>
-          <Route exact path="/home">
+          <Route exact path="/">
             <HomePage />
           </Route>
           <Route path="/signin">
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/login">
             <LoginPage />
+          </Route>
+          <Route path="/home">
+            <ProfileButton />
           </Route>
         </Switch>
       )}

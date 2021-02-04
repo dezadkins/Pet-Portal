@@ -1,7 +1,7 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 
-const { User, Pet } = require("../../db/models");
+const { User, Pet, Medication } = require("../../db/models");
 const medication = require("../../db/models/medication");
 
 const router = express.Router();
@@ -29,8 +29,12 @@ router.post(
   })
 );
 
+// *************************************************************
+// ******************** MEDICATION POST/GET ********************
+// *************************************************************
+
 router.post(
-  "/meds",
+  "/:id/meds",
   asyncHandler(async (req, res, next) => {
     const { petId, name, dosage, frequency } = req.body;
     const med = await Medication.create({
@@ -42,5 +46,27 @@ router.post(
     res.json(med);
   })
 );
+
+router.get(
+  "/:id/meds",
+  asyncHandler(async (req, res, next) => {
+    const medId = parseInt(req.params.id, 10);
+    const med = await Medication.findByPk(medId);
+
+    res.json(med);
+  })
+);
+
+router.get(
+  "/:id/meds",
+  asyncHandler(async (req, res, next) => {
+    const meds = await Medication.findAll();
+    res.json(meds);
+  })
+);
+
+// *************************************************************
+// ******************** VACCINES POST/GET ********************
+// *************************************************************
 
 module.exports = router;

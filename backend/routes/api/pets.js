@@ -10,7 +10,7 @@ const {
   Graph,
   Appointment,
 } = require("../../db/models");
-const medication = require("../../db/models/medication");
+// const medication = require("../../db/models/medication");
 
 const router = express.Router();
 
@@ -218,6 +218,16 @@ router.get(
   })
 );
 
+router.delete(
+  "/:id/graph",
+  asyncHandler(async (req, res) => {
+    const graphId = parseInt(req.params.id, 10);
+    const graph = await Graph.findByPk(graphId);
+    await graph.destroy();
+    res.json(graph);
+  })
+);
+
 // *************************************************************
 // ******************** APPOINTMENTS POST/GET ********************
 // *************************************************************
@@ -250,6 +260,16 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const appts = await Appointment.findAll();
     res.json(appts);
+  })
+);
+
+router.delete(
+  "/:id/appts",
+  asyncHandler(async (req, res) => {
+    const apptId = parseInt(req.params.id, 10);
+    const appointment = await Appointment.findByPk(apptId);
+    await appointment.destroy();
+    res.json(appointment);
   })
 );
 

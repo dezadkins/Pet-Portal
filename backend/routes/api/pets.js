@@ -1,7 +1,15 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
 
-const { User, Pet, Medication } = require("../../db/models");
+const {
+  User,
+  Pet,
+  Medication,
+  Vaccine,
+  Milestone,
+  Graph,
+  Appointment,
+} = require("../../db/models");
 const medication = require("../../db/models/medication");
 
 const router = express.Router();
@@ -68,5 +76,141 @@ router.get(
 // *************************************************************
 // ******************** VACCINES POST/GET ********************
 // *************************************************************
+
+router.post(
+  "/:id/vacs",
+  asyncHandler(async (req, res, next) => {
+    const { petId, name, dateGiven } = req.body;
+    const vaccine = await Vaccine.create({
+      petId,
+      name,
+      dateGiven,
+    });
+    res.json(vaccine);
+  })
+);
+
+router.get(
+  "/:id/vacs",
+  asyncHandler(async (req, res, next) => {
+    const vacId = parseInt(req.params.id, 10);
+    const vaccine = await Vaccine.findByPk(vacId);
+
+    res.json(vaccine);
+  })
+);
+
+router.get(
+  "/:id/vacs",
+  asyncHandler(async (req, res, next) => {
+    const vaccines = await Vaccine.findAll();
+    res.json(vaccines);
+  })
+);
+
+// *************************************************************
+// ******************** MILESTONES/EVENTS POST/GET ********************
+// *************************************************************
+
+router.post(
+  "/:id/events",
+  asyncHandler(async (req, res, next) => {
+    const { petId, picURL, caption } = req.body;
+    const event = await Milestone.create({
+      petId,
+      picURL,
+      caption,
+    });
+    res.json(event);
+  })
+);
+
+router.get(
+  "/:id/events",
+  asyncHandler(async (req, res, next) => {
+    const eventId = parseInt(req.params.id, 10);
+    const event = await Milestone.findByPk(eventId);
+
+    res.json(event);
+  })
+);
+
+router.get(
+  "/:id/events",
+  asyncHandler(async (req, res, next) => {
+    const events = await Milestone.findAll();
+    res.json(events);
+  })
+);
+
+// *************************************************************
+// ******************** GRAPH POST/GET ********************
+// *************************************************************
+
+router.post(
+  "/:id/graph",
+  asyncHandler(async (req, res, next) => {
+    const { petId, weight, length } = req.body;
+    const graph = await Graph.create({
+      petId,
+      weight,
+      length,
+    });
+    res.json(graph);
+  })
+);
+
+router.get(
+  "/:id/graph",
+  asyncHandler(async (req, res, next) => {
+    const graphId = parseInt(req.params.id, 10);
+    const graph = await Graph.findByPk(graphId);
+
+    res.json(graph);
+  })
+);
+
+router.get(
+  "/:id/graph",
+  asyncHandler(async (req, res, next) => {
+    const graphs = await Graph.findAll();
+    res.json(graphs);
+  })
+);
+
+// *************************************************************
+// ******************** GRAPH POST/GET ********************
+// *************************************************************
+
+router.post(
+  "/:id/appts",
+  asyncHandler(async (req, res, next) => {
+    const { petId, datetime, location } = req.body;
+    const appointment = await Appointment.create({
+      petId,
+      datetime,
+      location,
+    });
+    res.json(appointment);
+  })
+);
+
+router.get(
+  "/:id/appts",
+  asyncHandler(async (req, res, next) => {
+    const apptId = parseInt(req.params.id, 10);
+    const appointment = await Appointment.findByPk(apptId);
+
+    res.json(appointment);
+  })
+);
+
+router.get(
+  "/:id/appts",
+  asyncHandler(async (req, res, next) => {
+    const appts = await Appointment.findAll();
+    res.json(appts);
+  })
+);
 
 module.exports = router;

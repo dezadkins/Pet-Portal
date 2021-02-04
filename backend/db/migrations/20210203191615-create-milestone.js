@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       caption: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING(255),
       },
       petId: {

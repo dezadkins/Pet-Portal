@@ -9,11 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       weight: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
       length: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
       petId: {

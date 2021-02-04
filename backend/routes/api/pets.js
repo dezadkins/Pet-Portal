@@ -14,11 +14,25 @@ const {
 
 const router = express.Router();
 
+// *************************************************************
+// ******************** PET ROUTES *****************************
+// *************************************************************
+
 router.get(
   "/",
   asyncHandler(async (req, res, next) => {
     const pets = await Pet.findAll();
     res.json(pets);
+  })
+);
+
+router.get(
+  "/:petId",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const pet = await Pet.findByPk(petId);
+
+    res.json(pet);
   })
 );
 
@@ -37,22 +51,43 @@ router.post(
   })
 );
 
-router.delete(
-  "/:id",
-  asyncHandler(async (req, res) => {
-    const petId = parseInt(req.params.id, 10);
+router.put(
+  "/:petId",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const petData = req.body;
+
     const pet = await Pet.findByPk(petId);
-    await pet.destroy();
-    res.json(pet);
+    if (pet) {
+      await pet.update(petData);
+
+      res.json(pet);
+    } else {
+      next();
+    }
+  })
+);
+
+router.delete(
+  "/:petId",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const pet = await Pet.findByPk(petId);
+    if (pet) {
+      await pet.destroy();
+      res.json(pet);
+    } else {
+      next();
+    }
   })
 );
 
 // *************************************************************
-// ******************** MEDICATION POST/GET ********************
+// ******************** MEDICATION ROUTES **********************
 // *************************************************************
 
 router.post(
-  "/:id/meds",
+  "/:petId/meds",
   asyncHandler(async (req, res, next) => {
     const { petId, name, dosage, frequency } = req.body;
     const med = await Medication.create({
@@ -66,7 +101,7 @@ router.post(
 );
 
 router.get(
-  "/:id/meds",
+  "/petId/meds",
   asyncHandler(async (req, res, next) => {
     const medId = parseInt(req.params.id, 10);
     const med = await Medication.findByPk(medId);
@@ -76,20 +111,29 @@ router.get(
 );
 
 router.get(
-  "/:id/meds",
+  "/:petId/meds",
   asyncHandler(async (req, res, next) => {
-    const meds = await Medication.findAll();
+    const petId = parseInt(res.params.petId, 10);
+    const meds = await Medication.findAll({
+      where: {
+        petId,
+      },
+    });
     res.json(meds);
   })
 );
 
 router.delete(
-  "/:id/meds",
-  asyncHandler(async (req, res) => {
+  "/meds/:id",
+  asyncHandler(async (req, res, next) => {
     const medId = parseInt(req.params.id, 10);
     const med = await Medication.findByPk(medId);
-    await med.destroy();
-    res.json(med);
+    if (med) {
+      await med.destroy();
+      res.json(med);
+    } else {
+      next();
+    }
   })
 );
 
@@ -98,7 +142,7 @@ router.delete(
 // *************************************************************
 
 router.post(
-  "/:id/vacs",
+  "/:petId/vacs",
   asyncHandler(async (req, res, next) => {
     const { petId, name, dateGiven } = req.body;
     const vaccine = await Vaccine.create({
@@ -111,9 +155,9 @@ router.post(
 );
 
 router.get(
-  "/:id/vacs",
+  "/:petId/vacs",
   asyncHandler(async (req, res, next) => {
-    const vacId = parseInt(req.params.id, 10);
+    const vacId = parseInt(req.params.petId, 10);
     const vaccine = await Vaccine.findByPk(vacId);
 
     res.json(vaccine);
@@ -121,20 +165,29 @@ router.get(
 );
 
 router.get(
-  "/:id/vacs",
+  "/:petId/vacs",
   asyncHandler(async (req, res, next) => {
-    const vaccines = await Vaccine.findAll();
+    const petId = parseInt(req.params.petId, 10);
+    const vaccines = await Vaccine.findAll({
+      where: {
+        petId,
+      },
+    });
     res.json(vaccines);
   })
 );
 
 router.delete(
-  "/:id/vacs",
-  asyncHandler(async (req, res) => {
+  "/vacs/:id",
+  asyncHandler(async (req, res, next) => {
     const vacId = parseInt(req.params.id, 10);
     const vaccine = await Vaccine.findByPk(vacId);
-    await vaccine.destroy();
-    res.json(vaccine);
+    if (vaccine) {
+      await vaccine.destroy();
+      res.json(vaccine);
+    } else {
+      next();
+    }
   })
 );
 
@@ -143,7 +196,7 @@ router.delete(
 // *************************************************************
 
 router.post(
-  "/:id/events",
+  "/:petId/events",
   asyncHandler(async (req, res, next) => {
     const { petId, picURL, caption } = req.body;
     const event = await Milestone.create({
@@ -156,9 +209,9 @@ router.post(
 );
 
 router.get(
-  "/:id/events",
+  "/:petId/events",
   asyncHandler(async (req, res, next) => {
-    const eventId = parseInt(req.params.id, 10);
+    const eventId = parseInt(req.params.petId, 10);
     const event = await Milestone.findByPk(eventId);
 
     res.json(event);
@@ -166,20 +219,29 @@ router.get(
 );
 
 router.get(
-  "/:id/events",
+  "/:petId/events",
   asyncHandler(async (req, res, next) => {
-    const events = await Milestone.findAll();
+    const petId = parseInt(req.params.petId, 10);
+    const events = await Milestone.findAll({
+      where: {
+        petId,
+      },
+    });
     res.json(events);
   })
 );
 
 router.delete(
-  "/:id/events",
+  "/events/:id",
   asyncHandler(async (req, res) => {
     const eventId = parseInt(req.params.id, 10);
     const event = await Milestone.findByPk(eventId);
-    await event.destroy();
-    res.json(event);
+    if (event) {
+      await event.destroy();
+      res.json(event);
+    } else {
+      next();
+    }
   })
 );
 
@@ -188,7 +250,7 @@ router.delete(
 // *************************************************************
 
 router.post(
-  "/:id/graph",
+  "/:petId/graph",
   asyncHandler(async (req, res, next) => {
     const { petId, weight, length } = req.body;
     const graph = await Graph.create({
@@ -201,9 +263,9 @@ router.post(
 );
 
 router.get(
-  "/:id/graph",
+  "/:petId/graph",
   asyncHandler(async (req, res, next) => {
-    const graphId = parseInt(req.params.id, 10);
+    const graphId = parseInt(req.params.petId, 10);
     const graph = await Graph.findByPk(graphId);
 
     res.json(graph);
@@ -211,20 +273,29 @@ router.get(
 );
 
 router.get(
-  "/:id/graph",
+  "/:petId/graph",
   asyncHandler(async (req, res, next) => {
-    const graphs = await Graph.findAll();
+    const petId = parseInt(req.params.petId, 10);
+    const graphs = await Graph.findAll({
+      where: {
+        petId,
+      },
+    });
     res.json(graphs);
   })
 );
 
 router.delete(
-  "/:id/graph",
-  asyncHandler(async (req, res) => {
+  "/graph/:id",
+  asyncHandler(async (req, res, next) => {
     const graphId = parseInt(req.params.id, 10);
     const graph = await Graph.findByPk(graphId);
-    await graph.destroy();
-    res.json(graph);
+    if (graph) {
+      await graph.destroy();
+      res.json(graph);
+    } else {
+      next();
+    }
   })
 );
 
@@ -233,7 +304,7 @@ router.delete(
 // *************************************************************
 
 router.post(
-  "/:id/appts",
+  "/:petId/appts",
   asyncHandler(async (req, res, next) => {
     const { petId, datetime, location } = req.body;
     const appointment = await Appointment.create({
@@ -246,9 +317,9 @@ router.post(
 );
 
 router.get(
-  "/:id/appts",
+  "/:petId/appts",
   asyncHandler(async (req, res, next) => {
-    const apptId = parseInt(req.params.id, 10);
+    const apptId = parseInt(req.params.petId, 10);
     const appointment = await Appointment.findByPk(apptId);
 
     res.json(appointment);
@@ -256,20 +327,29 @@ router.get(
 );
 
 router.get(
-  "/:id/appts",
+  "/appts",
   asyncHandler(async (req, res, next) => {
-    const appts = await Appointment.findAll();
+    const petId = parseInt(req.params.petId, 10);
+    const appts = await Appointment.findAll({
+      where: {
+        petId,
+      },
+    });
     res.json(appts);
   })
 );
 
 router.delete(
-  "/:id/appts",
-  asyncHandler(async (req, res) => {
+  "/appts/:id",
+  asyncHandler(async (req, res, next) => {
     const apptId = parseInt(req.params.id, 10);
     const appointment = await Appointment.findByPk(apptId);
-    await appointment.destroy();
-    res.json(appointment);
+    if (appointment) {
+      await appointment.destroy();
+      res.json(appointment);
+    } else {
+      next();
+    }
   })
 );
 

@@ -37,6 +37,16 @@ router.post(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const petId = parseInt(req.params.id, 10);
+    const pet = await Pet.findByPk(petId);
+    await pet.destroy();
+    res.json(pet);
+  })
+);
+
 // *************************************************************
 // ******************** MEDICATION POST/GET ********************
 // *************************************************************
@@ -70,6 +80,16 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const meds = await Medication.findAll();
     res.json(meds);
+  })
+);
+
+router.delete(
+  "/:id/meds",
+  asyncHandler(async (req, res) => {
+    const medId = parseInt(req.params.id, 10);
+    const med = await Medication.findByPk(medId);
+    await med.destroy();
+    res.json(med);
   })
 );
 
@@ -108,6 +128,16 @@ router.get(
   })
 );
 
+router.delete(
+  "/:id/vacs",
+  asyncHandler(async (req, res) => {
+    const vacId = parseInt(req.params.id, 10);
+    const vaccine = await Vaccine.findByPk(vacId);
+    await vaccine.destroy();
+    res.json(vaccine);
+  })
+);
+
 // *************************************************************
 // ******************** MILESTONES/EVENTS POST/GET ********************
 // *************************************************************
@@ -140,6 +170,16 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const events = await Milestone.findAll();
     res.json(events);
+  })
+);
+
+router.delete(
+  "/:id/events",
+  asyncHandler(async (req, res) => {
+    const eventId = parseInt(req.params.id, 10);
+    const event = await Milestone.findByPk(eventId);
+    await event.destroy();
+    res.json(event);
   })
 );
 
@@ -179,7 +219,7 @@ router.get(
 );
 
 // *************************************************************
-// ******************** GRAPH POST/GET ********************
+// ******************** APPOINTMENTS POST/GET ********************
 // *************************************************************
 
 router.post(

@@ -27,6 +27,18 @@ router.get(
 );
 
 router.get(
+  "/:userId",
+  asyncHandler(async (req, res, next) => {
+    const userId = parseInt(req.params.userId, 10);
+
+    const pets = await Pet.findAll({
+      where: { userId },
+    });
+    res.json(pets);
+  })
+);
+
+router.get(
   "/:petId",
   asyncHandler(async (req, res, next) => {
     const petId = parseInt(req.params.petId, 10);

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import ProfileButton from "../Navigation/ProfileButton";
 import "./NavBar2.css";
 
 export default function NavBar2() {
@@ -36,6 +37,9 @@ export default function NavBar2() {
             </NavLink>
           </li>
         </ul>
+        <div className="profile-button">
+          <ProfileButton />
+        </div>
       </nav>
     </div>
   );

@@ -2,13 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  flex-wrap: wrap;
+  border: 5px solid black;
   background: #68a2e1;
   /* background: -webkit-linear-gradient(to right, #28188c, #000001); */
-  background: linear-gradient(to right, #010104, #28188c);
+  /* background: linear-gradient(to right, #010104, #28188c); */
   min-height: 100%;
   width: 100%;
   height: 100vh;
+  z-index: -1;
+}
+
+image-container {
+  border: 1px solid black;
+  width: 80%;
+  height: 80%;
 }
 .pet-photo {
   display: flex;
@@ -16,6 +24,19 @@
   align-items: center;
   border: 2px solid lightgray;
   border-radius: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+}
+
+.inner-display {
+  display: flex;
+  justify-content: center;
   width: 300px;
   height: 300px;
+  border: 3px solid black;
 }

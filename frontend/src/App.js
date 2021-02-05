@@ -41,9 +41,9 @@ function App() {
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <ProfileButton />
-          </Route>
+          </Route> */}
         </Switch>
       )}
     </>

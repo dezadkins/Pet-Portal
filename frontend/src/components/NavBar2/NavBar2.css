@@ -5,6 +5,13 @@
   color: black;
 }
 
+.profile-button {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+
 .navbar {
   position: fixed;
   background-color: var(--bg-primary);

@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
+import { useDispatch, useSelector } from "react-redux";
+import * as sessionActions from "../../store/session";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
-  
+
+  const sessionUser = useSelector((state) => state.session.user);
+
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
-  
+
   useEffect(() => {
     if (!showMenu) return;
 
@@ -18,10 +20,17 @@ function ProfileButton({ user }) {
       setShowMenu(false);
     };
 
-    document.addEventListener('click', closeMenu);
-  
+    document.addEventListener("click", closeMenu);
+
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     let res = await fetch(`/api/session`);
+  //     setProfilePic(res.data.user.profilePicURL);
+  //   })();
+  // }, [sessionUser]);
 
   const logout = (e) => {
     e.preventDefault();
@@ -35,8 +44,8 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <li>{sessionUser.username}</li>
+          <li>{sessionUser.email}</li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>

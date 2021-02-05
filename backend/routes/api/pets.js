@@ -123,6 +123,23 @@ router.get(
   })
 );
 
+router.put(
+  "/:petId/meds",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const medData = req.body;
+
+    const med = await Medication.findByPk(petId);
+    if (med) {
+      await med.update(medData);
+
+      res.json(med);
+    } else {
+      next();
+    }
+  })
+);
+
 router.delete(
   "/meds/:id",
   asyncHandler(async (req, res, next) => {
@@ -174,6 +191,23 @@ router.get(
       },
     });
     res.json(vaccines);
+  })
+);
+
+router.put(
+  "/:petId/vacs",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const vaccineData = req.body;
+
+    const vac = await Vaccine.findByPk(petId);
+    if (vac) {
+      await vac.update(vaccineData);
+
+      res.json(vac);
+    } else {
+      next();
+    }
   })
 );
 
@@ -231,6 +265,23 @@ router.get(
   })
 );
 
+router.put(
+  "/:petId/events",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const eventData = req.body;
+
+    const event = await Milestone.findByPk(petId);
+    if (event) {
+      await event.update(eventData);
+
+      res.json(event);
+    } else {
+      next();
+    }
+  })
+);
+
 router.delete(
   "/events/:id",
   asyncHandler(async (req, res) => {
@@ -285,6 +336,23 @@ router.get(
   })
 );
 
+router.put(
+  "/:petId/graph",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const graphData = req.body;
+
+    const graph = await Graph.findByPk(petId);
+    if (graph) {
+      await graph.update(graphData);
+
+      res.json(graph);
+    } else {
+      next();
+    }
+  })
+);
+
 router.delete(
   "/graph/:id",
   asyncHandler(async (req, res, next) => {
@@ -327,7 +395,7 @@ router.get(
 );
 
 router.get(
-  "/appts",
+  ":petId/appts",
   asyncHandler(async (req, res, next) => {
     const petId = parseInt(req.params.petId, 10);
     const appts = await Appointment.findAll({
@@ -336,6 +404,23 @@ router.get(
       },
     });
     res.json(appts);
+  })
+);
+
+router.put(
+  "/:petId/appts",
+  asyncHandler(async (req, res, next) => {
+    const petId = parseInt(req.params.petId, 10);
+    const apptData = req.body;
+
+    const appointment = await Appointment.findByPk(petId);
+    if (appointment) {
+      await appointment.update(apptData);
+
+      res.json(appointment);
+    } else {
+      next();
+    }
   })
 );
 

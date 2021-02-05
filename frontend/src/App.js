@@ -10,6 +10,7 @@ import NavBar2 from "./components/NavBar2/NavBar2";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage/Homepage";
 import ProfileButton from "./components/Navigation/ProfileButton";
+import PetProfile from "./components/PetProfile/PetProfile";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,9 +42,9 @@ function App() {
           <Route path="/login">
             <LoginPage />
           </Route>
-          {/* <Route path="/">
-            <ProfileButton />
-          </Route> */}
+          <Route path="/petprofile">
+            <PetProfile />
+          </Route>
         </Switch>
       )}
     </>

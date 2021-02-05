@@ -5,11 +5,11 @@ import "./NavBar.css";
 export default function NavBar() {
   return (
     <div>
-      <div className="title">Navbar</div>
+      {/* <div className="title">Navbar</div> */}
       <nav className="navbar">
         <ul className="navbar__nav">
           <li className="logo">
-            <NavLink class="nav-link" to="/navar">
+            <NavLink class="nav-link" to="/">
               <span className="link-text logo-text">Pet Portal</span>
             </NavLink>
           </li>

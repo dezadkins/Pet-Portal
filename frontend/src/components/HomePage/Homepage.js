@@ -26,15 +26,25 @@ export default function HomePage() {
   return (
     <>
       <NavBar2 />
-      <div className="homepage-container">
-        <div className="image-container">
+      <div className="homepage-wrapper">
+        <div className="row">
           <div className="display">
             {pets.map((pet) => (
-              <div className="inner-display">
-                <p>{pet.name}</p>
-                <p>{pet.species}</p>
+              <div key={pet.photoURL} className="inner-display">
+                <img className="photo-size" src={pet.photoURL} />
               </div>
             ))}
+            <div className="row">
+              <div className="display">
+                <div>
+                  {pets.map((pet) => (
+                    <div key={pet.name}>
+                      <p>{pet.name}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

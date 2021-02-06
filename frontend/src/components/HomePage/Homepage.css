@@ -10,8 +10,8 @@
   height: 100vh;
   /* z-index: -1; */
   background: #68a2e1;
-  /* background: -webkit-linear-gradient(to right, #28188c, #000001); */
-  /* background: linear-gradient(to right, #010104, #28188c); */
+  background: -webkit-linear-gradient(to right, #28188c, #000001);
+  background: linear-gradient(to right, #010104, #28188c);
 }
 
 .photo-size {

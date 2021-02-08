@@ -8,16 +8,6 @@
   background: lightgray;
 } */
 
-.profile-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 3px solid black;
-  border-radius: 20px;
-  /* width: 275px; */
-  height: 275px;
-}
-
 /*.profilePic-container {
   display: flex;
   justify-content: center;
@@ -86,6 +76,16 @@
   width: 100%;
   height: 100vh;
 }
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  border-radius: 20px;
+  /* width: 275px; */
+  height: 275px;
+}
 .wrapper {
   display: grid;
   grid-template-columns: 25% 40% 35%;
@@ -100,6 +100,9 @@
   background: lightblue;
   border: 2px solid black;
 }
+
+/* WRAPPER TWO SECTION */
+
 .wrapper-two {
   display: grid;
   grid-template-columns: 40% 25% 35%;
@@ -111,7 +114,7 @@
   padding-right: 5rem;
 }
 .wrapper-two > div {
-  /* background: lightblue; */
+  background: lightblue;
   border: 2px solid black;
 }
 

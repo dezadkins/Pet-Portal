@@ -13,6 +13,9 @@ export default function PetProfile() {
               <h1>Pet Profile</h1>
             </div>
           </div>
+          {/* <div > hello</div> */}
+          <div className="graph-contain"> Graph</div>
+          <div className="graph-contain"> Graph</div>
         </div>
         <div className="wrapper-two">
           <div className="profile-wrapper-two ">
@@ -21,7 +24,7 @@ export default function PetProfile() {
             </div>
           </div>
           <div className="appt-container">Appointment Box</div>
-          <div className="graph-contain">Graph Box</div>
+          <div>Graph Box</div>
         </div>
       </div>
       {/* <div className="overview-wrapper"> */}

@@ -26,7 +26,19 @@ export default function HomePage() {
 
   return (
     <>
+      <NavBar2 />
+      {/* <h1>Your Pet Family</h1> */}
       <div className="homepage-wrapper">
+        {pets.map((pet) => (
+          <div className="card">
+            <div className="img-container">
+              <img className="photo-size" src={pet.photoURL} key={pet.name} />
+            </div>
+            <div className="pet-name">{pet.name}</div>
+          </div>
+        ))}
+      </div>
+      {/* <div className="homepage-wrapper">
         <NavBar2 />
         <h1 className="title"> Your Pet Family</h1>
         <div className="row">
@@ -34,7 +46,7 @@ export default function HomePage() {
             <Cards />
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

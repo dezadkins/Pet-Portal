@@ -6,10 +6,24 @@ import interaction from "@fullcalendar/interaction";
 import axios from "axios";
 
 const Calendar = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
   const [sessionArray, setSessionArray] = useState([]);
   const [sessions, setSessions] = useState([]);
   const [appt, setAppts] = useState([]);
+  const dispatch = useDispatch();
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
+
+  useEffect(() => {
+    axios
+      .get("/api/pets/:petId/appts")
+      .then((res) => {
+        setAppts(res.data);
+      })
+      .catch((error) => console.log(error.toString()));
+  }, [isLoaded]);
 
   return (
     <>

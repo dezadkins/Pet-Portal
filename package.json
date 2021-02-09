@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
     "react-transition-group": "^4.4.1",
     "sequelize": "^6.5.0"
   }

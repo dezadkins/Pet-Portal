@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <>
       <NavBar2 />
-      {/* <h1>Your Pet Family</h1> */}
+      <h1 className="homepage-title">Your Pet Family</h1>
       <div className="homepage-wrapper">
         {pets.map((pet) => (
           <div className="card">
@@ -38,15 +38,6 @@ export default function HomePage() {
           </div>
         ))}
       </div>
-      {/* <div className="homepage-wrapper">
-        <NavBar2 />
-        <h1 className="title"> Your Pet Family</h1>
-        <div className="row">
-          <div className="display">
-            <Cards />
-          </div>
-        </div>
-      </div> */}
     </>
   );
 }

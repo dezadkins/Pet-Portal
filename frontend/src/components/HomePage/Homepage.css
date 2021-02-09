@@ -1,88 +1,3 @@
-/* .homepage-wrapper { */
-/* display: flex; */
-/* position: relative; */
-/* top: 0;
-  bottom: 0; */
-/* left: 0;
-  right: 0; */
-/* position: absolute; */
-/* justify-content: space-around; */
-/* align-items: center;*/
-/* flex-direction: row;
-  flex-wrap: wrap; */
-/* border: 5px solid black; */
-/* min-height: 100%; */
-/* min-width: 100%; */
-/* width: 100%;
-  height: 100vh; */
-/* z-index: -1; */
-/* background: #68a2e1;
-  background: -webkit-linear-gradient(to right, #28188c, #000001);
-  background: linear-gradient(to right, #010104, #28188c);
-  background-size: cover;
-} */
-
-/* .title {
-  color: white; */
-/* display: flex; */
-/* flex-direction: column; */
-/* position: absolute; */
-/* align-items: center;
-  justify-content: center; */
-/* left: 150%;
-} */
-
-/* .photo-size { */
-/* display: flex;
-  justify-content: space-evenly; */
-/* width: 350px;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 16px;
-} */
-
-/* .row {
-  display: flex;
-  flex-direction: column; */
-
-/* flex-wrap: wrap; */
-/*justify-content: space-between; */
-/* width: 80%;
-  height: 100%; */
-/* } */
-/*
-.pet-photo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid lightgray;
-  border-radius: 20px;
-  width: 200px;
-  height: 200px;
-} */
-
-/* .display { */
-/* display: flex; */
-/* flex: 1; */
-/* justify-content: space-evenly; */
-/* align-items: center; */
-/* flex-direction: row;
-  flex-wrap: wrap;
-  padding-top: 15px; */
-/* } */
-
-/* .inner-display { */
-/* display: flex;
-  justify-content: space-evenly; */
-/*align-items: center;
-  flex-wrap: wrap; */
-/* width: 300px;
-  height: 300px; */
-
-/* border-radius: 20px;
-  border: 3px solid black; */
-/* } */
-
 .homepage-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -98,11 +13,12 @@
 .card {
   flex-basis: 35%;
   padding-left: 4rem;
-  padding-top: 4rem;
+  padding-top: 5rem;
 }
 .img-container {
   width: 100%;
   height: 250px;
+  /* border: 2px solid black; */
 }
 .photo-size {
   width: 100%;
@@ -118,4 +34,15 @@
   color: white;
   justify-content: center;
   font-size: 2rem;
+}
+
+.homepage-title {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 4rem;
+  padding-top: 5rem;
+  background: #68a2e1;
+  background: -webkit-linear-gradient(to right, #28188c, #000001);
+  background: linear-gradient(to right, #010104, #28188c);
 }

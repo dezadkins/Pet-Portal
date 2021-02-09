@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
-import FullCalendar, { applyStyle } from "@fullcalendar/react";
+import React, { useState, useEffect, useDispatch } from "react";
+import FullCalendar from "@fullcalendar/react";
 import dayGrid from "@fullcalendar/daygrid";
 import timeGrid from "@fullcalendar/timegrid";
 import interaction from "@fullcalendar/interaction";
+import * as sessionActions from "../../store/session";
+
 import axios from "axios";
 
 const Calendar = () => {
@@ -17,12 +19,10 @@ const Calendar = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    axios
-      .get("/api/pets/:petId/appts")
-      .then((res) => {
-        setAppts(res.data);
-      })
-      .catch((error) => console.log(error.toString()));
+    axios.get("/api/pets/:petId/appts").then((res) => {
+      setAppts(res.data);
+    });
+    //   .catch((error) => console.log(error.toString()));
   }, [isLoaded]);
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const Calendar = () => {
     <>
       <div>
         <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          plugins={[dayGrid, timeGrid, interaction]}
           headerToolbar={{
             left: "prev,next today",
             center: "title",

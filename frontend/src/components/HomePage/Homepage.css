@@ -7,7 +7,7 @@
   /* height: 100vh; */
   max-height: 100%;
   background: -webkit-linear-gradient(to right, #b3d9f5, #f5f5f9);
-  background: linear-gradient(to right, #81bfee, #198cd3);
+  background: linear-gradient(to right, #81bfee, #152ac9);
 }
 .card {
   flex-basis: 35%;
@@ -42,7 +42,6 @@
   color: white;
   font-size: 4rem;
   padding-top: 5rem;
-  background: #68a2e1;
   background: -webkit-linear-gradient(to right, #b3d9f5, #f5f5f9);
-  background: linear-gradient(to right, #81bfee, #198cd3);
+  background: linear-gradient(to right, #81bfee, #152ac9);
 }

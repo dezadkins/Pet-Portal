@@ -14,8 +14,22 @@
   font-family: "Open Sans";
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
+  --bg-primary: #23232e3e;
+  --bg-secondary: #1414182e;
+  --transition-speed: 600ms;
+}
+
+.navbar:hover {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 600ms ease;
+
+  font-size: 16px;
+  font-family: "Open Sans";
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232ec2;
+  --bg-secondary: #141418ba;
   --transition-speed: 600ms;
 }
 .logo-circle {

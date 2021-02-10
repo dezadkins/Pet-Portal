@@ -42,7 +42,7 @@ function LoginFormPage() {
           <i className="fab fa-google-plus-g"> Sign in with Google</i>
         </NavLink>
       </div> */}
-      <span className="or-this">OR</span>
+      {/* <span className="or-this">OR</span> */}
       <label>
         <input
           type="text"

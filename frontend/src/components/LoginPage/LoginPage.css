@@ -3,9 +3,8 @@
 }
 .page-container {
   /* background: #f6f5f7; */
-  background: #68a2e1;
-  background: -webkit-linear-gradient(to right, #000001, #28188c);
-  background: linear-gradient(to right, #000001, #28188c);
+  background: -webkit-linear-gradient(to right, #b3d9f5, #f5f5f9);
+  background: linear-gradient(to right, #81bfee, #152ac9);
 
   display: flex;
   justify-content: center;
@@ -58,7 +57,7 @@
 }
 
 .sign-up-container {
-  left: 400px;
+  left: 385px;
   /* right: 30px; */
   width: 50%;
   /* opacity: 0; */

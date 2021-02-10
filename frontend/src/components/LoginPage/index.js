@@ -46,14 +46,14 @@ export default function LoginPage() {
               <p>
                 To keep connected with us please login with your personal info
               </p>
-              <button class="ghost" id="signIn" onClick={signIn}>
+              <button class="ghost" id="signIn">
                 Sign In
               </button>
             </div>
             <div class="overlay-panel overlay-right">
               <h1>Greetings!</h1>
               <p>Sign up to start your Pet Portal</p>
-              <button class="buddy ghost" id="signUp" onClick={signIn}>
+              <button class="buddy ghost" id="signUp">
                 Sign Up
               </button>
             </div>

@@ -6,6 +6,7 @@ import axios from "axios";
 export default function PetProfile() {
   return (
     <>
+      <NavBar />
       <div className="grid">
         <div className="profilepage-wrapper">
           <div className="box1">

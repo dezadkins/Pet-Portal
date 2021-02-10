@@ -32,7 +32,7 @@ function LoginFormPage() {
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <div className="social-signin">
+      {/* <div className="social-signin">
         <NavLink className="social-fb tag" to="/login">
           <i className="fab fa-facebook-f "> Sign in with Facebook</i>
         </NavLink>
@@ -41,7 +41,7 @@ function LoginFormPage() {
         <NavLink className="social-goog tag" to="/login">
           <i className="fab fa-google-plus-g"> Sign in with Google</i>
         </NavLink>
-      </div>
+      </div> */}
       <span className="or-this">OR</span>
       <label>
         <input

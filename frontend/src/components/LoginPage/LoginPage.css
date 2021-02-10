@@ -48,7 +48,7 @@
 }
 
 .sign-in-container {
-  left: 0;
+  left: 0px;
   width: 50%;
   z-index: 2;
 }
@@ -57,12 +57,13 @@
   transform: translateX(100%);
 }
 
-/* .sign-up-container {
-  left: 0;
+.sign-up-container {
+  left: 400px;
+  /* right: 30px; */
   width: 50%;
-  opacity: 0;
-  z-index: 1;
-} */
+  /* opacity: 0; */
+  /* z-index: 1; */
+}
 
 .container.right-panel-active .sign-up-container {
   transform: translateX(100%);
@@ -98,9 +99,9 @@
 }
 
 .overlay {
-  /* background: #68a2e1;
+  background: #68a2e1;
   background: -webkit-linear-gradient(to right, #000001, #28188c);
-  background: linear-gradient(to right, #000001, #28188c); */
+  background: linear-gradient(to right, #000001, #28188c);
   background: rgba(255, 255, 255, 0.1);
 
   background-repeat: no-repeat;

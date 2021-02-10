@@ -1,9 +1,9 @@
-.title {
+/* .title {
   display: flex;
   justify-content: center;
   font-size: 35px;
   color: black;
-}
+} */
 
 /* .profile-button {
   display: flex;
@@ -26,7 +26,7 @@
   --transition-speed: 500ms;
 }
 
-.navbar-nav {
+.navbar__nav2 {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -48,8 +48,8 @@
   width: 100%;
 }
 
-.nav-item2:last-child {
-  margin-top: auto;
+.nav-item2 {
+  margin-top: 100rem;
   /* padding-top: 20rem; */
 }
 

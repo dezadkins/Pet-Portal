@@ -27,12 +27,12 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route path="/signin">
+          {/* <Route path="/signin">
             <LoginFormPage />
           </Route>
           <Route exact path="/signup">
             <SignupFormPage />
-          </Route>
+          </Route> */}
           <Route path="/navbar">
             <NavBar />
           </Route>

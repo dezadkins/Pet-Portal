@@ -7,7 +7,7 @@ export default function NavBar2() {
   return (
     <div>
       <nav className="navbar">
-        <ul className="navbar__nav">
+        <ul className="navbar__nav2">
           <li className="logo">
             <nav class="nav-link">
               <div className="logo-circle">
@@ -18,7 +18,7 @@ export default function NavBar2() {
           </li>
 
           <li className="nav-item">
-            {/* <NavLink className="nav-link" to="/navbar">
+            <NavLink className="nav-link" to="/navbar">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -35,7 +35,7 @@ export default function NavBar2() {
                 ></path>
               </svg>
               <span className="link-text">Add New Pet</span>
-            </NavLink> */}
+            </NavLink>
           </li>
         </ul>
         {/* <div className="profile-button"></div> */}

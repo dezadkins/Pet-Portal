@@ -8,8 +8,6 @@ import * as sessionActions from "../../store/session";
 import axios from "axios";
 
 const Calendar = () => {
-  const [sessionArray, setSessionArray] = useState([]);
-  const [sessions, setSessions] = useState([]);
   const [appts, setAppts] = useState([]);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,36 +30,32 @@ const Calendar = () => {
       let datePlus1 = date + 172800000;
       let formattedDate = new Date(datePlus1).toISOString();
       initArray.push({
-        title: `DUE: ${appt.name}`,
+        petId: `DUE: ${appt.name}`,
         id: appt._id,
-        start: formattedDate,
-        allDay: true,
+        datetime: formattedDate,
+        location: true,
         color: "purple",
       });
     });
-    sessions.forEach((session) => {
-      if (session.sessionType === "planned") {
-        initArray.push({
-          title: `Planned:${session.description}-${session.apptName}`,
-          id: session._id,
-          start: session.start[0],
-          end: session.end[0],
-          allDay: session.allDay,
-          color: "orange",
-        });
-      } else {
-        initArray.push({
-          title: `${session.description}-${session.apptName}`,
-          id: session._id,
-          start: session.start[0],
-          end: session.end[0],
-          allDay: session.allDay,
-          color: "blue",
-        });
-      }
-    });
-    setSessionArray(initArray);
-  }, [sessions, appts]);
+    // Appointments.forEach((Appointment) => {
+    //   if (Appointment.sessionType === "planned") {
+    //     initArray.push({
+    //       id: Appointment.petId,
+    //       datetime: Appointment.datetime,
+    //       location: Appointment.location,
+    //       color: "orange",
+    //     });
+    //   } else {
+    //     initArray.push({
+    //       id: Appointment.petId,
+    //       datetime: Appointment.datetime,
+    //       location: Appointment.location,
+    //       color: "blue",
+    //     });
+    //   }
+    // });
+    setAppts(initArray);
+  }, [appts]);
 
   const handleEventClick = (clickInfo) => {
     if (
@@ -86,7 +80,7 @@ const Calendar = () => {
             center: "title",
             right: "dayGridMonth,timeGridWeek,timeGridDay",
           }}
-          events={sessionArray}
+          events={appts}
           initialView="dayGridMonth"
           editable={true}
           selectable={true}

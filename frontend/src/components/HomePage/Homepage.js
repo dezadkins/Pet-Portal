@@ -21,6 +21,7 @@ export default function HomePage() {
     // console.log("hit1", data);
     const pets = await data.json();
     setPets(pets);
+    console.log("hit2", pets);
   };
 
   return (

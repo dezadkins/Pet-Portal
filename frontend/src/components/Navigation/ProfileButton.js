@@ -20,9 +20,9 @@ function ProfileButton({ user }) {
       setShowMenu(false);
     };
 
-    document.addEventListener("click", closeMenu);
+    document.addEventListener("mouseover", closeMenu);
 
-    return () => document.removeEventListener("click", closeMenu);
+    return () => document.removeEventListener("mouseout", closeMenu);
   }, [showMenu]);
 
   // useEffect(() => {
@@ -40,14 +40,16 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+        <i className="logo-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{sessionUser.username}</li>
           <li>{sessionUser.email}</li>
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className="logout-button" onClick={logout}>
+              Log Out
+            </button>
           </li>
         </ul>
       )}

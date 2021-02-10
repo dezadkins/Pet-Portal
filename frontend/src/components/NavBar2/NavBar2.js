@@ -9,15 +9,16 @@ export default function NavBar2() {
       <nav className="navbar">
         <ul className="navbar__nav">
           <li className="logo">
-            <NavLink class="nav-link" to="/navbar">
+            <nav class="nav-link">
               <div className="logo-circle">
+                <ProfileButton />
                 <span className="link-text-two logo-text-two">Pet Portal</span>
               </div>
-            </NavLink>
+            </nav>
           </li>
 
           <li className="nav-item">
-            <NavLink className="nav-link" to="/navbar">
+            {/* <NavLink className="nav-link" to="/navbar">
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -34,12 +35,10 @@ export default function NavBar2() {
                 ></path>
               </svg>
               <span className="link-text">Add New Pet</span>
-            </NavLink>
+            </NavLink> */}
           </li>
         </ul>
-        <div className="profile-button">
-          <ProfileButton />
-        </div>
+        {/* <div className="profile-button"></div> */}
       </nav>
     </div>
   );

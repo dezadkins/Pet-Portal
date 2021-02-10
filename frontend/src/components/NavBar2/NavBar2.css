@@ -5,12 +5,12 @@
   color: black;
 }
 
-.profile-button {
+/* .profile-button {
   display: flex;
   justify-content: center;
   text-decoration: none;
   color: white;
-}
+} */
 
 .navbar {
   position: fixed;

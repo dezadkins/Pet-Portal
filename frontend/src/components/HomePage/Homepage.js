@@ -25,28 +25,6 @@ export default function HomePage() {
     console.log("hit2", pets);
   };
 
-  //  useEffect(() => {
-  //    const fetchUsers = async () => {
-  //      try {
-  //        setLoading(true);
-  //        const res = await fetch(`/api/users`);
-
-  //        const users = res.data;
-
-  //        if (users) setUsers(users);
-
-  //        setLoading(false);
-  //      } catch (err) {
-  //        console.error(err);
-  //      }
-  //    };
-
-  //    fetchUsers();
-  //    return function cleanup() {
-  //      setUsers([]);
-  //    };
-  //  }, []);
-
   return (
     <>
       <NavBar2 />

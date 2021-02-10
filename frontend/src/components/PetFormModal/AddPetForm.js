@@ -3,7 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
 import "./AddPetForm.css";
 
-function LoginForm() {
+function AddPetForm() {
   const dispatch = useDispatch();
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
@@ -52,4 +52,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default AddPetForm;

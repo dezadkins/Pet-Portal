@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import "./PetProfile.css";
 import axios from "axios";
+import WeightChart from "../WeightChart/WeightChart";
 
 export default function PetProfile() {
   return (
@@ -19,7 +20,7 @@ export default function PetProfile() {
             <h2>Upcoming Appointments</h2>
           </div>
           <div className="box4">
-            <h2>Graph</h2>
+            <WeightChart />
           </div>
           <div className="box5">
             <h2>Upcoming Visits</h2>

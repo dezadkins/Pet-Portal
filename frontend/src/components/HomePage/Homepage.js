@@ -19,10 +19,8 @@ export default function HomePage() {
 
   const fetchPets = async () => {
     const data = await fetch(`/api/pets/${sessionUser.id}`);
-    // console.log("hit1", data);
     const pets = await data.json();
     setPets(pets);
-    console.log("hit2", pets);
   };
 
   return (

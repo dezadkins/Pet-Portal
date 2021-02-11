@@ -326,7 +326,7 @@ router.post(
 );
 
 router.get(
-  "/:petId/graph",
+  "/:petId/graph/:id",
   asyncHandler(async (req, res, next) => {
     const graphId = parseInt(req.params.petId, 10);
     const graph = await Graph.findByPk(graphId);

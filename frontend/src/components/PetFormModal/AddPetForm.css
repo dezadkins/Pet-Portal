@@ -1,0 +1,14 @@
+.addPet__form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  background-color: lightblue;
+  border-radius: 20px;
+  width: 400px;
+  height: 500px;
+}
+
+.form-title {
+  display: flex;
+  justify-content: center;
+}

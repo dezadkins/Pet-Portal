@@ -1,4 +1,4 @@
-.pet-health-wrapper {
+.pet-growth-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -14,11 +14,11 @@
   background: linear-gradient(to right, #010104, #28188c); */
 }
 
-.pet-health__grid {
+.pet-growth__grid {
   display: grid;
 }
 
-.box7 {
+.box12 {
   margin-left: 100px;
   margin-top: 20px;
   margin-right: 20px;
@@ -27,13 +27,13 @@
   border: 2px solid orange;
 }
 
-.box8 {
+.box13 {
   border: 2px solid green;
   margin-top: 60px;
   margin-right: 290px;
   height: 150px;
 }
-.box9 {
+.box14 {
   height: 300px;
   width: 500px;
   margin-left: 140px;
@@ -41,7 +41,7 @@
 
   border: 2px solid yellow;
 }
-.box10 {
+.box15 {
   height: 300px;
   width: 500px;
   margin-left: 40px;

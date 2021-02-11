@@ -22,9 +22,6 @@ export default function PetProfile() {
           <div className="box4">
             <WeightChart />
           </div>
-          <div className="box5">
-            <h2>Upcoming Visits</h2>
-          </div>
         </div>
         <div className="box6">
           <h2>Summary</h2>

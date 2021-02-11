@@ -1,8 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
+
 import "./NavBar.css";
 
-export default function NavBar() {
+export default function NavBar({}) {
+  const { petId } = useParams();
   return (
     <div>
       {/* <div className="title">Navbar</div> */}
@@ -14,7 +16,7 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/navbar">
+            <NavLink className="nav-link" to={`/pets/${petId}/health`}>
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -34,7 +36,7 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/navbar">
+            <NavLink className="nav-link" to={`/pets/${petId}/growth`}>
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -54,7 +56,7 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/navbar">
+            <NavLink className="nav-link" to={`/pets/${petId}/appointments`}>
               <svg
                 aria-hidden="true"
                 focusable="false"
@@ -74,7 +76,7 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to="/navbar">
+            <NavLink className="nav-link" to={`/pets/${petId}/events`}>
               <svg
                 aria-hidden="true"
                 focusable="false"

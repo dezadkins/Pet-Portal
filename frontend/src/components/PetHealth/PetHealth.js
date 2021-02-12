@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import NavBar from "../NavBar/NavBar";
 import "./PetHealth.css";
 
 import axios from "axios";
 
 const PetHealth = () => {
-  const [pets, setPets] = useState([]);
+  const [pet, setPet] = useState([]);
+  const [appt, setAppt] = useState([]);
+  const { petId } = useParams();
 
   useEffect(() => {
     fetchPets();
-  }, []);
+  }, [petId]);
 
   const fetchPets = async () => {
-    const data = await fetch("/api/pets/:petId");
+    const data = await fetch(`/api/pets/${petId}`);
     const pets = await data.json();
-    setPets(pets);
+    setPet(pets);
   };
 
   return (
@@ -22,7 +26,9 @@ const PetHealth = () => {
       <NavBar />
       <div className="pet-health__grid">
         <div className="pet-health-wrapper">
-          <div className="box7"> Pet Image</div>
+          <div className="box7">
+            <img className="profile-petpic" src={pet.photoURL} />
+          </div>
           <div className="box8">
             <h2>Pet's Health</h2>
           </div>

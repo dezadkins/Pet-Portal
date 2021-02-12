@@ -25,6 +25,7 @@
     "mdbreact": "^5.0.1",
     "react-chartjs-2": "^2.11.1",
     "react-moment": "^1.1.1",
+    "react-responsive-carousel": "^3.2.11",
     "react-transition-group": "^4.4.1",
     "sequelize": "^6.5.0"
   }

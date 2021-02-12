@@ -1,20 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import SignupFormPage from "./components/SignupFormPage";
-import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
-import NavBar from "./components/NavBar/NavBar";
-import NavBar2 from "./components/NavBar2/NavBar2";
 import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage/Homepage";
-import ProfileButton from "./components/Navigation/ProfileButton";
 import PetProfile from "./components/PetProfile/PetProfile";
 import PetHealth from "./components/PetHealth/PetHealth";
 import PetGrowth from "./components/PetGrowth/PetGrowth";
 import Appointments from "./components/Appointments/Appointments";
 import Milestones from "./components/Milestones/Milestones";
+import { SliderData } from "./components/Milestones/SliderData";
 
 function App() {
   const dispatch = useDispatch();
@@ -47,7 +42,7 @@ function App() {
             <Appointments />
           </Route>
           <Route path="/pets/:petId/events">
-            <Milestones />
+            <Milestones slides={SliderData} />
           </Route>
         </Switch>
       )}

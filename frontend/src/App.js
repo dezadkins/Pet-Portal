@@ -11,6 +11,10 @@ import LoginPage from "./components/LoginPage";
 import HomePage from "./components/HomePage/Homepage";
 import ProfileButton from "./components/Navigation/ProfileButton";
 import PetProfile from "./components/PetProfile/PetProfile";
+import PetHealth from "./components/PetHealth/PetHealth";
+import PetGrowth from "./components/PetGrowth/PetGrowth";
+import Appointments from "./components/Appointments/Appointments";
+import Milestones from "./components/Milestones/Milestones";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,26 +28,26 @@ function App() {
       {/* <Navigation isLoaded={isLoaded} /> */}
       {isLoaded && (
         <Switch>
-          <Route exact path="/">
-            <HomePage />
-          </Route>
-          <Route path="/signin">
-            <LoginFormPage />
-          </Route>
-          <Route exact path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/navbar">
-            <NavBar />
-          </Route>
-          <Route path="/navbar2">
-            <NavBar2 />
-          </Route>
           <Route path="/login">
             <LoginPage />
           </Route>
-          <Route path="/petprofile">
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/pets/:petId">
             <PetProfile />
+          </Route>
+          <Route path="/pets/:petId/health">
+            <PetHealth />
+          </Route>
+          <Route path="/pets/:petId/growth">
+            <PetGrowth />
+          </Route>
+          <Route path="/pets/:petId/appointments">
+            <Appointments />
+          </Route>
+          <Route path="/pets/:petId/events">
+            <Milestones />
           </Route>
         </Switch>
       )}

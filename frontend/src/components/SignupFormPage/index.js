@@ -38,7 +38,7 @@ function SignupFormPage() {
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <div className="social-signin">
+      {/* <div className="social-signin">
         <NavLink className="social-fb tag" to="/login">
           <i class="fab fa-facebook-f"> Sign in with Facebook</i>
         </NavLink>
@@ -47,8 +47,8 @@ function SignupFormPage() {
         <NavLink className="social-goog tag" to="/login">
           <i class="fab fa-google-plus-g"> Sign in with Google</i>
         </NavLink>
-      </div>
-      <span>OR</span>
+      </div> */}
+      {/* <span>OR</span> */}
       <label>
         <input
           type="text"
@@ -89,7 +89,11 @@ function SignupFormPage() {
           required
         />
       </label>
-      <button className="sign-in-button shadow" type="submit">
+      <button
+        className="sign-in-button shadow"
+        type="submit"
+        onClick={handleSubmit}
+      >
         Sign Up
       </button>
     </form>

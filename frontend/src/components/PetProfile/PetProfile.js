@@ -1,48 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./PetProfile.css";
+import axios from "axios";
+import WeightChart from "../WeightChart/WeightChart";
 
 export default function PetProfile() {
+  const [pet, setPet] = useState([]);
+  const [appt, setAppt] = useState([]);
+  const { petId, apptId } = useParams();
+
+  useEffect(() => {
+    fetchPets();
+  }, [petId]);
+
+  const fetchPets = async () => {
+    const data = await fetch(`/api/pets/${petId}`);
+    const pets = await data.json();
+    setPet(pets);
+  };
+
+  useEffect(() => {
+    fetchAppts();
+  }, [apptId]);
+
+  const fetchAppts = async () => {
+    const data = await fetch(`/api/pets/appts/${apptId}`);
+    const appt = await data.json();
+    console.log("data", data);
+    setAppt(appt);
+    console.log("hit", appt);
+  };
+
   return (
     <>
-      <div className="page-wrapper">
-        <NavBar />
-        <div className="wrapper">
-          <div className="profile-wrapper ">
-            <div className="profilePic-container ">
-              <h1>Pet Profile</h1>
-            </div>
+      <NavBar />
+      <div className="grid">
+        <div className="profilepage-wrapper">
+          <div className="box1">
+            <img className="profile-petpic" src={pet.photoURL} />
           </div>
-          {/* <div > hello</div> */}
-          <div className="graph-contain"> Graph</div>
-          <div className="graph-contain"> Graph</div>
+          <div className="box2">
+            <h2>Overview</h2>
+          </div>
+          <div className="box3">
+            <div>{appt.datetime}</div>
+          </div>
+          <div className="box4">
+            <WeightChart />
+          </div>
         </div>
-        <div className="wrapper-two">
-          <div className="profile-wrapper-two ">
-            <div className="profilePic-container ">
-              <h1>appointment</h1>
-            </div>
-          </div>
-          <div className="appt-container">Appointment Box</div>
-          <div>Graph Box</div>
+        <div className="box6">
+          <h2>Summary</h2>
         </div>
       </div>
-      {/* <div className="overview-wrapper"> */}
-
-      {/* <div className="appointment-container">
-          <div className="appt-wrapper">
-            <div className="appt-container ">
-              <h1>Appt Div</h1>
-            </div>
-          </div>
-        </div> */}
-      {/* <div className="page-wrapper">
-          <div className="graph-wrapper">
-            <div className="graph-container ">
-              <h1>Graph Div</h1>
-            </div>
-          </div>
-        </div> */}
     </>
   );
 }

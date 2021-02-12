@@ -1,3 +1,14 @@
 .profile-dropdown {
   position: absolute;
+  top: 90px;
+  left: 30px;
+  list-style: none;
+  font-size: 12px;
+}
+
+/* .profile-dropdown:hover {
+} */
+
+.logout-button {
+  margin-top: 10px;
 }

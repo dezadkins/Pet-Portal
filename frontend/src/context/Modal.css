@@ -19,6 +19,8 @@
 }
 
 #modal-content {
+  /* justify-content: center; */
   position: absolute;
-  background-color:white;
+  border-radius: 20px;
+  background-color: white;
 }

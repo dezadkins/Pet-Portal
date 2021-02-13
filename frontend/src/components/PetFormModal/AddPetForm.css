@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background-color: lightblue;
+  background-color: rgb(196, 229, 240);
   border-radius: 20px;
   /* width: 400px;
   height: 500px; */
@@ -16,6 +16,10 @@
 .form-title {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
+  color: rgb(30, 76, 191);
+  font-family: "Reggae One", cursive;
+  font-weight: bold;
 }
 
 .image-upload {
@@ -32,7 +36,7 @@
 .add-pet__form-container {
   width: 400px;
   height: 100%;
-  border: 1px solid lightblue;
+  /* border: 1px solid lightblue; */
   border-radius: 3px;
   display: flex;
   flex-direction: column;

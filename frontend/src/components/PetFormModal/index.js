@@ -8,13 +8,14 @@ function PetFormModal() {
   return (
     <>
       {/* <button onClick={() => setShowModal(true)}> */}
+
       <svg
         onClick={() => setShowModal(true)}
         aria-hidden="true"
         focusable="false"
         data-prefix="far"
         data-icon="plus"
-        className="svg-inline--fa fa-plus fa-w-12"
+        className="plus-sign"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 384 512"

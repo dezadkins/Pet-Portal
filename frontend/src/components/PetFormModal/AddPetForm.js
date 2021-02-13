@@ -5,9 +5,10 @@ import "./AddPetForm.css";
 
 function AddPetForm() {
   const dispatch = useDispatch();
-  const [credential, setCredential] = useState("");
+  const [name, setName] = useState("");
   const [petType, setPetType] = useState([]);
-  const [password, setPassword] = useState("");
+  const [Breed, setBreed] = useState("");
+  const [DOB, setDOB] = useState("");
   const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
@@ -20,10 +21,20 @@ function AddPetForm() {
     );
   };
 
-  const petSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setPetType([]);
-    return;
+
+    const payload = {
+      userId,
+      dish_name,
+      ingredients,
+      instructions,
+      photoUrl,
+    };
+    console.log("PAYLOAD", payload);
+    const createdRecipe = dispatch(addRecipe(payload));
+
+    if (createdRecipe) history.push("/");
   };
 
   return (
@@ -46,7 +57,7 @@ function AddPetForm() {
               type="text"
               placeholder="Name"
               value={credential}
-              onChange={(e) => setCredential(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               required
             />
 
@@ -54,7 +65,7 @@ function AddPetForm() {
               Pet Type:
               <select
                 value={credential}
-                onChange={(e) => setCredential(e.target.value)}
+                onChange={(e) => setPetType(e.target.value)}
               >
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
@@ -68,7 +79,7 @@ function AddPetForm() {
                 type="text"
                 placeholder="Breed"
                 value={credential}
-                onChange={(e) => setCredential(e.target.value)}
+                onChange={(e) => setBreed(e.target.value)}
                 required
               />
             </div>
@@ -77,7 +88,7 @@ function AddPetForm() {
                 type="password"
                 placeholder="D.O.B"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setDOB(e.target.value)}
                 required
               />
             </div>

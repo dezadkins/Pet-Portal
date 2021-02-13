@@ -90,6 +90,11 @@
   /* border: 1px solid black; */
 }
 
+.plus-sign svg {
+  cursor: pointer;
+  color: transparent;
+}
+
 .all-input input {
   width: 200px;
   text-align: center;

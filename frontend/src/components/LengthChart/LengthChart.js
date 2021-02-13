@@ -3,30 +3,26 @@ import { Line } from "react-chartjs-2";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const WeightChart = () => {
+const LengthChart = () => {
   const [lineChart, setLineChart] = useState({});
-  const [weight, setWeight] = useState();
+  const [length, setLength] = useState();
   const { petId } = useParams();
-
-  // fetch(`/api/pets/${petId}`)
-  //   .then((res) => res.json())
-  //   .then((res) => console.log(res));
 
   useEffect(() => {
     axios
       .get(`/api/${petId}/graph`)
       .then((res) => {
-        const data = res.data.weight;
-        setWeight(data);
+        const data = res.data.length;
+        setLength(data);
       })
       .catch(function (error) {
         console.log(error);
       });
-  }, []);
+  }, [petId]);
 
   useEffect(() => {
     setLineChart({
-      labels: weight,
+      labels: length,
       datasets: [
         {
           data: [
@@ -57,10 +53,10 @@ const WeightChart = () => {
       ],
       title: {
         display: true,
-        text: "Weight Chart",
+        text: "Length Chart",
       },
     });
-  }, [weight]);
+  }, [length]);
 
   return (
     <>
@@ -75,4 +71,4 @@ const WeightChart = () => {
   );
 };
 
-export default WeightChart;
+export default LengthChart;

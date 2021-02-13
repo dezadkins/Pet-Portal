@@ -8,8 +8,8 @@ import axios from "axios";
 
 const Appointments = () => {
   const [pet, setPet] = useState([]);
-  const [appt, setAppt] = useState([]);
-  const { petId } = useParams();
+  const [appt, setAppt] = useState("");
+  const { petId, apptId } = useParams();
 
   useEffect(() => {
     fetchPets();
@@ -19,6 +19,18 @@ const Appointments = () => {
     const data = await fetch(`/api/pets/${petId}`);
     const pets = await data.json();
     setPet(pets);
+  };
+  useEffect(() => {
+    fetchAppts();
+  }, [apptId]);
+
+  const fetchAppts = async () => {
+    console.log(apptId);
+    const data = await fetch(`/api/pets/appts/${apptId}`);
+    const appt = await data.json();
+    console.log("appt", appt);
+    setAppt(appt);
+    console.log("hit", appt);
   };
 
   return (
@@ -32,7 +44,7 @@ const Appointments = () => {
           <div className="box17">
             <h2>Pet's Appointments</h2>
           </div>
-          <div className="box18">Upcoming Visits</div>
+          <div className="box18">{pet.datetime}</div>
           <div className="box19">Add Appointments</div>
           <div className="box20">Past Visits</div>
         </div>

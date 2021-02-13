@@ -1,14 +1,120 @@
 .addPet__form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: space-around;
+  align-items: center;
   background-color: lightblue;
   border-radius: 20px;
-  width: 400px;
-  height: 500px;
+  /* width: 400px;
+  height: 500px; */
+
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
 }
 
 .form-title {
   display: flex;
   justify-content: center;
+}
+
+.image-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 250px;
+  background-color: pink;
+  border: 3px solid black;
+  margin-bottom: 10px;
+}
+
+.add-pet__form-container {
+  width: 400px;
+  height: 100%;
+  border: 1px solid lightblue;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.add-pet__form-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.submit-button {
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: #1028858e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 5px;
+  width: 75spx;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+.upload-button {
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: #6a9ddc8e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 5px;
+  width: 75spx;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.all-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.all-input input {
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 5px;
+  width: 75spx;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+.all-input select {
+  width: 135px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  /* background-color: #6a9ddc8e; */
+  color: gray;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 5px;
+  width: 75spx;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
 }

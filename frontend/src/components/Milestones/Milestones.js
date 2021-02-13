@@ -75,9 +75,13 @@ const Milstones = ({ slides }) => {
 
 export default Milstones;
 
-// import React from "react";
+// import React, { useEffect, useState } from "react";
 // import ReactDOM from "react-dom";
+// import { useParams } from "react-router-dom";
 // import Carousel from "react-elastic-carousel";
+// import * as sessionActions from "../../store/session";
+// import { useDispatch, useSelector } from "react-redux";
+
 // import Item from "./Item";
 // import "./Milestones.css";
 
@@ -88,24 +92,105 @@ export default Milstones;
 //   { width: 1200, itemsToShow: 4 },
 // ];
 
-// function Milestones() {
+// function Milestones({ slides }) {
+//   const dispatch = useDispatch();
+//   const [slides, setSlides] = useState([]);
+//   const [current, setCurrent] = useState(0);
+//   const length = slides.length;
+//   const [pets, setPets] = useState([]);
+
+//   const { petId } = useParams();
+
+//   useEffect(() => {
+//     fetchPets();
+//   }, []);
+
+//   const fetchPets = async () => {
+//     fetch(`/api/pets/${petId}`)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         console.log("hit", data);
+//         const { data } = data;
+//         let slides = data.map((pet, img) => {
+//           return (
+//             <div key={pet}>
+//               <img src={img} />
+//             </div>
+//           );
+//         });
+//       });
+//     setSlides(slides).catch(function (res) {
+//       console.error(res);
+//     });
+
+//     // const data = await fetch(`/api/pets/${petId}`);
+//     // const pets = await data.json();
+
+//     // setPets(pets);
+//   };
+
+//   const nextSlide = () => {
+//     setCurrent(current === length - 1 ? 0 : current + 1);
+//   };
+
+//   const prevSlide = () => {
+//     setCurrent(current === 0 ? length - 1 : current - 1);
+//   };
+
+//   if (!Array.isArray(slides) || slides.length <= 0) {
+//     return null;
+//   }
 //   return (
 //     <>
 //       <h1 style={{ textAlign: "center" }}>Pet's Life Events</h1>
 //       <div className="slider">
-//         <Carousel breakPoints={breakPoints}>
-//           <Item>One</Item>
-//           <Item>Two</Item>
-//           <Item>Three</Item>
-//           <Item>Four</Item>
-//           <Item>Five</Item>
-//           <Item>Six</Item>
-//           <Item>Seven</Item>
-//           <Item>Eight</Item>
-//         </Carousel>
+//         <Carousel breakPoints={breakPoints}>{pet.photoURL}</Carousel>
 //       </div>
 //     </>
 //   );
 // }
 
 // export default Milestones;
+
+// import React from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { useParams } from "react-router-dom";
+
+// import { Carousel } from "react-responsive-carousel";
+
+// class Milestones extends React.Component {
+//   constructor(props) {
+//     super(props);
+
+//     this.state = {
+//       pets: null,
+//     };
+//   }
+
+//   componentDidMount() {
+//     // #1. First of all you have to fetch the images.
+//     fetch(`/api/pets/${petId}`)
+//       .then((response) => response.json()) // If it's a JSON response, you have to parse it firstly
+//       .then((pets) => this.setState({ pets })); // #2. After that you have to keep the images in the component's state.
+//   }
+
+//   render() {
+//     const { pets } = this.state;
+
+//     if (!pets) return <div>Images are not fetched yet!</div>;
+
+//     // #3. Finally, render the `<Carousel />` with the state's images.
+//     return (
+//       <Carousel autoPlay infiniteLoop="true">
+//         {pets.map((pet) => {
+//           return (
+//             <div>
+//               <img src={this.props.match.params.id} />
+//               <p className="legend">{pet.name}</p>
+//             </div>
+//           );
+//         })}
+//       </Carousel>
+//     );
+//   }
+// }

@@ -4,7 +4,7 @@ import { NavLink, useParams } from "react-router-dom";
 import "./NavBar.css";
 
 export default function NavBar({}) {
-  const { petId } = useParams();
+  const { petId, apptId } = useParams();
   return (
     <div>
       {/* <div className="title">Navbar</div> */}
@@ -56,7 +56,7 @@ export default function NavBar({}) {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to={`/pets/${petId}/appointments`}>
+            <NavLink className="nav-link" to={`/pets/${petId}/appts/${apptId}`}>
               <svg
                 aria-hidden="true"
                 focusable="false"

@@ -38,7 +38,7 @@ function App() {
           <Route path="/pets/:petId/growth">
             <PetGrowth />
           </Route>
-          <Route path="/pets/:petId/appointments">
+          <Route path="/pets/:petId/appts/:apptId">
             <Appointments />
           </Route>
           <Route path="/pets/:petId/events">

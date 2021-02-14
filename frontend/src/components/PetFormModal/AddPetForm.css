@@ -28,7 +28,7 @@
   align-items: center;
   height: 200px;
   width: 250px;
-  background-color: pink;
+  /* background-color: pink; */
   border: 3px solid black;
   margin-bottom: 10px;
 }

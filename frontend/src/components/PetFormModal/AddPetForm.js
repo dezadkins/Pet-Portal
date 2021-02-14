@@ -1,40 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch } from "react-redux";
+import { useParams, useHistory } from "react-router-dom";
+
 import "./AddPetForm.css";
 
 function AddPetForm() {
-  const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [petType, setPetType] = useState([]);
-  const [Breed, setBreed] = useState("");
-  const [DOB, setDOB] = useState("");
+  const [species, setSpecies] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [photoURL, setPhotoURL] = useState(null);
+  const [photoPreview, setPhotoPreview] = useState(null);
+  // const [photoLoad, setPhotoLoad] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
+  const uploadInput = useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setErrors([]);
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      (res) => {
-        if (res.data && res.data.errors) setErrors(res.data.errors);
-      }
-    );
-  };
-
+  const history = useHistory();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!photoURL) {
+      setErrors(<p id="errorMsg">Please upload an image!</p>);
+      return;
+    }
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("species", species);
+    formData.append("birthDate", birthDate);
+    formData.append("photoURL", photoURL);
+    try {
+      let result = await fetch("/api/pets/", {
+        method: "POST",
+        body: formData,
+      });
+      if (!result.ok) throw result;
+      return history.push("/");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-    const payload = {
-      userId,
-      dish_name,
-      ingredients,
-      instructions,
-      photoUrl,
-    };
-    console.log("PAYLOAD", payload);
-    const createdRecipe = dispatch(addRecipe(payload));
+  const updateFile = (e) => {
+    const {
+      target: {
+        validity,
+        files: [file],
+      },
+    } = e;
+    e.target.files[0]
+      ? setPhotoPreview(URL.createObjectURL(e.target.files[0]))
+      : setPhotoPreview(null);
 
-    if (createdRecipe) history.push("/");
+    return validity.valid && setPhotoURL(file);
+  };
+
+  const handleUploadClick = (e) => {
+    e.preventDefault();
+    uploadInput.current.click();
   };
 
   return (
@@ -48,15 +71,25 @@ function AddPetForm() {
 
       <div className="add-pet__form-container">
         <div className="add-pet__form-fields">
-          <div className="image-upload">Upload Image Here</div>
+          <div className="image-upload" src={photoURL}>
+            <input
+              ref={uploadInput}
+              style={{ display: "none" }}
+              type="file"
+              name="file"
+              onChange={updateFile}
+            />
+          </div>
           <div className="upload-box">
-            <button className="upload-button">Upload</button>
+            <button className="upload-button" onClick={handleUploadClick}>
+              Upload
+            </button>
           </div>
           <div className="all-input">
             <input
               type="text"
               placeholder="Name"
-              value={credential}
+              value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
@@ -64,7 +97,7 @@ function AddPetForm() {
             <label>
               Pet Type:
               <select
-                value={credential}
+                value={petType}
                 onChange={(e) => setPetType(e.target.value)}
               >
                 <option value="Dog">Dog</option>
@@ -78,24 +111,24 @@ function AddPetForm() {
               <input
                 type="text"
                 placeholder="Breed"
-                value={credential}
-                onChange={(e) => setBreed(e.target.value)}
+                value={species}
+                onChange={(e) => setSpecies(e.target.value)}
                 required
               />
             </div>
             <div>
               <input
-                type="password"
+                type="date"
                 placeholder="D.O.B"
-                value={password}
-                onChange={(e) => setDOB(e.target.value)}
+                value={birthDate}
+                onChange={(e) => setBirthDate(e.target.value)}
                 required
               />
             </div>
           </div>
         </div>
       </div>
-      <button className="submit-button" type="submit">
+      <button className="submit-button" type="submit" value="Post">
         Submit
       </button>
     </form>

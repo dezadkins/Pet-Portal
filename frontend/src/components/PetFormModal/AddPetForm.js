@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { fetch } from "../../store/csrf";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
@@ -10,7 +11,7 @@ function AddPetForm() {
   const [petType, setPetType] = useState([]);
   const [species, setSpecies] = useState("");
   const [birthDate, setBirthDate] = useState("");
-  const [photoURL, setPhotoURL] = useState(null);
+  const [photoURL, setPhotoURL] = useState("");
   const [photoPreview, setPhotoPreview] = useState(null);
   // const [photoLoad, setPhotoLoad] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -34,14 +35,15 @@ function AddPetForm() {
     formData.append("name", name);
     formData.append("species", species);
     formData.append("birthDate", birthDate);
-    formData.append("photoURL", photoURL);
+    formData.append("file", photoURL);
     try {
       let result = await fetch("/api/pets/", {
         method: "POST",
         body: formData,
       });
-      if (!result.ok) throw result;
-      return history.push("/");
+
+      const pet = result.data;
+      if (pet) history.push("/");
     } catch (err) {
       setLoading(false);
       console.error(err);
@@ -58,7 +60,6 @@ function AddPetForm() {
     e.target.files[0]
       ? setPhotoPreview(URL.createObjectURL(e.target.files[0]))
       : setPhotoPreview(null);
-
     return validity.valid && setPhotoURL(file);
   };
 
@@ -66,6 +67,30 @@ function AddPetForm() {
     e.preventDefault();
     uploadInput.current.click();
   };
+  // const uploadImage = () => {
+  //   if (!photoPreview) {
+  //     return (
+  //       <>
+  //         <h1>Upload an Image</h1>
+  //         <div></div>
+  //         <div onClick={handleUploadClick}>
+  //           <button>Upload</button>
+  //         </div>
+  //       </>
+  //     );
+  //   } else {
+  //     return (
+  //       <>
+  //         <div>
+  //           <img src={photoPreview} alt="Upload Preview" />
+  //         </div>
+  //         <div onClick={handleUploadClick}>
+  //           <button style={{ width: "120px" }}>Change Image</button>
+  //         </div>
+  //       </>
+  //     );
+  //   }
+  // };
 
   return (
     <form className="addPet__form" onSubmit={handleSubmit}>
@@ -77,8 +102,10 @@ function AddPetForm() {
       </ul>
 
       <div className="add-pet__form-container">
+        {/* {uploadImage()} */}
         <div className="add-pet__form-fields">
-          <div className="image-upload" src={photoURL}>
+          <div className="image-upload">
+            <img className="image-preview" src={photoPreview} />
             <input
               ref={uploadInput}
               style={{ display: "none" }}
@@ -87,10 +114,8 @@ function AddPetForm() {
               onChange={updateFile}
             />
           </div>
-          <div className="upload-box">
-            <button className="upload-button" onClick={handleUploadClick}>
-              Upload
-            </button>
+          <div onClick={handleUploadClick} className="upload-box">
+            <button className="upload-button">Upload</button>
           </div>
           <div className="all-input">
             <input

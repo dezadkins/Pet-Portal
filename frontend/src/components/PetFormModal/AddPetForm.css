@@ -33,6 +33,13 @@
   margin-bottom: 10px;
 }
 
+.image-preview {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* background-position: top; */
+}
+
 .add-pet__form-container {
   width: 400px;
   height: 100%;

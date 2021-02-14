@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 
 import "./AddPetForm.css";
@@ -17,9 +17,15 @@ function AddPetForm() {
   const [errors, setErrors] = useState([]);
   const uploadInput = useRef(null);
 
+  const user = useSelector((state) => {
+    return state.session.user;
+  });
   const history = useHistory();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
+    setLoading(true);
     if (!photoURL) {
       setErrors(<p id="errorMsg">Please upload an image!</p>);
       return;
@@ -37,6 +43,7 @@ function AddPetForm() {
       if (!result.ok) throw result;
       return history.push("/");
     } catch (err) {
+      setLoading(false);
       console.error(err);
     }
   };

@@ -99,7 +99,7 @@ export default function NavBar({}) {
           </li>
 
           <li className="nav-item">
-            <div>
+            <div className="nav-link">
               <PetFormModal />
               {/* <svg
                 aria-hidden="true"

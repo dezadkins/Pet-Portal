@@ -37,6 +37,9 @@ export default function HomePage() {
             className="card"
           >
             <div className="img-container">
+              {/* <div className="thumbtack-div">
+                <i class="fas fa-thumbtack"></i>
+              </div> */}
               <img className="photo-size" src={pet.photoURL} key={pet.name} />
             </div>
             <div className="pet-name">{pet.name}</div>

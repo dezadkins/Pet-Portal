@@ -44,6 +44,7 @@
   width: 500px;
   margin-left: 140px;
   margin-top: -90px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
 
   border: 2px solid yellow;
 }
@@ -53,6 +54,8 @@
   margin-left: 40px;
   margin-top: -90px;
   border: 2px solid red;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
   /* background-color: red; */
 }
 /* .box11 {

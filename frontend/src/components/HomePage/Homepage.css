@@ -15,17 +15,32 @@
   padding-top: 5rem;
   /* border: 2px solid black; */
 }
-.img-container {
-  /* width: 100%;
-  height: 250px; */
 
-  /* border: 2px solid black; */
+.thumbtack-div {
+  display: flex;
+  justify-content: center;
 }
+/* .fa-thumbtack { */
+/* color: red; */
+/* position: relative; */
+/* width: 10px;
+  height: 30px; */
+/* top: 8px; */
+/* margin-top: 20px; */
+/* } */
+/* .img-container { */
+/* width: 100%;*/
+/* height: 600px; */
+
+/* border: 2px solid black; */
+/* } */
 .photo-size {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
+
   /* background-position: center bottom;
   background-size: contain;
   background-position: center; */

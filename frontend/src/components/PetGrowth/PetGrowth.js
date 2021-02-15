@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import WeightChart from "../WeightChart/WeightChart";
+import LengthChart from "../LengthChart/LengthChart";
 
 import NavBar from "../NavBar/NavBar";
 import "./PetGrowth.css";
@@ -32,8 +34,12 @@ const PetGrowth = () => {
           <div className="box13">
             <h2>Pet's Growth</h2>
           </div>
-          <div className="box14">Weight Graph</div>
-          <div className="box15">Length Graph</div>
+          <div className="box14">
+            <WeightChart />
+          </div>
+          <div className="box15">
+            <LengthChart />
+          </div>
         </div>
       </div>
     </>

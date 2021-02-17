@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
       photoURL: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.STRING,
       },
       userId: {

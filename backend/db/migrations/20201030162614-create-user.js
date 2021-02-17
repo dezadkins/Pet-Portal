@@ -24,7 +24,7 @@ module.exports = {
       },
       avatarURL: {
         type: Sequelize.STRING(255),
-        allowNull: false,
+        allowNull: true,
         defaultValue: null,
       },
       createdAt: {

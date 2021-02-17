@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./Appointments.css";
 
-import axios from "axios";
+// import axios from "axios";
 
 const Appointments = () => {
   const [pet, setPet] = useState([]);

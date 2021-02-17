@@ -17,12 +17,14 @@
   /* --bg-primary: #23232e3e;
   --bg-secondary: #1414182e; */
   --transition-speed: 600ms;
+  box-shadow: 0 0 8px rgba(223, 119, 7, 0.55), 0 10px 10px rgba(0, 0, 0, 0.05);
 }
 
 .navbar:hover {
   position: fixed;
   background-color: var(--bg-primary);
   transition: width 600ms ease;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
 
   font-size: 16px;
   font-family: "Open Sans";

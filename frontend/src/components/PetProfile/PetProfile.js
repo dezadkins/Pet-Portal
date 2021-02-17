@@ -44,7 +44,7 @@ export default function PetProfile() {
             <h2>Overview</h2>
           </div>
           <div className="box3">
-            <div>{appt.location}</div>
+            <div>Upcoming Appointments</div>
           </div>
           <div className="box4">
             <WeightChart />

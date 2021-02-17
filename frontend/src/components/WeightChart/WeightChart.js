@@ -8,7 +8,7 @@ const WeightChart = () => {
   const [weight, setWeight] = useState();
   const { petId } = useParams();
 
-  // UNDEFINED
+  // Gives UNDEFINED
   const fetchWeight = async () => {
     const data = await fetch(`/api/pets/${petId}/graph`);
     const pet = await data.json();

@@ -40,10 +40,13 @@
 }
 
 .box2 {
-  border: 2px solid green;
+  /* border: 2px solid green; */
   margin-top: 60px;
   margin-right: 20px;
   height: 150px;
+  font-family: "Reggae One", cursive;
+  font-size: 50px;
+  color: rgb(214, 245, 57);
 }
 .box3 {
   height: 50px;
@@ -56,7 +59,7 @@
   height: 300px;
   width: 500px;
   margin-left: 40px;
-  margin-top: -290px;
+  margin-top: -178px;
   /* border: 2px solid red; */
   /* background-color: red; */
 }

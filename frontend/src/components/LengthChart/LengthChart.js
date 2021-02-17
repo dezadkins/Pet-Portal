@@ -9,16 +9,18 @@ const LengthChart = () => {
   const { petId } = useParams();
 
   useEffect(() => {
-    axios
-      .get(`/api/${petId}/graph`)
-      .then((res) => {
-        const data = res.data.length;
-        setLength(data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    fetchLength();
   }, [petId]);
+
+  const fetchLength = async () => {
+    const data = await fetch(`/api/pets/${petId}/graph`);
+    const pet = await data.json();
+    // console.log([pet[0].length]);
+    //Filter weight when new data is added
+    // newArray = []
+    // for(i = 0; i < pet.length; i++){newArray.push(pet[i].weight)}
+    setLength([pet[0].length]);
+  };
 
   useEffect(() => {
     setLineChart({

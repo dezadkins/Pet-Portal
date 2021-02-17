@@ -7,7 +7,7 @@ import WeightChart from "../WeightChart/WeightChart";
 
 export default function PetProfile() {
   const [pet, setPet] = useState([]);
-  const [appt, setAppt] = useState("");
+  const [appt, setAppt] = useState([]);
   const { petId, apptId } = useParams();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default function PetProfile() {
 
   const fetchPets = async () => {
     const data = await fetch(`/api/pets/${petId}`);
-    // console.log(petId);
+    console.log(petId);
     const pets = await data.json();
     setPet(pets);
   };
@@ -26,10 +26,10 @@ export default function PetProfile() {
   }, [apptId]);
 
   const fetchAppts = async () => {
-    console.log(apptId);
-    const data = await fetch(`/api/pets/appts/${apptId}`).then((response) =>
-      console.log(response)
-    );
+    console.log(petId);
+    const data = await fetch(`/api/pets/${petId}/appts`);
+    const appt = await data.json();
+    setAppt(appt[0]);
   };
 
   return (
@@ -44,7 +44,7 @@ export default function PetProfile() {
             <h2>Overview</h2>
           </div>
           <div className="box3">
-            <div>Upcoming Appointments</div>
+            <div>{appt.location}</div>
           </div>
           <div className="box4">
             <WeightChart />

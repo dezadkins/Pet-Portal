@@ -11,19 +11,18 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
 
-      // datestamp:{
-      //   allowNull: false,
-      //   type: DataTypes.DATEONLY
-
-      // },
+      datestamp: {
+        allowNull: true,
+        type: DataTypes.DATEONLY,
+      },
 
       weight: {
         allowNull: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       },
       length: {
         allowNull: true,
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
       },
     },
     {}

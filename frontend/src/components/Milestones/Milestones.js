@@ -39,6 +39,7 @@ const Milstones = ({ slides }) => {
     <>
       <NavBar />
       <div className="eventpage-wrapper">
+        <div className="spacer-div"></div>
         <div className="pet-image-div">
           <img className="profile-petpic" src={pet.photoURL} />
         </div>

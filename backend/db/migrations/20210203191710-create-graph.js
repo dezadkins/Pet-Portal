@@ -14,11 +14,11 @@ module.exports = {
       // },
       weight: {
         allowNull: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       length: {
         allowNull: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       petId: {
         allowNull: false,

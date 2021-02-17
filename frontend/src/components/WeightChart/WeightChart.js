@@ -8,20 +8,23 @@ const WeightChart = () => {
   const [weight, setWeight] = useState();
   const { petId } = useParams();
 
-  // Gives UNDEFINED
   // const fetchWeight = async () => {
   //   const data = await fetch(`/api/pets/${petId}/graph`);
-  //   const pet = await data.json();
-  //   console.log(pet.weight);
-  //   setWeight(pet.weight);
-  // };
+  //   const weight = await data.json();
+  //   console.log(weight);
+  //   setWeight(weight);
+  // }
 
-  // Fetches Array
   const fetchWeight = async () => {
     const data = await fetch(`/api/pets/${petId}/graph`);
-    const weight = await data.json();
-    console.log(weight);
-    setWeight(weight);
+    const pet = await data.json();
+    // console.log([pet[0].weight]);
+    //Filter weight when new data is added
+    // newArray = [];
+    // for (i = 0; i < pet.length; i++) {
+    //   newArray.push(pet[i].weight);
+    // }
+    setWeight([pet[0].weight]);
   };
 
   useEffect(() => {

@@ -49,6 +49,8 @@
   color: rgb(214, 245, 57);
 }
 .box9 {
+  display: flex;
+  justify-content: space-between;
   height: 300px;
   width: 500px;
   margin-left: 140px;
@@ -83,8 +85,11 @@
 
 .fa-folder-plus {
   display: flex;
-  width: 480px;
-  height: 70px;
-  border: 3px solid black;
+  font-size: 26px;
+  width: 30px;
+  height: 30px;
+  padding: 5px 10px 0px 0px;
+  /* border: 3px solid black; */
   justify-content: flex-end;
+  cursor: pointer;
 }

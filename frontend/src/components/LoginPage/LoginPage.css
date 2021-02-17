@@ -17,6 +17,10 @@
 
 .login-title {
   color: #fff;
+  font-family: "Reggae One", cursive;
+  font-size: 48px;
+  color: rgb(214, 245, 57);
+  padding-bottom: 20px;
 }
 
 .container {

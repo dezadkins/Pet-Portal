@@ -14,6 +14,19 @@ function LoginFormPage() {
 
   if (sessionUser) return <Redirect to="/" />;
 
+  const loginDemo = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(
+      sessionActions.login({
+        credential: "demo@user.io",
+        password: "password",
+      })
+    ).catch((res) => {
+      if (res.data && res.data.errors) setErrors(res.data.errors);
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -66,7 +79,7 @@ function LoginFormPage() {
       <button className="shadow buddy" type="submit">
         Sign In
       </button>
-      <button className="shadow buddy" type="submit">
+      <button className="shadow buddy" type="submit" onClick={loginDemo}>
         Demo
       </button>
     </form>

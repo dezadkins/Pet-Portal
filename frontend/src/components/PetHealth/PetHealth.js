@@ -32,7 +32,10 @@ const PetHealth = () => {
           <div className="box8">
             <h2>Pet's Health</h2>
           </div>
-          <div className="box9">Vaccines</div>
+          <div className="box9">
+            Vaccines
+            <i className="fal fa-folder-plus folder"></i>
+          </div>
           <div className="box10">Medications</div>
         </div>
       </div>

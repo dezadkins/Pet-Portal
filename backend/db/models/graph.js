@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
           model: "Pets",
         },
       },
+
       weight: {
         allowNull: false,
         type: DataTypes.INTEGER,

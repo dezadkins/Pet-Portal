@@ -27,7 +27,7 @@ function PetFormModal({ setPets }) {
       </svg>
       {/* </button> */}
       {showModal && (
-        <Modal>
+        <Modal onClose={() => setShowModal(false)}>
           <AddPetForm setPets={setPets} onClose={() => setShowModal(false)} />
         </Modal>
       )}

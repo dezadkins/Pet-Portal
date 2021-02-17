@@ -8,23 +8,28 @@ const WeightChart = () => {
   const [weight, setWeight] = useState();
   const { petId } = useParams();
 
-  // fetch(`/api/pets/${petId}`)
-  //   .then((res) => res.json())
-  //   .then((res) => console.log(res));
+  // UNDEFINED
+  const fetchWeight = async () => {
+    const data = await fetch(`/api/pets/${petId}/graph`);
+    const pet = await data.json();
+    console.log(pet.weight);
+    setWeight(pet.weight);
+  };
+
+  // Fetches Array
+  // const fetchWeight = async () => {
+  //   const data = await fetch(`/api/pets/${petId}/graph`);
+  //   const weight = await data.json();
+  //   console.log(weight);
+  //   setWeight(weight);
+  // };
 
   useEffect(() => {
-    axios
-      .get(`/api/${petId}/graph`)
-      .then((res) => {
-        const data = res.data.weight;
-        setWeight(data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []);
+    fetchWeight();
+  }, [petId]);
 
   useEffect(() => {
+    console.log(weight);
     setLineChart({
       labels: weight,
       datasets: [

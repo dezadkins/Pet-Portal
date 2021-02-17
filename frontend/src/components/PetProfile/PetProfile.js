@@ -27,11 +27,9 @@ export default function PetProfile() {
 
   const fetchAppts = async () => {
     console.log(apptId);
-    const data = await fetch(`/api/pets/appts/${apptId}`);
-    const appt = await data.json();
-    console.log("appt", appt);
-    setAppt(appt);
-    console.log("hit", appt);
+    const data = await fetch(`/api/pets/appts/${apptId}`).then((response) =>
+      console.log(response)
+    );
   };
 
   return (

@@ -4,7 +4,7 @@ import PetFormModal from "../PetFormModal";
 
 import "./NavBar.css";
 
-export default function NavBar({}) {
+export default function NavBar({ setPets }) {
   const { petId, apptId } = useParams();
 
   return (
@@ -100,7 +100,7 @@ export default function NavBar({}) {
 
           <li className="nav-item">
             <div className="nav-link">
-              <PetFormModal />
+              <PetFormModal setPets={setPets} />
               {/* <svg
                 aria-hidden="true"
                 focusable="false"

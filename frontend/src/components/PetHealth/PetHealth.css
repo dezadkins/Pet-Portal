@@ -28,6 +28,7 @@
   -webkit-border-radius: 50%;
   border: 7px solid orange;
   background-position: center;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
 
   /* border-radius: 50px; */
 }
@@ -54,6 +55,7 @@
   margin-top: -90px;
 
   border: 2px solid yellow;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
 }
 .box10 {
   height: 300px;
@@ -61,6 +63,8 @@
   margin-left: 40px;
   margin-top: -90px;
   border: 2px solid red;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
+
   /* background-color: red; */
 }
 /* .box11 {

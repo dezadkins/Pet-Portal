@@ -26,6 +26,8 @@
   width: 300px;
   border: 6px solid orange;
   border-radius: 50%;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
 }
@@ -60,7 +62,7 @@
   width: 500px;
   margin-left: 40px;
   margin-top: -178px;
-  /* border: 2px solid red; */
+  border: 2px solid red;
   /* background-color: red; */
 }
 .box5 {

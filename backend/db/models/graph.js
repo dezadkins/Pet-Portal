@@ -11,12 +11,18 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
 
+      // datestamp:{
+      //   allowNull: false,
+      //   type: DataTypes.DATEONLY
+
+      // },
+
       weight: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
       length: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.INTEGER,
       },
     },

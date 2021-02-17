@@ -8,10 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      datestamp: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-      },
+      // datestamp: {
+      //   allowNull: false,
+      //   type: Sequelize.DATEONLY,
+      // },
       weight: {
         allowNull: true,
         type: Sequelize.INTEGER,

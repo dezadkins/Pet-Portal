@@ -9,20 +9,20 @@ const WeightChart = () => {
   const { petId } = useParams();
 
   // Gives UNDEFINED
-  const fetchWeight = async () => {
-    const data = await fetch(`/api/pets/${petId}/graph`);
-    const pet = await data.json();
-    console.log(pet.weight);
-    setWeight(pet.weight);
-  };
-
-  // Fetches Array
   // const fetchWeight = async () => {
   //   const data = await fetch(`/api/pets/${petId}/graph`);
-  //   const weight = await data.json();
-  //   console.log(weight);
-  //   setWeight(weight);
+  //   const pet = await data.json();
+  //   console.log(pet.weight);
+  //   setWeight(pet.weight);
   // };
+
+  // Fetches Array
+  const fetchWeight = async () => {
+    const data = await fetch(`/api/pets/${petId}/graph`);
+    const weight = await data.json();
+    console.log(weight);
+    setWeight(weight);
+  };
 
   useEffect(() => {
     fetchWeight();

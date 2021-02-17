@@ -1,5 +1,6 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
+const { singleMulterUpload, singlePublicFileUpload } = require("../../awsS3");
 
 const {
   User,
@@ -50,8 +51,10 @@ router.get(
 
 router.post(
   "/",
+  singleMulterUpload("file"),
   asyncHandler(async (req, res, next) => {
-    const { userId, name, species, birthDate, photoURL } = req.body;
+    const { userId, name, species, birthDate } = req.body;
+    const photoURL = await singlePublicFileUpload(req.file);
     const pet = await Pet.create({
       userId,
       name,
@@ -59,18 +62,29 @@ router.post(
       birthDate,
       photoURL,
     });
+
     res.json(pet);
   })
 );
 
 router.put(
   "/:petId",
+  singleMulterUpload("photoURL"),
   asyncHandler(async (req, res, next) => {
     const petId = parseInt(req.params.petId, 10);
     const petData = req.body;
 
     const pet = await Pet.findByPk(petId);
     if (pet) {
+      if (req.file) {
+        petData.photoURL = await singlePublicFileUpload(req.file);
+        if (
+          req.file.mimetype !== "image/jpeg" &&
+          req.file.mimetype !== "image/png"
+        ) {
+          return next();
+        }
+      }
       await pet.update(petData);
 
       res.json(pet);

@@ -3,11 +3,12 @@
   top: 90px;
   left: 30px;
   list-style: none;
-  font-size: 12px;
+  font-size: 9px;
 }
 
-/* .profile-dropdown:hover {
-} */
+.profile-dropdown li {
+  font-size: 8px;
+}
 
 .logout-button {
   margin-top: 10px;

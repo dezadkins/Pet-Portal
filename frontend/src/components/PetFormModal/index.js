@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import AddPetForm from "./AddPetForm";
 import "../NavBar2/NavBar2.css";
-function PetFormModal() {
+function PetFormModal({ setPets }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -27,8 +27,8 @@ function PetFormModal() {
       </svg>
       {/* </button> */}
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <AddPetForm />
+        <Modal>
+          <AddPetForm setPets={setPets} onClose={() => setShowModal(false)} />
         </Modal>
       )}
     </>

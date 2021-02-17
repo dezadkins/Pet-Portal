@@ -6,6 +6,12 @@ const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
 const { User } = require("../../db/models");
 
+const {
+  s3,
+  singlePublicFileUpload,
+  singleMulterUpload,
+} = require("../../awsS3");
+
 const router = express.Router();
 
 const validateSignup = [
@@ -28,10 +34,20 @@ const validateSignup = [
 // Sign up
 router.post(
   "/",
+  singleMulterUpload("avatarURL"),
   validateSignup,
   asyncHandler(async (req, res) => {
-    const { email, password, username, avatarURL } = req.body;
-    const user = await User.signup({ email, username, password, avatarURL });
+    const { email, password, username } = req.body;
+    let avatarURL = null;
+    if (req.file)
+      avatarURL = await singlePublicFileUpload(req.file, "prof-pics");
+
+    const user = await User.signup({
+      email,
+      username,
+      password,
+      avatarURL,
+    });
 
     await setTokenCookie(res, user);
 
@@ -48,5 +64,16 @@ router.get(
     res.json(users);
   })
 );
+
+// router.get(
+//   "/:id",
+//   asyncHandler(async (req, res) => {
+//     const userId = parseInt(req.params.id, 10);
+
+//     const user = await User.findByPk(userId);
+
+//     res.json(user);
+//   })
+// );
 
 module.exports = router;

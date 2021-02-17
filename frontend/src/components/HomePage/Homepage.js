@@ -25,7 +25,7 @@ export default function HomePage() {
 
   return (
     <>
-      <NavBar2 />
+      <NavBar2 setPets={setPets} />
       <h1 className="homepage-title">Your Pet Family</h1>
       <div className="homepage-wrapper">
         {pets.map((pet) => (

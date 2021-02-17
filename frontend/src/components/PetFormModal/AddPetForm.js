@@ -6,7 +6,7 @@ import { useParams, useHistory } from "react-router-dom";
 
 import "./AddPetForm.css";
 
-function AddPetForm() {
+function AddPetForm({ onClose, setPets }) {
   const [name, setName] = useState("");
   const [petType, setPetType] = useState([]);
   const [species, setSpecies] = useState("");
@@ -25,6 +25,7 @@ function AddPetForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     setErrors([]);
     setLoading(true);
     if (!photoURL) {
@@ -32,6 +33,8 @@ function AddPetForm() {
       return;
     }
     const formData = new FormData();
+
+    formData.append("userId", user.id);
     formData.append("name", name);
     formData.append("species", species);
     formData.append("birthDate", birthDate);
@@ -40,10 +43,14 @@ function AddPetForm() {
       let result = await fetch("/api/pets/", {
         method: "POST",
         body: formData,
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
       const pet = result.data;
-      if (pet) history.push("/");
+      setPets((currentPets) => {
+        return [...currentPets, pet];
+      });
+      onClose();
     } catch (err) {
       setLoading(false);
       console.error(err);
@@ -126,7 +133,7 @@ function AddPetForm() {
               required
             />
 
-            <label>
+            {/* <label>
               Pet Type:
               <select
                 value={petType}
@@ -138,11 +145,11 @@ function AddPetForm() {
                 <option value="Horse">Horse</option>
                 <option value="Pig">Pig</option>
               </select>
-            </label>
+            </label> */}
             <div>
               <input
                 type="text"
-                placeholder="Breed"
+                placeholder="Species"
                 value={species}
                 onChange={(e) => setSpecies(e.target.value)}
                 required

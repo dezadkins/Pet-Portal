@@ -5,7 +5,7 @@ import PetFormModal from "../PetFormModal";
 import AddPetForm from "../PetFormModal/AddPetForm";
 import "./NavBar2.css";
 
-export default function NavBar2() {
+export default function NavBar2({ setPets }) {
   return (
     <div>
       <nav className="navbar">
@@ -21,7 +21,7 @@ export default function NavBar2() {
 
           <li className="nav-item">
             <div className="nav-link">
-              <PetFormModal />
+              <PetFormModal setPets={setPets} />
               {/* <svg
                 aria-hidden="true"
                 focusable="false"

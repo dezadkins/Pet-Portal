@@ -52,11 +52,11 @@
   border: 2px solid yellow;
 }
 .box19 {
-  height: 300px;
-  width: 500px;
+  height: 500px;
+  width: 700px;
   margin-left: 40px;
-  margin-top: -90px;
-  border: 2px solid red;
+  margin-top: -220px;
+  /* border: 2px solid red; */
   /* background-color: red; */
 }
 

@@ -1,96 +1,77 @@
-import React, { useState, useEffect, useDispatch } from "react";
-import FullCalendar from "@fullcalendar/react";
-import dayGrid from "@fullcalendar/daygrid";
-import timeGrid from "@fullcalendar/timegrid";
-import interaction from "@fullcalendar/interaction";
-import * as sessionActions from "../../store/session";
+import React, { Component } from "react";
+
+import { Calendar, momentLocalizer } from "react-big-calendar";
+import moment from "moment";
+import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import axios from "axios";
 
-const Calendar = () => {
-  const [appts, setAppts] = useState([]);
-  const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
+// import logo from "./logo.svg";
+import "react-big-calendar/lib/css/react-big-calendar.css";
+import "./Calendar.css";
 
-  useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
-  }, [dispatch]);
+moment.locale("en-GB");
+const localizer = momentLocalizer(moment);
 
-  useEffect(() => {
-    axios.get("/api/pets/:petId/appts").then((res) => {
-      setAppts(res.data);
-    });
-    //   .catch((error) => console.log(error.toString()));
-  }, [isLoaded]);
+class MyCalendar extends Component {
+  constructor(props) {
+    super(props);
 
-  useEffect(() => {
-    const initArray = [];
-    appts.forEach((appt) => {
-      let date = Date.parse(appt.dueDate);
-      let datePlus1 = date + 172800000;
-      let formattedDate = new Date(datePlus1).toISOString();
-      initArray.push({
-        petId: `DUE: ${appt.name}`,
-        id: appt._id,
-        datetime: formattedDate,
-        location: true,
-        color: "purple",
-      });
-    });
-    // Appointments.forEach((Appointment) => {
-    //   if (Appointment.sessionType === "planned") {
-    //     initArray.push({
-    //       id: Appointment.petId,
-    //       datetime: Appointment.datetime,
-    //       location: Appointment.location,
-    //       color: "orange",
-    //     });
-    //   } else {
-    //     initArray.push({
-    //       id: Appointment.petId,
-    //       datetime: Appointment.datetime,
-    //       location: Appointment.location,
-    //       color: "blue",
-    //     });
-    //   }
-    // });
-    setAppts(initArray);
-  }, [appts]);
+    this.state = {
+      cal_events: [
+        //State is updated via componentDidMount
+      ],
+    };
+  }
 
-  const handleEventClick = (clickInfo) => {
-    if (
-      window.confirm(
-        `Are you sure you want to delete the appointment '${clickInfo.appt.title}'`
-      )
-    ) {
-      clickInfo.appt.remove();
-      axios
-        .delete(`/api/session/${clickInfo.event._def.publicId}`)
-        .catch((error) => console.oog(error));
-    }
+  convertDate = (date) => {
+    return moment.utc(date).toDate();
   };
 
-  return (
-    <>
-      <div>
-        <FullCalendar
-          plugins={[dayGrid, timeGrid, interaction]}
-          headerToolbar={{
-            left: "prev,next today",
-            center: "title",
-            right: "dayGridMonth,timeGridWeek,timeGridDay",
-          }}
-          events={appts}
-          initialView="dayGridMonth"
-          editable={true}
-          selectable={true}
-          selectMirror={true}
-          dayMaxEvents={true}
-          eventClick={handleEventClick}
-        />
-      </div>
-    </>
-  );
-};
+  componentDidMount() {
+    axios
+      .get("http://localhost:3000/events")
+      .then((response) => {
+        console.log(response.data);
+        let appointments = response.data;
 
-export default Calendar;
+        for (let i = 0; i < appointments.length; i++) {
+          appointments[i].start = this.convertDate(appointments[i].start);
+          appointments[i].end = this.convertDate(appointments[i].end);
+        }
+
+        this.setState({
+          cal_events: appointments,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  render() {
+    const { cal_events } = this.state;
+
+    return (
+      <div className="App">
+        <header className="App-header">
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <h1 className="App-title">Book Appointment</h1>
+        </header>
+        <div style={{ height: 500 }}>
+          <Calendar
+            className="calendar-style"
+            localizer={localizer}
+            events={cal_events}
+            step={30}
+            defaultView="week"
+            views={["month", "week", "day"]}
+            defaultDate={new Date()}
+          />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default MyCalendar;

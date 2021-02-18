@@ -13,7 +13,7 @@ module.exports = {
     return queryInterface.bulkInsert("Graphs", [
       {
         petId: "1",
-        datestamp: "MM/DD/YYYY",
+        datestamp: "11/15/2020",
         weight: "3.4",
         length: "6",
         createdAt,
@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         petId: "1",
-        datestamp: "MM/DD/YYYY",
+        datestamp: "12/05/2020",
         weight: "4.6",
         length: "7",
         createdAt,
@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         petId: "1",
-        datestamp: "MM/DD/YYYY",
+        datestamp: "01/14/2021",
         weight: "8.1",
         length: "12",
         createdAt,
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         petId: "2",
-        datestamp: "MM/DD/YYYY",
+        datestamp: "08/13/2019",
         weight: "6",
         length: "12",
         createdAt,
@@ -45,7 +45,7 @@ module.exports = {
       },
       {
         petId: "3",
-        datestamp: "MM/DD/YYYY",
+        datestamp: "06/12/2012",
         weight: "10",
         length: "16",
         createdAt,

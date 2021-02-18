@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Calendar from "../Calendar/Calendar";
 import { useParams } from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar";
@@ -45,8 +46,10 @@ const Appointments = () => {
             <h2>Pet's Appointments</h2>
           </div>
           <div className="box18">{pet.datetime}</div>
-          <div className="box19">Add Appointments</div>
-          <div className="box20">Past Visits</div>
+          <div className="box19">
+            <Calendar />
+          </div>
+          {/* <div className="box20">Past Visits</div> */}
         </div>
       </div>
     </>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import moment from "moment";
 
 const LengthChart = () => {
   const [lineChart, setLineChart] = useState({});
-  const [length, setLength] = useState();
+  const [length, setLength] = useState([]);
+  const [date, setDate] = useState(false);
   const { petId } = useParams();
 
   useEffect(() => {
@@ -15,33 +16,24 @@ const LengthChart = () => {
   const fetchLength = async () => {
     const data = await fetch(`/api/pets/${petId}/graph`);
     const pet = await data.json();
-    // console.log([pet[0].length]);
     //Filter weight when new data is added
-    // newArray = []
-    // for(i = 0; i < pet.length; i++){newArray.push(pet[i].weight)}
-    setLength([pet[0].length]);
+    let lengthArray = [];
+    let dateArray = [];
+    for (let i = 0; i < pet.length; i++) {
+      lengthArray.push(pet[i].weight);
+      dateArray.push(moment(pet[i].datestamp).format("MM Do YY"));
+    }
+    setLength(lengthArray);
+    setDate(dateArray);
   };
 
   useEffect(() => {
     setLineChart({
-      labels: length,
+      labels: date,
       datasets: [
         {
-          data: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-          ],
-          backgroundColor: [
+          data: length,
+          borderColor: [
             "#FF5400",
             "#228CDB",
             "#5BC0EB",
@@ -58,7 +50,7 @@ const LengthChart = () => {
         text: "Length Chart",
       },
     });
-  }, [length]);
+  }, [length, date]);
 
   return (
     <>

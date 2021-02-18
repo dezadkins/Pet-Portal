@@ -1,30 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import moment from "moment";
 
 const WeightChart = () => {
   const [lineChart, setLineChart] = useState({});
-  const [weight, setWeight] = useState();
+  const [weight, setWeight] = useState([]);
+  const [date, setDate] = useState(false);
   const { petId } = useParams();
-
-  // const fetchWeight = async () => {
-  //   const data = await fetch(`/api/pets/${petId}/graph`);
-  //   const weight = await data.json();
-  //   console.log(weight);
-  //   setWeight(weight);
-  // }
 
   const fetchWeight = async () => {
     const data = await fetch(`/api/pets/${petId}/graph`);
     const pet = await data.json();
-    // console.log([pet[0].weight]);
     //Filter weight when new data is added
-    // newArray = [];
-    // for (i = 0; i < pet.length; i++) {
-    //   newArray.push(pet[i].weight);
-    // }
-    setWeight([pet[0].weight]);
+    let weightArray = [];
+    let dateArray = [];
+    for (let i = 0; i < pet.length; i++) {
+      weightArray.push(pet[i].weight);
+      dateArray.push(moment(pet[i].datestamp).format("MM Do YY"));
+    }
+    console.log(weightArray);
+    setWeight(weightArray);
+    setDate(dateArray);
   };
 
   useEffect(() => {
@@ -32,26 +29,18 @@ const WeightChart = () => {
   }, [petId]);
 
   useEffect(() => {
-    console.log(weight);
     setLineChart({
-      labels: weight,
+      options: {
+        title: {
+          display: true,
+          text: "Weight Chart",
+        },
+      },
+      labels: date,
       datasets: [
         {
-          data: [
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
-          ],
-          backgroundColor: [
+          data: weight,
+          borderColor: [
             "#FF5400",
             "#228CDB",
             "#5BC0EB",
@@ -63,12 +52,8 @@ const WeightChart = () => {
           ],
         },
       ],
-      title: {
-        display: true,
-        text: "Weight Chart",
-      },
     });
-  }, [weight]);
+  }, [weight, date]);
 
   return (
     <>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import VaccineFormModal from "../VaccineModal";
 
 import NavBar from "../NavBar/NavBar";
 import "./PetHealth.css";
 
 import axios from "axios";
+import MedFormModal from "../MedFormModal";
 
 const PetHealth = () => {
   const [pet, setPet] = useState([]);
@@ -34,9 +36,13 @@ const PetHealth = () => {
           </div>
           <div className="box9">
             Vaccines
-            <i className="fal fa-folder-plus folder"></i>
+            <VaccineFormModal />
           </div>
-          <div className="box10">Medications</div>
+          <div className="box10">
+            {/* <div className="med-box">Meds</div> */}
+
+            <MedFormModal />
+          </div>
         </div>
       </div>
     </>

@@ -59,7 +59,7 @@
   border: 2px solid yellow;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
 }
-.box10 {
+.box10 .fa-folder-plus {
   height: 300px;
   width: 500px;
   margin-left: 40px;
@@ -93,3 +93,8 @@
   justify-content: flex-end;
   cursor: pointer;
 }
+
+/* .med-box {
+  border: 1px solid black;
+  width
+} */

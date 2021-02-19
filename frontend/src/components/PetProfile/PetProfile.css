@@ -51,11 +51,15 @@
   color: rgb(214, 245, 57);
 }
 .box3 {
+  display: flex;
+  justify-content: center;
   height: 50px;
   margin-left: 100px;
   margin-top: 10px;
+  font-size: 32px;
+  /* color: orange; */
 
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
 .box4 {
   height: 300px;

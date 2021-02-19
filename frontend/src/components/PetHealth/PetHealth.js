@@ -39,7 +39,7 @@ const PetHealth = () => {
             <VaccineFormModal />
           </div>
           <div className="box10">
-            {/* <div className="med-box">Meds</div> */}
+            {/* <span className="med-box">Meds</span> */}
 
             <MedFormModal />
           </div>

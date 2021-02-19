@@ -132,6 +132,19 @@ function AddPetForm({ onClose, setPets }) {
               onChange={(e) => setName(e.target.value)}
               required
             />
+            <label>
+              Pet Type:
+              <select
+                value={petType}
+                onChange={(e) => setPetType(e.target.value)}
+              >
+                <option value="Dog">Dog</option>
+                <option value="Cat">Cat</option>
+                <option value="Ferret">Ferret</option>
+                <option value="Horse">Horse</option>
+                <option value="Pig">Pig</option>
+              </select>
+            </label>
 
             <div>
               <input

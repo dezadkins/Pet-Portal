@@ -6,7 +6,7 @@ import { useParams, useHistory } from "react-router-dom";
 
 // import "./AddPetForm.css";
 
-function AddPetForm({ onClose, setPets }) {
+function AddMedForm({ onClose, setPets }) {
   const [name, setName] = useState("");
   const [petType, setPetType] = useState([]);
   const [species, setSpecies] = useState("");
@@ -101,7 +101,7 @@ function AddPetForm({ onClose, setPets }) {
 
   return (
     <form className="addPet__form" onSubmit={handleSubmit}>
-      <h1 className="form-title">New Addition</h1>
+      <h1 className="form-title">Add Medication</h1>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
@@ -111,19 +111,6 @@ function AddPetForm({ onClose, setPets }) {
       <div className="add-pet__form-container">
         {/* {uploadImage()} */}
         <div className="add-pet__form-fields">
-          <div className="image-upload">
-            <img className="image-preview" src={photoPreview} />
-            <input
-              ref={uploadInput}
-              style={{ display: "none" }}
-              type="file"
-              name="file"
-              onChange={updateFile}
-            />
-          </div>
-          <div onClick={handleUploadClick} className="upload-box">
-            <button className="upload-button">Upload</button>
-          </div>
           <div className="all-input">
             <input
               type="text"
@@ -133,34 +120,33 @@ function AddPetForm({ onClose, setPets }) {
               required
             />
             <label>
-              Pet Type:
+              <input
+                type="text"
+                placeholder="Dosage"
+                value={species}
+                onChange={(e) => setSpecies(e.target.value)}
+                required
+              />
               <select
                 value={petType}
                 onChange={(e) => setPetType(e.target.value)}
+                Unit
               >
-                <option value="Dog">Dog</option>
-                <option value="Cat">Cat</option>
-                <option value="Ferret">Ferret</option>
-                <option value="Horse">Horse</option>
-                <option value="Pig">Pig</option>
+                <option value="Unit">Unit</option>
+                <option value="ml">ml</option>
+                <option value="mg">mg</option>
+                <option value="drops">drops</option>
+                <option value="tabs">tabs</option>
+                <option value="application">application</option>
               </select>
             </label>
 
             <div>
               <input
                 type="text"
-                placeholder="Species"
+                placeholder="frequency"
                 value={species}
                 onChange={(e) => setSpecies(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <input
-                type="date"
-                placeholder="D.O.B"
-                value={birthDate}
-                onChange={(e) => setBirthDate(e.target.value)}
                 required
               />
             </div>
@@ -174,4 +160,4 @@ function AddPetForm({ onClose, setPets }) {
   );
 }
 
-export default AddPetForm;
+export default AddMedForm;

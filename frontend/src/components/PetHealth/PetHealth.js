@@ -35,11 +35,11 @@ const PetHealth = () => {
             <h2>Pet's Health</h2>
           </div>
           <div className="box9">
-            Vaccines
+            <p className="med-list">Vaccines</p>
             <VaccineFormModal />
           </div>
           <div className="box10">
-            {/* <span className="med-box">Meds</span> */}
+            <p className="med-list">Medications</p>
 
             <MedFormModal />
           </div>

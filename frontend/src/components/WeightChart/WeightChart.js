@@ -39,7 +39,9 @@ const WeightChart = () => {
       labels: date,
       datasets: [
         {
+          label: "Weight Chart",
           data: weight,
+          backgroundColor: "rgba(255, 0, 255, 0.75)",
           borderColor: [
             "#FF5400",
             "#228CDB",

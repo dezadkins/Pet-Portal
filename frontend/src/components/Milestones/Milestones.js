@@ -69,6 +69,7 @@ const Milstones = ({ slides }) => {
             })}
           </section>
         </div>
+        <p className="img-caption">Caption</p>
       </div>
     </>
   );

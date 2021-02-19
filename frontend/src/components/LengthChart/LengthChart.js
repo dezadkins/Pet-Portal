@@ -32,6 +32,8 @@ const LengthChart = () => {
       labels: date,
       datasets: [
         {
+          label: "Length Chart",
+
           data: length,
           borderColor: [
             "#FF5400",

@@ -108,3 +108,9 @@
   justify-content: center;
   height: 100vh;
 }
+
+.img-caption {
+  display: flex;
+  padding-top: 20px;
+  justify-content: center;
+}

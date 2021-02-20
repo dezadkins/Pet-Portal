@@ -67,8 +67,8 @@
   top: 50%;
   right: 200px;
   font-size: 3rem;
-  color: #000;
-  z-index: 10;
+  color: rgba(214, 215, 227, 0.42);
+  /* z-index: 10; */
   cursor: pointer;
   user-select: none;
 }
@@ -78,8 +78,8 @@
   top: 50%;
   left: 200px;
   font-size: 3rem;
-  color: #000;
-  z-index: 10;
+  color: rgba(214, 215, 227, 0.42);
+  /* z-index: 10; */
   cursor: pointer;
   user-select: none;
 }
@@ -113,4 +113,26 @@
   display: flex;
   padding-top: 20px;
   justify-content: center;
+}
+
+.add-pic-div {
+  /* border: 1px solid green; */
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 13%;
+  /* height: 10%; */
+  margin-left: 240px;
+  margin-top: 20px;
+}
+
+.fa-camera-retro {
+  color: red;
+  font-size: 30px;
+  cursor: pointer;
+}
+.upload-title {
+  color: orangered;
+  font-family: "Reggae One", cursive;
+  font-weight: bold;
 }

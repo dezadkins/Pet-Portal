@@ -5,6 +5,7 @@ import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import NavBar from "../NavBar/NavBar";
 import "./Milestones.css";
+import MilestoneFormModal from "../MilestoneModal";
 
 const Milstones = ({ slides }) => {
   const [current, setCurrent] = useState(0);
@@ -42,6 +43,10 @@ const Milstones = ({ slides }) => {
         <div className="spacer-div"></div>
         <div className="pet-image-div">
           <img className="profile-petpic" src={pet.photoURL} />
+        </div>
+        <div className="add-pic-div">
+          <h3 className="upload-title">Upload Event</h3>
+          <MilestoneFormModal />
         </div>
         <h1 className="event-title">Pet Life Events</h1>
         <div className="slider-box">

@@ -1,0 +1,18 @@
+.caption-input {
+  margin-top: 30px;
+}
+
+.addEvent__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(196, 229, 240);
+  border-radius: 20px;
+  /* width: 400px;
+  height: 500px; */
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+  z-index: 1;
+}

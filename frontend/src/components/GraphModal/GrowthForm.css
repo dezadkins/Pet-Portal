@@ -1,0 +1,101 @@
+.weight-font {
+  font-size: 22px;
+  margin: 10px 4px;
+}
+.length-font {
+  font-size: 22px;
+  margin: 10px 4px;
+}
+
+.growth-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  color: rgb(30, 76, 191);
+  font-family: "Reggae One", cursive;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.growth__form-container {
+  width: 400px;
+  height: 300px;
+  /* border: 1px solid lightblue; */
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+.growth__form-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px;
+}
+.weight-fields {
+  /* display: flex; */
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  width: 350px;
+
+  margin-top: 40px;
+}
+
+.date-marg {
+  margin-bottom: 40px;
+}
+
+.length-fields {
+  /* border: 1px solid black; */
+  margin-top: 20px;
+}
+
+.growth-pad {
+  margin-bottom: 20px;
+  width: 30px;
+}
+
+.growth-input input {
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: white;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 5px;
+  width: 75spx;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}
+
+.growth-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
+  align-items: center;
+  /* border: 1px solid black; */
+}
+
+.growth-submit {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  background-color: #1028858e;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 6px 5px;
+  width: 75spx;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 80ms ease-in;
+}

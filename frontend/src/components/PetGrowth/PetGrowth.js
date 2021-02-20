@@ -7,6 +7,7 @@ import NavBar from "../NavBar/NavBar";
 import "./PetGrowth.css";
 
 import axios from "axios";
+import GrowthFormModal from "../GraphModal";
 
 const PetGrowth = () => {
   const [pet, setPet] = useState([]);
@@ -39,6 +40,10 @@ const PetGrowth = () => {
           </div>
           <div className="box15">
             <LengthChart />
+          </div>
+          <div className="add-data-icon">
+            Add Data
+            <GrowthFormModal />
           </div>
         </div>
       </div>

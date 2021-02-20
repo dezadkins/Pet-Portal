@@ -1,7 +1,7 @@
 .pet-growth-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   /* grid-template-areas:
     "box1 box2"
     "box3 box5"
@@ -45,7 +45,7 @@
   height: 300px;
   width: 500px;
   margin-left: 140px;
-  margin-top: -90px;
+  margin-top: 90px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
 
   border: 2px solid yellow;
@@ -54,22 +54,23 @@
   height: 300px;
   width: 500px;
   margin-left: 40px;
-  margin-top: -90px;
+  margin-top: 90px;
   border: 2px solid red;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 
   /* background-color: red; */
 }
-/* .box11 {
-  margin-bottom: 380px;
-  margin-top: -400px;
-  margin-left: 10px;
-
-  border: 2px solid blue;
-} */
-
-/* .box11 {
+.add-data-icon {
   display: flex;
-  margin-top: -280px;
-  border: 2px solid purple;
-} */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* border: 1px solid black; */
+  margin-left: 680px;
+  margin-top: -60px;
+}
+
+.fa-balance-scale-right {
+  /* margin-top: 10px; */
+  margin: 10px 2px 0px 4px;
+  cursor: pointer;
+}

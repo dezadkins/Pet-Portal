@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      event: {
+      place: {
         allowNull: true,
         type: DataTypes.STRING,
       },

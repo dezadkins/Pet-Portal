@@ -120,6 +120,7 @@ router.post(
       petId,
       name,
       dosage,
+      unit,
       frequency,
     });
     res.json(med);
@@ -405,6 +406,7 @@ router.post(
       petId,
       datetime,
       location,
+      place,
     });
     res.json(appointment);
   })

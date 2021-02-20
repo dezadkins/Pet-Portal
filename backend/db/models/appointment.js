@@ -12,10 +12,14 @@ module.exports = (sequelize, DataTypes) => {
       },
       datetime: {
         allowNull: false,
-        type: DataTypes.DATE,
+        type: DataTypes.DATE(6),
       },
       location: {
         allowNull: false,
+        type: DataTypes.STRING,
+      },
+      event: {
+        allowNull: true,
         type: DataTypes.STRING,
       },
     },

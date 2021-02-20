@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
-
+import { SocialIcon } from "react-social-icons";
 import LoginFormPage from "../LoginFormPage";
+import Footer from "./Footer";
 import SignupFormPage from "../SignupFormPage";
-
 import "./LoginPage.css";
 
 export default function LoginPage() {
@@ -28,7 +28,7 @@ export default function LoginPage() {
 
   return (
     <div className="page-container">
-      <h1 className="login-title">Pet Portal</h1>
+      <h1 className="login-title">Welcome to Pet Portal</h1>
 
       <div className="container">
         <div className="form-container sign-up-container">
@@ -59,6 +59,9 @@ export default function LoginPage() {
             </div>
           </div>
         </div> */}
+      </div>
+      <div className="footer">
+        <Footer />
       </div>
     </div>
   );

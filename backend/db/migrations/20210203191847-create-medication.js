@@ -16,6 +16,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
+      unit: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       frequency: {
         allowNull: false,
         type: Sequelize.STRING,

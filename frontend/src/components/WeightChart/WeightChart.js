@@ -17,7 +17,7 @@ const WeightChart = () => {
     let dateArray = [];
     for (let i = 0; i < pet.length; i++) {
       weightArray.push(pet[i].weight);
-      dateArray.push(moment(pet[i].datestamp).format("MM Do YY"));
+      dateArray.push(moment(pet[i].datestamp).format("MM/D"));
     }
     console.log(weightArray);
     setWeight(weightArray);
@@ -41,7 +41,8 @@ const WeightChart = () => {
         {
           label: "Weight Chart",
           data: weight,
-          backgroundColor: "rgba(255, 0, 255, 0.75)",
+          backgroundColor: " rgba(213, 35, 22, 0.564)",
+          Color: "white",
           borderColor: [
             "#FF5400",
             "#228CDB",

@@ -45,6 +45,7 @@ export default function PetProfile() {
           </div>
           {/* <h3>Upcoming Appt</h3> */}
           <div className="box3">
+            <div>{appt.event}</div>
             <div>{appt.datetime}</div>
           </div>
           <div className="box4">

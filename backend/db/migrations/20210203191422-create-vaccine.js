@@ -14,7 +14,7 @@ module.exports = {
       },
       dateGiven: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATEONLY,
       },
       petId: {
         allowNull: false,

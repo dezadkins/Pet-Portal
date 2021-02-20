@@ -10,12 +10,17 @@ module.exports = {
       },
       datetime: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE(6),
       },
       location: {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      event: {
+        allowNull: true,
+        type: Sequelize.STRING,
+      },
+
       petId: {
         allowNull: false,
         type: Sequelize.INTEGER,

@@ -20,8 +20,8 @@ const LengthChart = () => {
     let lengthArray = [];
     let dateArray = [];
     for (let i = 0; i < pet.length; i++) {
-      lengthArray.push(pet[i].weight);
-      dateArray.push(moment(pet[i].datestamp).format("MM Do YY"));
+      lengthArray.push(pet[i].length);
+      dateArray.push(moment(pet[i].datestamp).format("MM/YY"));
     }
     setLength(lengthArray);
     setDate(dateArray);
@@ -35,6 +35,8 @@ const LengthChart = () => {
           label: "Length Chart",
 
           data: length,
+          backgroundColor: " rgba(5, 154, 77, 0.564)",
+
           borderColor: [
             "#FF5400",
             "#228CDB",

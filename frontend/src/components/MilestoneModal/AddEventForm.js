@@ -83,8 +83,12 @@ function AddEventForm({ onClose, setEvents }) {
       <div className="add-pet__form-container">
         {/* {uploadImage()} */}
         <div className="add-pet__form-fields">
-          <div className="image-upload">
-            <img className="image-preview" src={photoPreview} />
+          <div className="event-image-upload">
+            <img
+              className="image-preview"
+              onClick={handleUploadClick}
+              src={photoPreview}
+            />
             <input
               ref={uploadInput}
               style={{ display: "none" }}
@@ -93,9 +97,12 @@ function AddEventForm({ onClose, setEvents }) {
               onChange={updateFile}
             />
           </div>
-          <div onClick={handleUploadClick} className="upload-box">
+          <div className="upload-box">
             <button className="upload-button">Upload</button>
           </div>
+          {/* <div className="upload-box">
+            <button className="upload-button">Upload</button>
+          </div> */}
           <div className="caption-input">
             <textarea
               cols="30"

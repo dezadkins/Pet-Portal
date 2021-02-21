@@ -16,3 +16,15 @@
   text-align: center;
   z-index: 1;
 }
+
+.event-image-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 250px;
+  /* background-color: pink; */
+  border: 3px solid black;
+  margin-bottom: 10px;
+  z-index: 1;
+}

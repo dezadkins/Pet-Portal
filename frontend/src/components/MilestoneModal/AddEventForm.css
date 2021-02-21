@@ -24,7 +24,20 @@
   height: 200px;
   width: 250px;
   /* background-color: pink; */
-  border: 3px solid black;
+  border: 3px solid rgb(116, 102, 102);
   margin-bottom: 10px;
   z-index: 1;
+}
+.fa-camera {
+  font-size: 170px;
+  color: rgba(196, 185, 185, 0.351);
+  z-index: 1;
+  cursor: pointer;
+}
+
+.upload-here {
+  position: absolute;
+  color: rgba(92, 81, 81, 0.858);
+
+  /* z-index: 0; */
 }

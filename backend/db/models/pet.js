@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       birthDate: {
         allowNull: false,
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
       },
       photoURL: {
         allowNull: true,

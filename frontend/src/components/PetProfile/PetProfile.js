@@ -67,7 +67,11 @@ export default function PetProfile() {
           </div>
         </div>
         <div className="box6">
-          <h2>Summary</h2>
+          <h2>{`Welcome to ${pet.name}'s Page!`}</h2>
+
+          <div>
+            {`${pet.name} is a ${pet.species} and their birthday is on ${pet.birthDate}`}{" "}
+          </div>
         </div>
       </div>
     </>

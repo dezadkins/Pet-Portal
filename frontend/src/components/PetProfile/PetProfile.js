@@ -31,7 +31,24 @@ export default function PetProfile() {
     const appt = await data.json();
     setAppt(appt[0]);
   };
-
+  const newPetAppt = () => {
+    if (!appt) {
+      return (
+        <div className="box3">
+          <div>
+            <h2>No Upcoming Apppointments!</h2>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="box3">
+          <div>{appt.event}</div>
+          <div>{appt.datetime}</div>
+        </div>
+      );
+    }
+  };
   return (
     <>
       <NavBar />
@@ -44,10 +61,7 @@ export default function PetProfile() {
             <h2>Overview</h2>
           </div>
           {/* <h3>Upcoming Appt</h3> */}
-          <div className="box3">
-            <div>{appt.event}</div>
-            <div>{appt.datetime}</div>
-          </div>
+          {newPetAppt()}
           <div className="box4">
             <WeightChart />
           </div>

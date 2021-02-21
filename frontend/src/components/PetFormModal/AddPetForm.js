@@ -75,6 +75,36 @@ function AddPetForm({ onClose, setPets }) {
     uploadInput.current.click();
   };
 
+  const uploadImage = () => {
+    if (!photoPreview) {
+      return (
+        <>
+          <div className="event-image-upload">
+            <i class="fal fa-camera"></i>
+          </div>
+          <div onClick={handleUploadClick} className="upload-box">
+            <button className="upload-button">Upload</button>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="event-image-upload">
+            <img
+              className="image-preview"
+              src={photoPreview}
+              alt="Upload Preview"
+            />
+          </div>
+          <div onClick={handleUploadClick} className="upload-box">
+            <button className="upload-button">Upload</button>
+          </div>
+        </>
+      );
+    }
+  };
+
   return (
     <form className="addPet__form" onSubmit={handleSubmit}>
       <h1 className="form-title">New Addition</h1>
@@ -87,8 +117,9 @@ function AddPetForm({ onClose, setPets }) {
       <div className="add-pet__form-container">
         {/* {uploadImage()} */}
         <div className="add-pet__form-fields">
-          <div className="image-upload">
-            <img className="image-preview" src={photoPreview} />
+          <div>
+            {uploadImage()}
+
             <input
               ref={uploadInput}
               style={{ display: "none" }}
@@ -97,9 +128,9 @@ function AddPetForm({ onClose, setPets }) {
               onChange={updateFile}
             />
           </div>
-          <div onClick={handleUploadClick} className="upload-box">
+          {/* <div onClick={handleUploadClick} className="upload-box">
             <button className="upload-button">Upload</button>
-          </div>
+          </div> */}
           <div className="all-input">
             <input
               type="text"

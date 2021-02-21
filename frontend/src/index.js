@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { ModalProvider } from "./context/Modal";
 import App from "./App";
-
 import configureStore from "./store";
 import { restoreCSRF, fetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
@@ -35,6 +34,7 @@ function Root() {
       <Provider store={store}>
         <BrowserRouter>
           <App />
+
           {/* <Carrot /> */}
         </BrowserRouter>
       </Provider>

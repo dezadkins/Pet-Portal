@@ -14,8 +14,8 @@
   font-family: "Open Sans";
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
-  /* --bg-primary: #23232e3e;
-  --bg-secondary: #1414182e; */
+  --bg-primary: #23232e3e;
+  --bg-secondary: #1414182e;
   --transition-speed: 600ms;
   box-shadow: 0 0 8px rgba(223, 119, 7, 0.55), 0 10px 10px rgba(0, 0, 0, 0.05);
 }

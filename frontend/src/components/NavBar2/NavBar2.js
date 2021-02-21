@@ -8,11 +8,11 @@ import "./NavBar2.css";
 export default function NavBar2({ setPets }) {
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar2">
         <ul className="navbar__nav2">
           <li className="logo">
-            <nav class="nav-link">
-              <div className="logo-circle">
+            <nav class="nav-link2">
+              <div>
                 <ProfileButton />
                 <span className="link-text-two logo-text-two">Pet Portal</span>
               </div>

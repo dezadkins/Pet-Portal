@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import { useHistory, Redirect } from "react-router-dom";
+
 import NavBar2 from "../NavBar2/NavBar2";
 import "./Homepage.css";
 
@@ -22,6 +23,10 @@ export default function HomePage() {
     const pets = await data.json();
     setPets(pets);
   };
+
+  // const noPets =() => {
+  //   if (!pets)
+  // }
 
   return (
     <>

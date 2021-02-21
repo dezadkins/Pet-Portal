@@ -1,39 +1,31 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faYoutube,
-  faFacebook,
-  faTwitter,
-  faInstagram,
-  faLinkedin,
-  faGithub,
-  faCreativeCommonsSampling,
-  faPiedPiper,
-} from "@fortawesome/free-brands-svg-icons";
+
+import { Link } from "react-router-dom";
+
 import "./Footer.css";
+
+//TODO: fix the image link so it doesn't reload
 export default function Footer() {
   return (
     <div>
-      <p className="social-container">
-        <a
-          href="https://www.youtube.com/c/jamesqquick"
-          className="youtube social"
-        >
-          <FontAwesomeIcon icon={faPiedPiper} size="2x" />
-        </a>
-        <a
-          href="https://www.facebook.com/learnbuildteach/"
-          className="facebook social"
-        >
-          <FontAwesomeIcon icon={faGithub} size="2x" />
-        </a>
-        <a
-          href="http://www.instagram.com/larnbuildteach"
-          className="linkedin social"
-        >
-          <FontAwesomeIcon icon={faLinkedin} size="2x" />
-        </a>
-      </p>
+      <div>
+        <div className="footer__links">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/dezadkins/Pet-Portal"
+          >
+            <i className="fab fa-github-square" />
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/dez-adkins-64981a36/"
+          >
+            <i className="fab fa-linkedin" />
+          </a>
+        </div>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@
 
 .signin-title {
   color: #fff;
+  /* font-family: "Montserrat", sans-serif; */
 }
 .or-this {
   color: #fff;
@@ -88,6 +89,7 @@
   border-radius: 10px;
   border: 1px solid #000000;
   background-color: #6a9ddc8e;
+  margin-top: 20px;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;

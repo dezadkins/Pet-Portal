@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import { useHistory, Redirect } from "react-router-dom";
-
+import "./Navigation.css";
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -46,9 +46,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="logo-circle" />
-      </button>
+      <i className="fal fa-user-circle" onClick={openMenu}></i>
       {showMenu && (
         <ul className="profile-dropdown">
           <li>{sessionUser.username}</li>

@@ -76,23 +76,21 @@ function AddEventForm({ onClose, setEvents }) {
       return (
         <>
           <div className="event-image-upload" onClick={handleUploadClick}>
-            {/* <h2>Upload an Image</h2> */}
             <i class="fal fa-camera"></i>
+            <h1 className="upload-here">Upload Here</h1>
           </div>
-          <div className="imgPlaceholder"></div>
         </>
       );
     } else {
       return (
         <>
-          <div className="event-image-upload">
+          <div className="event-image-upload" onClick={handleUploadClick}>
             <img
               className="image-preview"
               src={photoPreview}
               alt="Upload Preview"
             />
           </div>
-          <div onClick={handleUploadClick}></div>
         </>
       );
     }

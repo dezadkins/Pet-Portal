@@ -74,30 +74,6 @@ function AddPetForm({ onClose, setPets }) {
     e.preventDefault();
     uploadInput.current.click();
   };
-  // const uploadImage = () => {
-  //   if (!photoPreview) {
-  //     return (
-  //       <>
-  //         <h1>Upload an Image</h1>
-  //         <div></div>
-  //         <div onClick={handleUploadClick}>
-  //           <button>Upload</button>
-  //         </div>
-  //       </>
-  //     );
-  //   } else {
-  //     return (
-  //       <>
-  //         <div>
-  //           <img src={photoPreview} alt="Upload Preview" />
-  //         </div>
-  //         <div onClick={handleUploadClick}>
-  //           <button style={{ width: "120px" }}>Change Image</button>
-  //         </div>
-  //       </>
-  //     );
-  //   }
-  // };
 
   return (
     <form className="addPet__form" onSubmit={handleSubmit}>

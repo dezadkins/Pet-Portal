@@ -34,3 +34,10 @@
   z-index: 1;
   cursor: pointer;
 }
+
+.upload-here {
+  position: absolute;
+  color: rgba(92, 81, 81, 0.858);
+
+  /* z-index: 0; */
+}

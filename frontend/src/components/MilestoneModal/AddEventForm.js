@@ -71,6 +71,33 @@ function AddEventForm({ onClose, setEvents }) {
     uploadInput.current.click();
   };
 
+  const uploadImage = () => {
+    if (!photoPreview) {
+      return (
+        <>
+          <div className="event-image-upload" onClick={handleUploadClick}>
+            {/* <h2>Upload an Image</h2> */}
+            <i class="fal fa-camera"></i>
+          </div>
+          <div className="imgPlaceholder"></div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div className="event-image-upload">
+            <img
+              className="image-preview"
+              src={photoPreview}
+              alt="Upload Preview"
+            />
+          </div>
+          <div onClick={handleUploadClick}></div>
+        </>
+      );
+    }
+  };
+
   return (
     <form className="addEvent__form" onSubmit={handleSubmit}>
       <h1 className="form-title">Add Event</h1>
@@ -81,14 +108,9 @@ function AddEventForm({ onClose, setEvents }) {
       </ul>
 
       <div className="add-pet__form-container">
-        {/* {uploadImage()} */}
         <div className="add-pet__form-fields">
-          <div className="event-image-upload">
-            <img
-              className="image-preview"
-              onClick={handleUploadClick}
-              src={photoPreview}
-            />
+          <div>
+            {uploadImage()}
             <input
               ref={uploadInput}
               style={{ display: "none" }}
@@ -97,9 +119,7 @@ function AddEventForm({ onClose, setEvents }) {
               onChange={updateFile}
             />
           </div>
-          <div className="upload-box">
-            <button className="upload-button">Upload</button>
-          </div>
+
           {/* <div className="upload-box">
             <button className="upload-button">Upload</button>
           </div> */}

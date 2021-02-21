@@ -54,12 +54,12 @@
 }
 
 .image {
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
   object-fit: cover;
 
   border-radius: 10px;
-  border: 2px solid black;
+  border: 7px solid orange;
 }
 
 .right-arrow {
@@ -95,10 +95,14 @@
   transform: scale(1.08);
 }
 
-.image-slide-div {
+/* .image-slide-div {
   width: 15%;
   height: 25%;
   border: 1px solid black;
+} */
+.slide-div {
+  /* border: 1px solid darkgoldenrod; */
+  height: 350px;
 }
 
 .view-slider {
@@ -109,9 +113,13 @@
   height: 100vh;
 }
 
-.img-caption {
+.image-caption {
+  font-family: "Reggae One", cursive;
+  /* font-size: 50px; */
+  color: rgb(214, 245, 57);
+
   display: flex;
-  padding-top: 20px;
+  padding-top: 5px;
   justify-content: center;
 }
 

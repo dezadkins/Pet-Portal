@@ -38,8 +38,7 @@ const PetHealth = () => {
 
   const newPetVac = () => {
     if (!vacs) {
-      return;
-      <p>No Vaccines Added</p>;
+      return <p>No Vaccines Added</p>;
     } else {
       return (
         <ol setVaccines={setVaccines}>

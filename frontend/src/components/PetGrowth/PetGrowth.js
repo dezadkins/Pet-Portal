@@ -11,7 +11,7 @@ import GrowthFormModal from "../GraphModal";
 
 const PetGrowth = () => {
   const [pet, setPet] = useState([]);
-  const [appt, setAppt] = useState([]);
+  const [growth, setGrowth] = useState([]);
   const { petId } = useParams();
 
   useEffect(() => {
@@ -43,7 +43,7 @@ const PetGrowth = () => {
           </div>
           <div className="add-data-icon">
             Add Data
-            <GrowthFormModal />
+            <GrowthFormModal setGrowth={setGrowth} />
           </div>
         </div>
       </div>

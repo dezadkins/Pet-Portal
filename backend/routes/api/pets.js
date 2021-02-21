@@ -115,7 +115,7 @@ router.delete(
 router.post(
   "/meds",
   asyncHandler(async (req, res, next) => {
-    const { petId, name, dosage, frequency } = req.body;
+    const { petId, name, dosage, unit, frequency } = req.body;
     const med = await Medication.create({
       petId,
       name,

@@ -8,7 +8,7 @@ import { useParams, useHistory } from "react-router-dom";
 
 function AddVaccineForm({ onClose, setVaccine }) {
   const [name, setName] = useState("");
-  const [vacType, setVacType] = useState([]);
+  // const [vacType, setVacType] = useState([]);
   const [dateGiven, setDateGiven] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   const [loading, setLoading] = useState(false);

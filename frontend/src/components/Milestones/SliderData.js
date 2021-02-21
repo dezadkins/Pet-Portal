@@ -24,3 +24,6 @@ export const SliderData = [
       "https://images.unsplash.com/photo-1585166915828-db195f24e2ba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fHBldHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
   },
 ];
+
+//if there's no event posts "<h2>You have no current events!"
+//if have events, first fetch events, caption and maybe pets then map through

@@ -6,14 +6,13 @@ import { useParams, useHistory } from "react-router-dom";
 
 // import "./AddPetForm.css";
 
-function AddMedForm({ onClose, setPets }) {
+function AddMedForm({ onClose, setMeds }) {
   const [name, setName] = useState("");
-  const [petType, setPetType] = useState([]);
-  const [species, setSpecies] = useState("");
-  const [birthDate, setBirthDate] = useState("");
-  const [photoURL, setPhotoURL] = useState("");
-  const [photoPreview, setPhotoPreview] = useState(null);
-  // const [photoLoad, setPhotoLoad] = useState(false);
+  // const [medType, setMedType] = useState([]);
+  const [dosage, setDosage] = useState([]);
+  const [unit, setUnit] = useState("");
+  const [frequency, setFrequency] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const uploadInput = useRef(null);
@@ -28,27 +27,24 @@ function AddMedForm({ onClose, setPets }) {
 
     setErrors([]);
     setLoading(true);
-    if (!photoURL) {
-      setErrors(<p id="errorMsg">Please upload an image!</p>);
-      return;
-    }
+
     const formData = new FormData();
 
     formData.append("userId", user.id);
     formData.append("name", name);
-    formData.append("species", species);
-    formData.append("birthDate", birthDate);
-    formData.append("file", photoURL);
+    formData.append("dosage", dosage);
+    formData.append("unit", unit);
+    formData.append("frequency", frequency);
     try {
-      let result = await fetch("/api/pets/", {
+      let result = await fetch("/api/pets/meds", {
         method: "POST",
         body: formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
 
-      const pet = result.data;
-      setPets((currentPets) => {
-        return [...currentPets, pet];
+      const med = result.data;
+      setMeds((currentMeds) => {
+        return [...currentMeds, med];
       });
       onClose();
     } catch (err) {
@@ -56,48 +52,6 @@ function AddMedForm({ onClose, setPets }) {
       console.error(err);
     }
   };
-
-  const updateFile = (e) => {
-    const {
-      target: {
-        validity,
-        files: [file],
-      },
-    } = e;
-    e.target.files[0]
-      ? setPhotoPreview(URL.createObjectURL(e.target.files[0]))
-      : setPhotoPreview(null);
-    return validity.valid && setPhotoURL(file);
-  };
-
-  const handleUploadClick = (e) => {
-    e.preventDefault();
-    uploadInput.current.click();
-  };
-  // const uploadImage = () => {
-  //   if (!photoPreview) {
-  //     return (
-  //       <>
-  //         <h1>Upload an Image</h1>
-  //         <div></div>
-  //         <div onClick={handleUploadClick}>
-  //           <button>Upload</button>
-  //         </div>
-  //       </>
-  //     );
-  //   } else {
-  //     return (
-  //       <>
-  //         <div>
-  //           <img src={photoPreview} alt="Upload Preview" />
-  //         </div>
-  //         <div onClick={handleUploadClick}>
-  //           <button style={{ width: "120px" }}>Change Image</button>
-  //         </div>
-  //       </>
-  //     );
-  //   }
-  // };
 
   return (
     <form className="addPet__form" onSubmit={handleSubmit}>
@@ -123,13 +77,13 @@ function AddMedForm({ onClose, setPets }) {
               <input
                 type="text"
                 placeholder="Dosage"
-                value={species}
-                onChange={(e) => setSpecies(e.target.value)}
+                value={dosage}
+                onChange={(e) => setDosage(e.target.value)}
                 required
               />
               <select
-                value={petType}
-                onChange={(e) => setPetType(e.target.value)}
+                value={unit}
+                onChange={(e) => setUnit(e.target.value)}
                 Unit
               >
                 <option value="Unit">Unit</option>
@@ -145,8 +99,8 @@ function AddMedForm({ onClose, setPets }) {
               <input
                 type="text"
                 placeholder="frequency"
-                value={species}
-                onChange={(e) => setSpecies(e.target.value)}
+                value={frequency}
+                onChange={(e) => setFrequency(e.target.value)}
                 required
               />
             </div>

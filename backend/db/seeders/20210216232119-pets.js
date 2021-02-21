@@ -20,7 +20,7 @@ module.exports = {
           species: "Dog",
           birthDate: "10/09/2020",
           photoURL:
-            "https://uc5844c7072b82e25f940cb53ad2.dl.dropboxusercontent.com/cd/0/inline/BJW26XjqTltCOXaEyyiIXQBM6UtxmOiuBgeu64xGCvYivHP6ZB6EB235BurjOls3H0oNdSZqzbxiFVw4Gc3tAiWwm3zdSpPcut2jpi1mE3glpL4ETYsuj9oefmvnLvg0xyo/file#",
+            "https://i.pinimg.com/originals/ff/bc/82/ffbc82573319997913c491e82bfe91cd.jpg",
           createdAt,
           updatedAt,
         },

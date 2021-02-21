@@ -36,6 +36,7 @@ export default function PetProfile() {
       return (
         <div className="box3">
           <div>
+            <h3>Upcoming Appointments</h3>
             <h2>No Upcoming Apppointments!</h2>
           </div>
         </div>
@@ -43,7 +44,9 @@ export default function PetProfile() {
     } else {
       return (
         <div className="box3">
-          <div>{appt.event}</div>
+          <h3>Upcoming Appointments</h3>
+          <div>{appt.place}</div>
+          <div>{appt.location}</div>
           <div>{appt.datetime}</div>
         </div>
       );

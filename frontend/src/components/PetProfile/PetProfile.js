@@ -36,18 +36,23 @@ export default function PetProfile() {
       return (
         <div className="box3">
           <div>
-            <h3>Upcoming Appointments</h3>
-            <h2>No Upcoming Apppointments!</h2>
+            <h3 className="appt-title1">Upcoming Appointments</h3>
+            <h2 className="appts1">No Upcoming Apppointments!</h2>
           </div>
         </div>
       );
     } else {
       return (
+        // THIS NEEDS TO BE MAPPED **********************
         <div className="box3">
-          <h3>Upcoming Appointments</h3>
-          <div>{appt.place}</div>
-          <div>{appt.location}</div>
-          <div>{appt.datetime}</div>
+          <h3 className="appt-title1">Upcoming Appointments</h3>
+          <div className="appts1">
+            <p className="appt-time">{appt.datetime}</p>
+            <div className="appt-place">
+              <p>{appt.place}</p>
+              <p>{appt.location}</p>
+            </div>
+          </div>
         </div>
       );
     }
@@ -55,26 +60,28 @@ export default function PetProfile() {
   return (
     <>
       <NavBar />
-      <div className="grid">
-        <div className="profilepage-wrapper">
+      <div className="profilepage-wrapper">
+        <div className="grid">
           <div className="box1">
             <img className="profile-petpic" src={pet.photoURL} />
           </div>
           <div className="box2">
             <h2>Overview</h2>
           </div>
+          <div className="box6">
+            <h2 className="title1">{`Welcome to ${pet.name}'s Page!`}</h2>
+
+            <p className="info1">
+              {`${pet.name} is a ${pet.species} and their birthday is on ${pet.birthDate}`}{" "}
+            </p>
+          </div>
           {/* <h3>Upcoming Appt</h3> */}
-          {newPetAppt()}
+
           <div className="box4">
             <WeightChart />
           </div>
-        </div>
-        <div className="box6">
-          <h2>{`Welcome to ${pet.name}'s Page!`}</h2>
 
-          <div>
-            {`${pet.name} is a ${pet.species} and their birthday is on ${pet.birthDate}`}{" "}
-          </div>
+          {newPetAppt()}
         </div>
       </div>
     </>

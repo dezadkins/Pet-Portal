@@ -1,23 +1,42 @@
 .profilepage-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  /* grid-template-areas:
-    "box1 box2"
-    "box3 box5"
-    "box4 box5"; */
-  /* width: 100%; */
-  /* height: 100vh; */
-  height: 100vh;
+
+  width: 100%;
+  height: 100%;
+
+  /* max-height: 100%; */
   background: -webkit-linear-gradient(to right, #b3d9f5, #f5f5f9);
   background: linear-gradient(to right, #81bfee, #152ac9);
 }
 
 .grid {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "box1 box2"
+    "box6 box4"
+    "box3 .";
+  grid-gap: 40px;
+  border: 3px solid black;
+}
+
+.box6 {
+  grid-area: box6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+    "title1 title1"
+    "info1 info1";
+  margin-bottom: 80px;
+  margin-left: 100px;
+  margin-right: 100px;
+  /* border: 2px solid purple; */
 }
 
 .box1 {
+  grid-area: box1;
   margin-left: 120px;
   margin-top: 30px;
   margin-right: 20px;
@@ -42,46 +61,120 @@
 }
 
 .box2 {
-  /* border: 2px solid green; */
-  margin-top: 60px;
-  margin-right: 20px;
+  grid-area: box2;
+  transform: translate(-155px, 65px);
+  /* margin-right: 20px; */
   height: 150px;
   font-family: "Reggae One", cursive;
-  font-size: 50px;
+  font-size: 65px;
+  text-shadow: 4px 2px #111010bb;
   color: rgb(214, 245, 57);
 }
-.box3 {
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  margin-left: 100px;
-  margin-top: 10px;
-  font-size: 32px;
-  /* color: orange; */
-
-  /* border: 2px solid yellow; */
-}
 .box4 {
-  height: 300px;
-  width: 500px;
-  margin-left: 40px;
-  margin-top: -178px;
+  grid-area: box4;
+  position: relative;
+  align-content: flex-end;
+
+  /* margin-left: 2rem; */
+  height: 440px;
+  width: 750px;
+  background-color: rgb(199, 195, 195);
   border: 2px solid red;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+
+  border-radius: 5px;
+  transform: translate(10px, -125px);
   /* background-color: red; */
 }
-.box5 {
+/* .box5 {
   margin-bottom: 380px;
   margin-top: -400px;
   margin-left: 10px;
 
   border: 2px solid blue;
+} */
+
+.title1 {
+  grid-area: title1;
+  display: flex;
+  justify-content: center;
+  font-family: "Reggae One", cursive;
+  font-size: 30px;
+  text-shadow: 4px 2px #111010bb;
+  color: rgb(214, 245, 57);
 }
 
-.box6 {
+.info1 {
+  grid-area: info1;
   display: flex;
-  justify-content: column;
-  margin-top: -280px;
+  justify-content: center;
+  padding-left: 25px;
+  padding-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  /* border: 1px solid black; */
+}
+
+.box3 {
+  grid-area: box3;
+  display: grid;
+  /* border: 2px solid green; */
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 2fr 5fr;
+  grid-template-areas:
+    ". appt-title1"
+    ". appts1";
+  height: 200px;
   margin-left: 100px;
-  margin-right: 100px;
-  border: 2px solid purple;
+  transform: translate(0px, -200px);
+  /* margin-top: 10px; */
+  height: 200px;
+  font-size: 32px;
+  background-color: #fff;
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0);
+
+  /* color: orange; */
+
+  /* border: 2px solid yellow; */
+}
+
+.appt-title1 {
+  grid-area: appt-title1;
+  display: flex;
+  justify-content: flex-start;
+  /* border: 1px solid black; */
+  font-family: "Reggae One", cursive;
+  text-shadow: 4px 2px #111010bb;
+  font-size: 25px;
+  color: rgb(214, 245, 57);
+}
+
+.appts1 {
+  grid-area: appts1;
+}
+
+.appt-time {
+  /* border: 1px solid black; */
+  color: rgba(233, 35, 8, 0.897);
+  /* text-shadow: 2px 2px #111010bb; */
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+.appt-place {
+  /* border: 1px solid green; */
+  transform: translate(15px, 5px);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }

@@ -10,7 +10,8 @@ import MedFormModal from "../MedFormModal";
 
 const PetHealth = () => {
   const [pet, setPet] = useState([]);
-  const [vacs, setVacs] = useState("");
+  const [vacs, setVaccines] = useState([]);
+  // const [vacs, setVacs] = useState("");
   const [meds, setMeds] = useState("");
   const { petId, vacId, medId } = useParams();
 
@@ -32,7 +33,7 @@ const PetHealth = () => {
     const data = await fetch(`/api/pets/${petId}/vacs`);
     const vacs = await data.json();
     console.log("Vaccines", vacs);
-    setVacs(vacs);
+    setVaccines(vacs);
   };
 
   const newPetVac = () => {
@@ -41,7 +42,7 @@ const PetHealth = () => {
       <p>No Vaccines Added</p>;
     } else {
       return (
-        <ol>
+        <ol setVaccines={setVaccines}>
           {vacs.map((vac, i) => (
             <li key={vac.name}>{`${vac.name} given on ${vac.dateGiven}`} </li>
           ))}
@@ -50,31 +51,31 @@ const PetHealth = () => {
     }
   };
 
-  useEffect(() => {
-    fetchMeds();
-  }, [medId]);
+  // useEffect(() => {
+  //   fetchMeds();
+  // }, [medId]);
 
-  const fetchMeds = async () => {
-    const data = await fetch(`/api/pets/${petId}/meds`);
-    const meds = await data.json();
-    console.log("MEDSSSS", meds);
-    setMeds(meds);
-  };
+  // const fetchMeds = async () => {
+  //   const data = await fetch(`/api/pets/${petId}/meds`);
+  //   const meds = await data.json();
+  //   console.log("MEDSSSS", meds);
+  //   setMeds(meds);
+  // };
 
-  const newPetMed = () => {
-    if (!meds) {
-      return;
-      <p>No Medications Added</p>;
-    } else {
-      return (
-        <ol>
-          {meds.map((med, i) => (
-            <li key={med.name}>{`${med.name} `} </li>
-          ))}
-        </ol>
-      );
-    }
-  };
+  // const newPetMed = () => {
+  //   if (!meds) {
+  //     return;
+  //     <p>No Medications Added</p>;
+  //   } else {
+  //     return (
+  //       <ol>
+  //         {meds.map((med, i) => (
+  //           <li key={med.name}>{`${med.name} `} </li>
+  //         ))}
+  //       </ol>
+  //     );
+  //   }
+  // };
 
   return (
     <>
@@ -95,7 +96,7 @@ const PetHealth = () => {
           </div>
           <div className="box10">
             <p className="med-list">Medications</p>
-            {newPetMed()}
+            {/* {newPetMed()} */}
 
             <MedFormModal />
           </div>

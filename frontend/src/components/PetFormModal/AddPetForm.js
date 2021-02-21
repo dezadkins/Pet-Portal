@@ -13,7 +13,6 @@ function AddPetForm({ onClose, setPets }) {
   const [birthDate, setBirthDate] = useState("");
   const [photoURL, setPhotoURL] = useState("");
   const [photoPreview, setPhotoPreview] = useState(null);
-  // const [photoLoad, setPhotoLoad] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const uploadInput = useRef(null);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import VaccineForm from "./VaccineForm";
 
-function VaccineFormModal({ setVaccine }) {
+function VaccineFormModal({ setVaccines }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ function VaccineFormModal({ setVaccine }) {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <VaccineForm
-            setVaccine={setVaccine}
+            setVaccines={setVaccines}
             onClose={() => setShowModal(false)}
           />
         </Modal>

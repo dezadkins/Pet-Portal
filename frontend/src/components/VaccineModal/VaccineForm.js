@@ -6,11 +6,10 @@ import { useParams, useHistory } from "react-router-dom";
 
 // import "./AddPetForm.css";
 
-function AddVaccineForm({ onClose, setVaccine }) {
+function AddVaccineForm({ onClose, setVaccines }) {
   const [name, setName] = useState("");
   // const [vacType, setVacType] = useState([]);
   const [dateGiven, setDateGiven] = useState("");
-  const [photoURL, setPhotoURL] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   // const uploadInput = useRef(null);
@@ -31,18 +30,17 @@ function AddVaccineForm({ onClose, setVaccine }) {
     formData.append("userId", user.id);
     // formData.append("petId", pet.id);
     formData.append("name", name);
-
     formData.append("dateGiven", dateGiven);
-    formData.append("file", photoURL);
+
     try {
-      let result = await fetch("/api/pets/vacs", {
+      let result = await fetch(`/api/pets/vacs`, {
         method: "POST",
         body: formData,
         headers: { "Content-Type": "multipart/form-data" },
       });
 
       const vacs = result.data;
-      setVaccine((currentVacs) => {
+      setVaccines((currentVacs) => {
         return [...currentVacs, vacs];
       });
       onClose();

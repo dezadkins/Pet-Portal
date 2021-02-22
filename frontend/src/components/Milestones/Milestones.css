@@ -14,9 +14,11 @@
 .event-title {
   display: flex;
   justify-content: center;
-  margin-top: -120px;
+  margin-top: -190px;
+  height: 150px;
   font-family: "Reggae One", cursive;
-  font-size: 50px;
+  font-size: 65px;
+  text-shadow: 4px 2px #111010bb;
   color: rgb(214, 245, 57);
 }
 .slider {
@@ -135,12 +137,14 @@
 }
 
 .fa-camera-retro {
-  color: red;
+  color: rgb(148, 9, 9);
+
   font-size: 30px;
   cursor: pointer;
 }
 .upload-title {
-  color: orangered;
+  color: rgb(148, 9, 9);
+
   font-family: "Reggae One", cursive;
   font-weight: bold;
 }

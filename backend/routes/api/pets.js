@@ -141,7 +141,7 @@ router.get(
 router.get(
   "/:petId/meds",
   asyncHandler(async (req, res, next) => {
-    const petId = parseInt(res.params.petId, 10);
+    const petId = parseInt(req.params.petId, 10);
     const meds = await Medication.findAll({
       where: {
         petId,

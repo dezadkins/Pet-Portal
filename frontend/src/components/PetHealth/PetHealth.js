@@ -12,7 +12,7 @@ const PetHealth = () => {
   const [pet, setPet] = useState([]);
   const [vacs, setVaccines] = useState([]);
   // const [vacs, setVacs] = useState("");
-  const [meds, setMeds] = useState("");
+  const [meds, setMeds] = useState([]);
   const { petId, vacId, medId } = useParams();
 
   useEffect(() => {
@@ -37,7 +37,8 @@ const PetHealth = () => {
   };
 
   const newPetVac = () => {
-    if (!vacs) {
+    console.log("hi", vacs);
+    if (vacs.length === 0) {
       return <p className="vac-list1">No Vaccines Added</p>;
     } else {
       return (
@@ -89,16 +90,16 @@ const PetHealth = () => {
           <div className="box9">
             <p className="vac-title">Vaccines</p>
             <div className="vac-modal">
-              <VaccineFormModal />
+              <VaccineFormModal setVaccines={setVaccines} />
             </div>
             {newPetVac()}
           </div>
           <div className="box10">
             <p className="med-title">Medications</p>
             <div className="med-modal">
-              <MedFormModal />
+              <MedFormModal setMeds={setMeds} />
             </div>
-            {/* {newPetMed()} */}
+            {newPetMed()}
           </div>
         </div>
       </div>

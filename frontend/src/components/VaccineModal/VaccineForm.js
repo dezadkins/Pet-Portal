@@ -13,7 +13,7 @@ function AddVaccineForm({ onClose, setVaccines }) {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   // const uploadInput = useRef(null);
-
+  const { petId } = useParams();
   const user = useSelector((state) => {
     return state.session.user;
   });
@@ -25,18 +25,19 @@ function AddVaccineForm({ onClose, setVaccines }) {
     setErrors([]);
     setLoading(true);
 
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    formData.append("userId", user.id);
-    // formData.append("petId", pet.id);
-    formData.append("name", name);
-    formData.append("dateGiven", dateGiven);
+    // // formData.append("userId", user.id);
+    // formData.append("petId", petId);
+    // console.log("pets", petId);
+    // formData.append("name", name);
+    // formData.append("dateGiven", dateGiven);
 
     try {
       let result = await fetch(`/api/pets/vacs`, {
         method: "POST",
-        body: formData,
-        headers: { "Content-Type": "multipart/form-data" },
+        body: JSON.stringify({ petId, name, dateGiven }),
+        headers: { "Content-Type": "application/json" },
       });
 
       const vacs = result.data;

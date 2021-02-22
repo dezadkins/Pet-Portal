@@ -47,7 +47,7 @@ export default function PetProfile() {
         <div className="box3">
           <h3 className="appt-title1">Upcoming Appointments</h3>
           <div className="appts1">
-            <p className="appt-time">{appt.datetime}</p>
+            <p className="appt-time">{new Date(appt.datetime).toUTCString()}</p>
             <div className="appt-place">
               <p>{appt.place}</p>
               <p>{appt.location}</p>

@@ -10,6 +10,7 @@ const {
   Milestone,
   Graph,
   Appointment,
+  sequelize,
 } = require("../../db/models");
 // const medication = require("../../db/models/medication");
 
@@ -427,6 +428,18 @@ router.get(
   asyncHandler(async (req, res, next) => {
     const petId = parseInt(req.params.petId, 10);
     const appts = await Appointment.findAll({
+      // attributes: [
+      //   "petId",
+      //   "datetime",
+      //   [
+      //     sequelize.Sequelize.fn(
+      //       "date_format",
+      //       sequelize.Sequelize.col("datetime"),
+      //       "%d-%b-%y"
+      //     ),
+      //     "datetime",
+      //   ],
+      // ],
       where: {
         petId,
       },

@@ -38,10 +38,10 @@ const PetHealth = () => {
 
   const newPetVac = () => {
     if (!vacs) {
-      return <p>No Vaccines Added</p>;
+      return <p className="vac-list1">No Vaccines Added</p>;
     } else {
       return (
-        <ol setVaccines={setVaccines}>
+        <ol className="vac-list1" setVaccines={setVaccines}>
           {vacs.map((vac, i) => (
             <li key={vac.name}>{`${vac.name} given on ${vac.dateGiven}`} </li>
           ))}
@@ -50,37 +50,36 @@ const PetHealth = () => {
     }
   };
 
-  // useEffect(() => {
-  //   fetchMeds();
-  // }, [medId]);
+  useEffect(() => {
+    fetchMeds();
+  }, [medId]);
 
-  // const fetchMeds = async () => {
-  //   const data = await fetch(`/api/pets/${petId}/meds`);
-  //   const meds = await data.json();
-  //   console.log("MEDSSSS", meds);
-  //   setMeds(meds);
-  // };
+  const fetchMeds = async () => {
+    const data = await fetch(`/api/pets/${petId}/meds`);
+    const meds = await data.json();
+    console.log("MEDSSSS", meds);
+    setMeds(meds);
+  };
 
-  // const newPetMed = () => {
-  //   if (!meds) {
-  //     return;
-  //     <p>No Medications Added</p>;
-  //   } else {
-  //     return (
-  //       <ol>
-  //         {meds.map((med, i) => (
-  //           <li key={med.name}>{`${med.name} `} </li>
-  //         ))}
-  //       </ol>
-  //     );
-  //   }
-  // };
+  const newPetMed = () => {
+    if (!meds) {
+      return <p className="med-list1">No Medications Added</p>;
+    } else {
+      return (
+        <ol className="med-list1">
+          {meds.map((med, i) => (
+            <li key={med.name}>{`${med.name} `} </li>
+          ))}
+        </ol>
+      );
+    }
+  };
 
   return (
     <>
       <NavBar />
-      <div className="pet-health__grid">
-        <div className="pet-health-wrapper">
+      <div className="pet-health-wrapper">
+        <div className="pet-health__grid">
           <div className="box7">
             <img className="profile-petpic" src={pet.photoURL} />
           </div>
@@ -88,16 +87,18 @@ const PetHealth = () => {
             <h2>Pet's Health</h2>
           </div>
           <div className="box9">
-            <p className="med-list">Vaccines</p>
+            <p className="vac-title">Vaccines</p>
+            <div className="vac-modal">
+              <VaccineFormModal />
+            </div>
             {newPetVac()}
-
-            <VaccineFormModal />
           </div>
           <div className="box10">
-            <p className="med-list">Medications</p>
+            <p className="med-title">Medications</p>
+            <div className="med-modal">
+              <MedFormModal />
+            </div>
             {/* {newPetMed()} */}
-
-            <MedFormModal />
           </div>
         </div>
       </div>

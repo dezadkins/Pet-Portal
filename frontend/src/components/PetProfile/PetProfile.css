@@ -142,7 +142,7 @@
     linear-gradient(#eee 0.1em, transparent 0.1em);
   background-size: 100% 1.2em;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0);
-
+  z-index: 0;
   /* color: orange; */
 
   /* border: 2px solid yellow; */

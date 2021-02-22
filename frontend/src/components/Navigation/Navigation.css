@@ -9,11 +9,17 @@
   background-color: rgb(167, 187, 192);
   border: 2px solid rgb(253, 253, 253);
   border-radius: 50px 30px 30px 2px;
+  box-shadow: 4px 2px #111010af;
+  padding: 5px 5px;
+
   /* color: yellow; */
 }
 
 .profile-dropdown li {
-  font-size: 12px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+
   color: black;
 }
 
@@ -24,6 +30,7 @@
   background-color: rgba(107, 181, 250, 0.692);
   width: 70px;
   height: 25px;
+  font-family: "Montserrat", sans-serif;
 }
 
 .fa-user-circle {

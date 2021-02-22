@@ -1,23 +1,21 @@
 .pet-health-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  /* grid-template-areas:
-    "box1 box2"
-    "box3 box5"
-    "box4 box5"; */
-  /* width: 100%; */
-  /* height: 100vh; */
   height: 100vh;
-  /* background: -webkit-linear-gradient(to right, #b3d9f5, #f5f5f9); */
   background: linear-gradient(to right, #81bfee, #152ac9);
 }
 
 .pet-health__grid {
   display: grid;
+  grid-template-columns: 13% 42% 45%;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "box7 . box8"
+    " . box9 box10";
+  grid-gap: px;
 }
 
 .box7 {
+  grid-area: box7;
   margin-left: 100px;
   margin-top: 20px;
   margin-right: 20px;
@@ -39,59 +37,130 @@
 }
 
 .box8 {
-  /* border: 2px solid green; */
-  margin-top: 60px;
-  margin-right: 90px;
+  grid-area: box8;
+  transform: translate(-155px, 65px);
   height: 150px;
-  /* width: 600px; */
   font-family: "Reggae One", cursive;
-  font-size: 43px;
+  font-size: 65px;
+  text-shadow: 4px 2px #111010bb;
   color: rgb(214, 245, 57);
-}
-.box9 {
-  display: flex;
-  justify-content: space-between;
-  height: 300px;
-  width: 500px;
-  margin-left: 140px;
-  margin-top: -90px;
-
-  border: 2px solid yellow;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
 }
 
 .fa-folder-plus {
-  display: flex;
-  font-size: 26px;
+  font-size: 32px;
   width: 30px;
   height: 30px;
-  padding: 5px 10px 0px 0px;
-  /* border: 3px solid black; */
-  justify-content: flex-end;
   cursor: pointer;
+  text-shadow: 1px 1px black;
+  color: rgb(223, 175, 73);
 }
 
-.med-list {
-  font-family: "Reggae One", cursive;
-  font-size: 23px;
-  color: rgb(214, 245, 57);
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+.box9 {
+  grid-area: box9;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+    ". vac-title vac-modal "
+    ". vac-list1 .";
   height: 300px;
   width: 500px;
+  background-color: #fff;
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 120% 1.8em;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0);
+}
+.vac-modal {
+  grid-area: vac-modal;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 15px;
+  /* border: 1px solid springgreen; */
+}
+
+.vac-title {
+  grid-area: vac-title;
+  font-family: "Reggae One", cursive;
+  text-shadow: 4px 2px #111010bb;
+  font-size: 33px;
+  color: rgb(214, 245, 57);
+  padding-top: 5px;
+  color: rgb(214, 245, 57);
+  display: grid;
+  justify-content: center;
+
+  /* border: 1px solid green; */
   /* z-index: 1; */
 }
 
+.vac-list1 {
+  grid-area: vac-list1;
+  /* border: 1px solid purple; */
+  transform: translate(15px, 5px);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 33px;
+  padding-left: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
 .box10 {
-  display: flex;
-  justify-content: flex-end;
+  grid-area: box10;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas:
+    ". med-title med-modal "
+    ". med-list1 .";
   height: 300px;
   width: 500px;
-  margin-left: 40px;
-  margin-top: -90px;
-  border: 2px solid red;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35), 0 10px 10px rgba(0, 0, 0, 0.32);
+  background-color: #fff;
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #abced4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 120% 1.8em;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0);
+}
 
-  /* background-color: red; */
+.med-list1 {
+  grid-area: med-list1;
+  /* border: 1px solid purple; */
+  transform: translate(15px, 5px);
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 33px;
+  padding-left: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.med-title {
+  grid-area: med-title;
+  font-family: "Reggae One", cursive;
+  text-shadow: 4px 2px #111010bb;
+  font-size: 33px;
+  color: rgb(214, 245, 57);
+  padding-top: 5px;
+  color: rgb(214, 245, 57);
+  display: grid;
+  justify-content: center;
+}
+
+.med-modal {
+  grid-area: med-modal;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 15px;
+  /* border: 1px solid springgreen; */
 }

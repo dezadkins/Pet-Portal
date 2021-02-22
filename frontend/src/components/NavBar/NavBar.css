@@ -33,6 +33,7 @@
   --bg-primary: #e44515c2;
   --bg-secondary: #4a3f3a85;
   --transition-speed: 600ms;
+  z-index: 1;
 }
 .logo-circle {
   border: 2px solid white;

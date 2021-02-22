@@ -35,9 +35,9 @@ export default function PetProfile() {
     if (!appt) {
       return (
         <div className="box3">
-          <div>
-            <h3 className="appt-title1">Upcoming Appointments</h3>
-            <h2 className="appts1">No Upcoming Apppointments!</h2>
+          <h3 className="appt-title1">Upcoming Appointments</h3>
+          <div className="appts1">
+            <h2 className="appt-place">No Upcoming Apppointments!</h2>
           </div>
         </div>
       );

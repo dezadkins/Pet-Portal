@@ -63,7 +63,7 @@ const PetHealth = () => {
   };
 
   const newPetMed = () => {
-    if (!meds) {
+    if (meds.length === 0) {
       return <p className="med-list1">No Medications Added</p>;
     } else {
       return (

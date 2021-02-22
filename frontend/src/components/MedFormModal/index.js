@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "../../context/Modal";
 import MedForm from "./MedForm";
 
-function MedFormModal({ setPets }) {
+function MedFormModal({ setMeds }) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ function MedFormModal({ setPets }) {
       <i class="fad fa-folder-plus" onClick={() => setShowModal(true)}></i>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <MedForm setPets={setPets} onClose={() => setShowModal(false)} />
+          <MedForm setMeds={setMeds} onClose={() => setShowModal(false)} />
         </Modal>
       )}
     </>

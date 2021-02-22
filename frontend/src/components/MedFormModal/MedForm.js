@@ -16,7 +16,7 @@ function AddMedForm({ onClose, setMeds }) {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
   const uploadInput = useRef(null);
-
+  const { petId } = useParams();
   const user = useSelector((state) => {
     return state.session.user;
   });
@@ -28,18 +28,18 @@ function AddMedForm({ onClose, setMeds }) {
     setErrors([]);
     setLoading(true);
 
-    const formData = new FormData();
+    // const formData = new FormData();
 
-    formData.append("userId", user.id);
-    formData.append("name", name);
-    formData.append("dosage", dosage);
-    formData.append("unit", unit);
-    formData.append("frequency", frequency);
+    // formData.append("userId", user.id);
+    // formData.append("name", name);
+    // formData.append("dosage", dosage);
+    // formData.append("unit", unit);
+    // formData.append("frequency", frequency);
     try {
       let result = await fetch("/api/pets/meds", {
         method: "POST",
-        body: formData,
-        headers: { "Content-Type": "multipart/form-data" },
+        body: JSON.stringify({ petId, name, dosage, unit, frequency }),
+        headers: { "Content-Type": "application/json" },
       });
 
       const med = result.data;

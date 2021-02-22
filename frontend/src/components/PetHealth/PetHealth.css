@@ -11,7 +11,7 @@
   grid-template-areas:
     "box7 . box8"
     " . box9 box10";
-  grid-gap: px;
+  /* grid-gap: px; */
 }
 
 .box7 {
@@ -152,7 +152,7 @@
   font-size: 33px;
   color: rgb(214, 245, 57);
   padding-top: 5px;
-  color: rgb(214, 245, 57);
+
   display: grid;
   justify-content: center;
 }

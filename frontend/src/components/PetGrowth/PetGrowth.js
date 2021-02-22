@@ -27,8 +27,8 @@ const PetGrowth = () => {
   return (
     <>
       <NavBar />
-      <div className="pet-growth__grid">
-        <div className="pet-growth-wrapper">
+      <div className="pet-growth-wrapper">
+        <div className="pet-growth__grid">
           <div className="box12">
             <img className="profile-petpic" src={pet.photoURL} />
           </div>
@@ -41,9 +41,9 @@ const PetGrowth = () => {
           <div className="box15">
             <LengthChart />
           </div>
-          <div className="add-data-icon">
-            Add Data
+          <div className="addData">
             <GrowthFormModal setGrowth={setGrowth} />
+            <h3 className="add-title">Add Data</h3>
           </div>
         </div>
       </div>

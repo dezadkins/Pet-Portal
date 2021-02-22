@@ -401,7 +401,7 @@ router.delete(
 router.post(
   "/appts",
   asyncHandler(async (req, res, next) => {
-    const { petId, datetime, location } = req.body;
+    const { petId, datetime, location, place } = req.body;
     const appointment = await Appointment.create({
       petId,
       datetime,

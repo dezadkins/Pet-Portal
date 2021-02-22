@@ -5,6 +5,7 @@ import LoginFormPage from "../LoginFormPage";
 import Footer from "./Footer";
 import SignupFormPage from "../SignupFormPage";
 import "./LoginPage.css";
+import Particles from "./Particles";
 
 export default function LoginPage() {
   // const [signIn, setSignIn] = useState(false);
@@ -28,6 +29,7 @@ export default function LoginPage() {
 
   return (
     <div className="page-container">
+      {/* <Particles /> */}
       <h1 className="login-title">Welcome to Pet Portal</h1>
 
       <div className="container">

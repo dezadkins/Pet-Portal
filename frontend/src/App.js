@@ -10,6 +10,7 @@ import PetGrowth from "./components/PetGrowth/PetGrowth";
 import Appointments from "./components/Appointments/Appointments";
 import Milestones from "./components/Milestones/Milestones";
 import { SliderData } from "./components/Milestones/SliderData";
+import Particles from "./components/LoginPage/Particles";
 
 function App() {
   const dispatch = useDispatch();

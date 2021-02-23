@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import LoginPage from "./components/LoginPage";
@@ -10,6 +10,7 @@ import PetGrowth from "./components/PetGrowth/PetGrowth";
 import Appointments from "./components/Appointments/Appointments";
 import Milestones from "./components/Milestones/Milestones";
 import { SliderData } from "./components/Milestones/SliderData";
+
 import Particles from "./components/LoginPage/Particles";
 import Background from "./components/Background/Background";
 
@@ -20,9 +21,13 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  const sessionUser = useSelector((state) => state.session.user);
+  if (isLoaded && !sessionUser) return <LoginPage isLoaded={isLoaded} />;
+
   return (
     <>
       {/* <Navigation isLoaded={isLoaded} /> */}
+
       {isLoaded && (
         <Switch>
           <Route exact path="/login">

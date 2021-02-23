@@ -35,7 +35,7 @@ export default function HomePage() {
     <>
       <NavBar2 setPets={setPets} />
       <h1 className="homepage-title">Your Pet Family</h1>
-      {!pets ? (
+      {pets.length === 0 ? (
         <div className="homepage-rapper"> Hello</div>
       ) : (
         <div className="homepage-wrapper">

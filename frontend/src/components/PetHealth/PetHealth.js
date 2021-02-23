@@ -42,11 +42,15 @@ const PetHealth = () => {
       return <p className="vac-list1">No Vaccines Added</p>;
     } else {
       return (
-        <ol className="vac-list1" setVaccines={setVaccines}>
+        <ul className="vac-list1" setVaccines={setVaccines}>
           {vacs.map((vac, i) => (
-            <li key={vac.name}>{`${vac.name} given on ${vac.dateGiven}`} </li>
+            <li key={vac.name}>
+              {`${vac.name} given on ${new Date(vac.dateGiven).toDateString(
+                "MM/DD/YYYY"
+              )}`}{" "}
+            </li>
           ))}
-        </ol>
+        </ul>
       );
     }
   };
@@ -67,11 +71,13 @@ const PetHealth = () => {
       return <p className="med-list1">No Medications Added</p>;
     } else {
       return (
-        <ol className="med-list1">
+        <ul className="med-list1">
           {meds.map((med, i) => (
-            <li key={med.name}>{`${med.name} `} </li>
+            <li key={med.name}>
+              {`${med.dosage} ${med.unit} of ${med.name}  ${med.frequency}`}{" "}
+            </li>
           ))}
-        </ol>
+        </ul>
       );
     }
   };

@@ -88,7 +88,7 @@ const PetHealth = () => {
       <div className="pet-health-wrapper">
         <div className="pet-health__grid">
           <div className="box7">
-            <Link to="/">
+            <Link to={`/pets/${petId}`}>
               <img className="profile-petpic" src={pet.photoURL} />
             </Link>
           </div>

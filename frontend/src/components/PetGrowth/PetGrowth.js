@@ -30,7 +30,7 @@ const PetGrowth = () => {
       <div className="pet-growth-wrapper">
         <div className="pet-growth__grid">
           <div className="box12">
-            <Link to="/">
+            <Link to={`/pets/${petId}`}>
               <img className="profile-petpic" src={pet.photoURL} />
             </Link>
           </div>

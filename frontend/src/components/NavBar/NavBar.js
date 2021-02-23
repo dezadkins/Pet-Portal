@@ -78,7 +78,7 @@ export default function NavBar({ setPets }) {
             </NavLink>
           </li>
           <li className="nav-item">
-            <NavLink className="nav-link" to={`/pets/${petId}/appts/${apptId}`}>
+            <NavLink className="nav-link" to={`/pets/${petId}/appts/`}>
               <svg
                 aria-hidden="true"
                 focusable="false"

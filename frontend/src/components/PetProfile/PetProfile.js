@@ -80,12 +80,12 @@ export default function PetProfile() {
             </p>
           </div>
           {/* <h3>Upcoming Appt</h3> */}
-
-          <div className="box4">
-            <WeightChart />
-          </div>
-
-          {newPetAppt()}
+          <Link to={`/pets/${petId}/growth`}>
+            <div className="box4">
+              <WeightChart />
+            </div>
+          </Link>
+          <Link to={`/pets/${petId}/appts`}>{newPetAppt()}</Link>
         </div>
       </div>
     </>

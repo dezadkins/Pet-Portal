@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import WeightChart from "../WeightChart/WeightChart";
 import LengthChart from "../LengthChart/LengthChart";
 
@@ -30,7 +30,9 @@ const PetGrowth = () => {
       <div className="pet-growth-wrapper">
         <div className="pet-growth__grid">
           <div className="box12">
-            <img className="profile-petpic" src={pet.photoURL} />
+            <Link to="/">
+              <img className="profile-petpic" src={pet.photoURL} />
+            </Link>
           </div>
           <div className="box13">
             <h2>Pet's Growth</h2>

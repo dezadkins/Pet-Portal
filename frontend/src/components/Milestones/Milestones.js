@@ -1,6 +1,6 @@
 import { useSpring, animated } from "react-spring";
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import NavBar from "../NavBar/NavBar";
@@ -42,7 +42,9 @@ const Milstones = ({ slides }) => {
       <div className="eventpage-wrapper">
         <div className="spacer-div"></div>
         <div className="pet-image-div">
-          <img className="profile-petpic" src={pet.photoURL} />
+          <Link to="/">
+            <img className="profile-petpic" src={pet.photoURL} />
+          </Link>
         </div>
         <div className="add-pic-div">
           <h3 className="upload-title">Upload Event</h3>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./PetProfile.css";
 import axios from "axios";
@@ -65,7 +65,9 @@ export default function PetProfile() {
       <div className="profilepage-wrapper">
         <div className="grid">
           <div className="box1">
-            <img className="profile-petpic" src={pet.photoURL} />
+            <Link to="/">
+              <img className="profile-petpic" src={pet.photoURL} />
+            </Link>
           </div>
           <div className="box2">
             <h2>Overview</h2>

@@ -35,25 +35,29 @@ export default function HomePage() {
     <>
       <NavBar2 setPets={setPets} />
       <h1 className="homepage-title">Your Pet Family</h1>
-      <div className="homepage-wrapper">
-        {pets.map((pet) => (
-          <div
-            onClick={(e) => {
-              e.preventDefault();
-              history.push(`/pets/${pet.id}`);
-            }}
-            className="card"
-          >
-            <div className="img-container">
-              {/* <div className="thumbtack-div">
+      {!pets ? (
+        <div className="homepage-rapper"> Hello</div>
+      ) : (
+        <div className="homepage-wrapper">
+          {pets.map((pet) => (
+            <div
+              onClick={(e) => {
+                e.preventDefault();
+                history.push(`/pets/${pet.id}`);
+              }}
+              className="card"
+            >
+              <div className="img-container">
+                {/* <div className="thumbtack-div">
                 <i class="fas fa-thumbtack"></i>
               </div> */}
-              <img className="photo-size" src={pet.photoURL} key={pet.name} />
+                <img className="photo-size" src={pet.photoURL} key={pet.name} />
+              </div>
+              <div className="pet-name">{pet.name}</div>
             </div>
-            <div className="pet-name">{pet.name}</div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

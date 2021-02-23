@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "../Calendar/Calendar";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import NavBar from "../NavBar/NavBar";
 import "./Appointments.css";
@@ -40,7 +40,9 @@ const Appointments = () => {
       <div className="pet-appt__grid">
         <div className="pet-appt-wrapper">
           <div className="box16">
-            <img className="profile-petpic" src={pet.photoURL} />
+            <Link to="/">
+              <img className="profile-petpic" src={pet.photoURL} />
+            </Link>
           </div>
           <div className="box17">
             <h2>Pet's Appointments</h2>

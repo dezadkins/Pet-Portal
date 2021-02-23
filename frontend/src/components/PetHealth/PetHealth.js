@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import VaccineFormModal from "../VaccineModal";
 
 import NavBar from "../NavBar/NavBar";
@@ -46,7 +46,7 @@ const PetHealth = () => {
           {vacs.map((vac, i) => (
             <li key={vac.name}>
               {`${vac.name} given on ${new Date(vac.dateGiven).toDateString(
-                "MM/DD/YYYY"
+                "%B %d %Y"
               )}`}{" "}
             </li>
           ))}
@@ -88,7 +88,9 @@ const PetHealth = () => {
       <div className="pet-health-wrapper">
         <div className="pet-health__grid">
           <div className="box7">
-            <img className="profile-petpic" src={pet.photoURL} />
+            <Link to="/">
+              <img className="profile-petpic" src={pet.photoURL} />
+            </Link>
           </div>
           <div className="box8">
             <h2>Pet's Health</h2>

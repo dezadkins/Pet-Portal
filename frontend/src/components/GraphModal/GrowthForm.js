@@ -36,7 +36,7 @@ function AddGrowthForm({ onClose, setGrowth }) {
     // formData.append("date", date);
 
     try {
-      let result = await fetch("/api/pets/graph", {
+      let result = await fetch(`/api/pets/graph`, {
         method: "POST",
         body: JSON.stringify({ petId, weight, length }),
         headers: { "Content-Type": "application/json" },

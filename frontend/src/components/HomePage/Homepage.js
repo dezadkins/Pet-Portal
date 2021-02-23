@@ -14,10 +14,6 @@ export default function HomePage() {
 
   const history = useHistory();
 
-  // const user = useSelector((state) => {
-  //   return state.session.user;
-  // });
-
   useEffect(() => {
     fetchPets();
   }, []);
@@ -27,16 +23,17 @@ export default function HomePage() {
     const pets = await data.json();
     setPets(pets);
   };
-  // if (!user) {
-  //   return <Redirect to="/login" />;
-  // }
 
   return (
     <>
       <NavBar2 setPets={setPets} />
       <h1 className="homepage-title">Your Pet Family</h1>
       {pets.length === 0 ? (
-        <div className="homepage-rapper"> Hello</div>
+        <div className="homepage-wrapper">
+          <div className="noPets-title">
+            You currently have not Pets to View
+          </div>
+        </div>
       ) : (
         <div className="homepage-wrapper">
           {pets.map((pet) => (

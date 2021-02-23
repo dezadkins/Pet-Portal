@@ -86,6 +86,22 @@
   transform: translate(10px, -125px);
   /* background-color: red; */
 }
+
+.box4-one {
+  grid-area: box4;
+  position: relative;
+  align-content: flex-end;
+
+  /* margin-left: 2rem; */
+  height: 440px;
+  width: 750px;
+  background-color: rgba(199, 195, 195, 0.344);
+  border: 2px solid red;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
+
+  border-radius: 5px;
+  transform: translate(10px, -125px);
+}
 /* .box5 {
   margin-bottom: 380px;
   margin-top: -400px;

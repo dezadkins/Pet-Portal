@@ -79,13 +79,15 @@ export default function PetProfile() {
               {`${pet.name} is a ${pet.species} and their birthday is on ${pet.birthDate}`}{" "}
             </p>
           </div>
-          {/* <h3>Upcoming Appt</h3> */}
+
           <Link to={`/pets/${petId}/growth`}>
             <div className="box4">
               <WeightChart />
             </div>
           </Link>
-          <Link to={`/pets/${petId}/appts`}>{newPetAppt()}</Link>
+          <Link to={`/pets/${petId}/appts`} style={{ textDecoration: "none" }}>
+            {newPetAppt()}
+          </Link>
         </div>
       </div>
     </>

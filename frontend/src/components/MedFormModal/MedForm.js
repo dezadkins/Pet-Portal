@@ -4,7 +4,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 
-// import "./AddPetForm.css";
+import "./MedForm.css";
 
 function AddMedForm({ onClose, setMeds }) {
   const [name, setName] = useState("");
@@ -65,8 +65,9 @@ function AddMedForm({ onClose, setMeds }) {
       <div className="add-pet__form-container">
         {/* {uploadImage()} */}
         <div className="add-pet__form-fields">
-          <div className="all-input">
+          <div className="med-input">
             <input
+              className="name-input"
               type="text"
               placeholder="Name"
               value={name}
@@ -76,6 +77,7 @@ function AddMedForm({ onClose, setMeds }) {
             <label>
               <input
                 type="text"
+                className="dosage-input"
                 placeholder="Dosage"
                 value={dosage}
                 onChange={(e) => setDosage(e.target.value)}

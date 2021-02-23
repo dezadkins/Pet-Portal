@@ -38,10 +38,10 @@ const PetGrowth = () => {
             <h2>Pet's Growth</h2>
           </div>
           <div className="box14">
-            <WeightChart />
+            <WeightChart setGrowth={setGrowth} />
           </div>
           <div className="box15">
-            <LengthChart />
+            <LengthChart setGrowth={setGrowth} />
           </div>
           <div className="addData">
             <GrowthFormModal setGrowth={setGrowth} />

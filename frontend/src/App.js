@@ -11,6 +11,7 @@ import Appointments from "./components/Appointments/Appointments";
 import Milestones from "./components/Milestones/Milestones";
 import { SliderData } from "./components/Milestones/SliderData";
 import Particles from "./components/LoginPage/Particles";
+import Background from "./components/Background/Background";
 
 function App() {
   const dispatch = useDispatch();

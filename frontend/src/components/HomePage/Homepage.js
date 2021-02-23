@@ -14,6 +14,10 @@ export default function HomePage() {
 
   const history = useHistory();
 
+  // const user = useSelector((state) => {
+  //   return state.session.user;
+  // });
+
   useEffect(() => {
     fetchPets();
   }, []);
@@ -23,9 +27,8 @@ export default function HomePage() {
     const pets = await data.json();
     setPets(pets);
   };
-
-  // const noPets =() => {
-  //   if (!pets)
+  // if (!user) {
+  //   return <Redirect to="/login" />;
   // }
 
   return (

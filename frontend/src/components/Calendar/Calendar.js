@@ -52,6 +52,7 @@ const Calendar = () => {
         // onClick={}
         initialView="dayGridMonth"
         editable={true}
+        className
         selectable={true}
         selectMirror={true}
         dayMaxEvents={true}

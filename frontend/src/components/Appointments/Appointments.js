@@ -37,8 +37,8 @@ const Appointments = () => {
   return (
     <>
       <NavBar />
-      <div className="pet-appt__grid">
-        <div className="pet-appt-wrapper">
+      <div className="pet-appt-wrapper">
+        <div className="pet-appt__grid">
           <div className="box16">
             <Link to={`/pets/${petId}`}>
               <img className="profile-petpic" src={pet.photoURL} />

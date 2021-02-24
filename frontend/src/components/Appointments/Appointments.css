@@ -1,26 +1,21 @@
 .pet-appt-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  /* grid-template-areas:
-    "box1 box2"
-    "box3 box5"
-    "box4 box5"; */
-  /* width: 100%; */
-  /* height: 100vh; */
-  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
   background: -webkit-linear-gradient(to right, #b3d9f5, #f5f5f9);
   background: linear-gradient(to right, #81bfee, #152ac9);
 }
 
 .pet-appt__grid {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas:
+    "box16 box17"
+    "box18 box19";
 }
 
 .box16 {
-  margin-left: 100px;
-  margin-top: 20px;
-  margin-right: 20px;
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -33,10 +28,10 @@
 }
 
 .box17 {
+  grid-area: box17;
   /* border: 2px solid green; */
   margin-top: 60px;
   text-align: center;
-  margin-right: 90px;
   height: 150px;
 
   font-family: "Reggae One", cursive;
@@ -44,26 +39,38 @@
   color: rgb(214, 245, 57);
 }
 .box18 {
+  grid-area: box18;
   height: 300px;
   width: 500px;
-  margin-left: 140px;
-  margin-top: -90px;
+  transform: translate(210px, 175px);
+  background-color: rgba(255, 255, 255, 0.945);
+  border-radius: 5px;
+  background-image: linear-gradient(
+      90deg,
+      transparent 79px,
+      #abacd4 79px,
+      #abced4 81px,
+      transparent 81px
+    ),
+    linear-gradient(rgb(238, 238, 238) 0.1em, transparent 0.1em);
+  background-size: 100% 1.2em;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5), 0 10px 10px rgba(0, 0, 0, 0);
+  z-index: 0;
 
   border: 2px solid yellow;
 }
 .box19 {
+  grid-area: box19;
   height: 500px;
   width: 700px;
-  margin-left: 40px;
-  margin-top: -220px;
   /* border: 2px solid red; */
   /* background-color: red; */
 }
 
-.box20 {
+/* .box20 {
   margin-bottom: 380px;
   margin-top: -400px;
   margin-left: 10px;
 
   border: 2px solid blue;
-}
+} */

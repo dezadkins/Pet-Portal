@@ -76,7 +76,11 @@ export default function PetProfile() {
             <h2 className="title1">{`Welcome to ${pet.name}'s Page!`}</h2>
 
             <p className="info1">
-              {`${pet.name} is a ${pet.species} and their birthday is on ${pet.birthDate}`}{" "}
+              {`${pet.name} is a ${
+                pet.species
+              } and their birthday is on ${new Date(
+                pet.birthDate
+              ).toDateString()}`}{" "}
             </p>
           </div>
 

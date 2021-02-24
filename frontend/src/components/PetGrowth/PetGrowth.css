@@ -9,7 +9,7 @@
 
 .pet-growth__grid {
   display: grid;
-  grid-template-columns: 45% 10% 45%;
+  grid-template-columns: 40% 20% 40%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
     "box12 . box13"
@@ -45,10 +45,9 @@
   grid-area: box14;
   position: relative;
   /* align-content: flex-end; */
-
   margin-left: 6.8rem;
-  height: 390px;
-  width: 700px;
+  height: 315px;
+  width: 603px;
   background-color: rgb(219, 212, 212);
   border: 2px solid red;
   box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
@@ -60,10 +59,9 @@
   grid-area: box15;
   position: relative;
   /* align-content: flex-end; */
-
   /* margin-left: 2rem; */
-  height: 390px;
-  width: 700px;
+  height: 315px;
+  width: 603px;
   background-color: rgb(219, 212, 212);
   border: 2px solid red;
   box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
@@ -74,6 +72,7 @@
 .addData {
   grid-area: addData;
   /* border: 1px solid black; */
+  margin-left: 90px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,5 +92,7 @@
 
 .add-title {
   font-family: "Montserrat", sans-serif;
+
+  /* border: 1px solid black; */
   color: rgb(148, 9, 9);
 }

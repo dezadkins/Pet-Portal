@@ -177,6 +177,10 @@
 
 .appts1 {
   grid-area: appts1;
+  /* display: flex;
+  justify-content: space-around; */
+  border: 1px solid black;
+  transform: translate(45px, 20px);
 }
 
 .appt-time {

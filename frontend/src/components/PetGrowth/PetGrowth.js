@@ -35,9 +35,11 @@ const PetGrowth = () => {
           <div className="box13">
             <h2>{`${pet.name}`}'s Growth</h2>
           </div>
+          <p className="pounds">Pounds</p>
           <div className="box14">
             <WeightChart setGrowth={setGrowth} />
           </div>
+          <p className="inches">Inches</p>
           <div className="box15">
             <LengthChart setGrowth={setGrowth} />
           </div>

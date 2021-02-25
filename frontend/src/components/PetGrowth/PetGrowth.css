@@ -7,13 +7,28 @@
   background: linear-gradient(to right, #81bfee, #152ac9);
 }
 
+.pounds {
+  grid-area: pounds;
+  /* transform: translate(135px, 85px); */
+  margin-left: 200px;
+  margin-top: 130px;
+  transform: rotate(-90deg);
+  border: 1px solid black;
+  height: 20px;
+}
+.inches {
+  grid-area: inches;
+  border: 1px solid black;
+  height: 20px;
+}
+
 .pet-growth__grid {
   display: grid;
-  grid-template-columns: 40% 20% 40%;
+  grid-template-columns: 5% 40% 10% 5% 40%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-    "box12 . box13"
-    "box14 addData box15";
+    ". box12 . box13 ."
+    "pounds box14 addData  inches box15 ";
   /* grid-gap: px; */
 }
 
@@ -71,8 +86,8 @@
 }
 .addData {
   grid-area: addData;
-  /* border: 1px solid black; */
-  margin-left: 90px;
+  border: 1px solid black;
+  margin-left: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

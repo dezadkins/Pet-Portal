@@ -84,3 +84,42 @@
 
   border: 2px solid blue;
 } */
+
+.appt-title2 {
+  grid-area: appt-title1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  /* border: 1px solid black; */
+  font-family: "Reggae One", cursive;
+  text-shadow: 4px 2px #111010bb;
+  font-size: 25px;
+  color: rgb(214, 245, 57);
+}
+
+.appts2 {
+  grid-area: appts1;
+}
+
+.appt-time2 {
+  margin-top: 30px;
+  /* border: 1px solid black; */
+  color: rgba(233, 35, 8, 0.897);
+  display: flex;
+  justify-content: center;
+  /* text-shadow: 2px 2px #111010bb; */
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+.appt-place2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* border: 1px solid green; */
+  transform: translate(15px, 5px);
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}

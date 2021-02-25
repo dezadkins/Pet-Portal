@@ -29,7 +29,7 @@ export default function PetProfile() {
     console.log(petId);
     const data = await fetch(`/api/pets/${petId}/appts`);
     const appt = await data.json();
-    setAppt(appt);
+    setAppt(appt[1]);
   };
   const newPetAppt = () => {
     if (!appt) {
@@ -46,19 +46,19 @@ export default function PetProfile() {
         // THIS NEEDS TO BE MAPPED **********************
         <div className="box3">
           <h3 className="appt-title1">Upcoming Appointments</h3>
-          {appt.map((a) => (
-            <div>
-              <div className="appts1">
-                <p className="appt-time">
-                  {new Date(a.datetime).toLocaleString()}
-                </p>
-                <div className="appt-place">
-                  <p>{a.place}</p>
-                  <p>{a.location}</p>
-                </div>
-              </div>
+          {/* {appt.map((a) => ( */}
+          {/* <div> */}
+          <div className="appts1">
+            <p className="appt-time">
+              {new Date(appt.datetime).toLocaleString()}
+            </p>
+            <div className="appt-place">
+              <p>{appt.place}</p>
+              <p>{appt.location}</p>
             </div>
-          ))}
+          </div>
+          {/* </div> */}
+          {/* ))} */}
         </div>
       );
     }

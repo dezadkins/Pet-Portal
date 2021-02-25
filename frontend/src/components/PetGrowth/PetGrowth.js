@@ -2,10 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import WeightChart from "../WeightChart/WeightChart";
 import LengthChart from "../LengthChart/LengthChart";
-
 import NavBar from "../NavBar/NavBar";
 import "./PetGrowth.css";
-
 import axios from "axios";
 import GrowthFormModal from "../GraphModal";
 

@@ -25,14 +25,6 @@ function AddVaccineForm({ onClose, setVaccines }) {
     setErrors([]);
     setLoading(true);
 
-    // const formData = new FormData();
-
-    // // formData.append("userId", user.id);
-    // formData.append("petId", petId);
-    // console.log("pets", petId);
-    // formData.append("name", name);
-    // formData.append("dateGiven", dateGiven);
-
     try {
       let result = await fetch(`/api/pets/vacs`, {
         method: "POST",

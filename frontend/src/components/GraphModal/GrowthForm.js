@@ -7,9 +7,9 @@ import { useParams, useHistory } from "react-router-dom";
 import "./GrowthForm.css";
 
 function AddGrowthForm({ onClose, setGrowth }) {
-  const [weight, setWeight] = useState();
-  const [length, setLength] = useState();
-  const [date, setDate] = useState("");
+  const [weight, setWeight] = useState([]);
+  const [length, setLength] = useState([]);
+  const [datestamp, setDateStamp] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
@@ -38,11 +38,12 @@ function AddGrowthForm({ onClose, setGrowth }) {
     try {
       let result = await fetch(`/api/pets/graph`, {
         method: "POST",
-        body: JSON.stringify({ petId, weight, length }),
+        body: JSON.stringify({ petId, weight, length, datestamp }),
         headers: { "Content-Type": "application/json" },
       });
 
       const stats = result.data;
+      console.log("Stats!", stats);
       setGrowth((currentStats) => {
         return [...currentStats, stats];
       });
@@ -77,16 +78,16 @@ function AddGrowthForm({ onClose, setGrowth }) {
                 placeholder="Measurement"
                 value={weight}
                 onChange={(e) => setWeight(e.target.value)}
-                required
+                // required
               />
               <div>
                 <input
                   className="date-marg"
                   type="date"
                   placeholder="Date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  required
+                  value={datestamp}
+                  onChange={(e) => setDateStamp(e.target.value)}
+                  // required
                 />
               </div>
             </div>
@@ -100,16 +101,16 @@ function AddGrowthForm({ onClose, setGrowth }) {
                   placeholder="Measurement"
                   value={length}
                   onChange={(e) => setLength(e.target.value)}
-                  required
+                  // required
                 />
               </div>
               <div>
                 <input
                   type="date"
                   placeholder="Date"
-                  value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  required
+                  value={datestamp}
+                  onChange={(e) => setDateStamp(e.target.value)}
+                  // required
                 />
               </div>
             </div>

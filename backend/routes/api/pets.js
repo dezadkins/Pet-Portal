@@ -331,11 +331,12 @@ router.delete(
 router.post(
   "/graph",
   asyncHandler(async (req, res, next) => {
-    const { petId, weight, length } = req.body;
+    const { petId, weight, length, datestamp } = req.body;
     const graph = await Graph.create({
       petId,
       weight,
       length,
+      datestamp,
     });
     res.json(graph);
   })

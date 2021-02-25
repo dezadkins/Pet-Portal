@@ -50,7 +50,7 @@ const Milstones = ({ slides }) => {
           <h3 className="upload-title">Upload Event</h3>
           <MilestoneFormModal />
         </div>
-        <h1 className="event-title">Pet Life Events</h1>
+        <h1 className="event-title">{`${pet.name}`}'s Life Events</h1>
         <div className="slider-box">
           <section className="slider">
             <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />

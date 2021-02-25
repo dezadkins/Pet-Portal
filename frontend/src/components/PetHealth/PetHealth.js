@@ -93,7 +93,7 @@ const PetHealth = () => {
             </Link>
           </div>
           <div className="box8">
-            <h2>Pet's Health</h2>
+            <h2>{`${pet.name}`}'s Health</h2>
           </div>
           <div className="box9">
             <p className="vac-title">Vaccines</p>

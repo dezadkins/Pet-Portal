@@ -45,7 +45,7 @@ const Appointments = () => {
             </Link>
           </div>
           <div className="box17">
-            <h2>Pet's Appointments</h2>
+            <h2>{`${pet.name}`}'s Appointments</h2>
           </div>
           <div className="box18">{pet.datetime}</div>
           <div className="box19">

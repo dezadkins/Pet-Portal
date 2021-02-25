@@ -35,7 +35,7 @@ const PetGrowth = () => {
             </Link>
           </div>
           <div className="box13">
-            <h2>Pet's Growth</h2>
+            <h2>{`${pet.name}`}'s Growth</h2>
           </div>
           <div className="box14">
             <WeightChart setGrowth={setGrowth} />

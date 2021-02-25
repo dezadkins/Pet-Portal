@@ -6,23 +6,24 @@ export const SliderData = [
   },
   {
     image:
-      "https://nebula.wsimg.com/8cf88f7339fafaa62acf210751c4920d?AccessKeyId=96C8B0CF55A5FE06885E&disposition=0&alloworigin=1",
-    caption: "Three Days with Buddy!",
-  },
-  {
-    image:
       "https://www.pets4homes.co.uk/images/classifieds/2020/01/30/2584798/large/female-shih-tzu-puppy-for-sale-5e4a4cd0a59ad.jpg",
     caption: "Hey there!",
   },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1512723185835-0700e5069a9a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzF8fHBldHN8ZW58MHx8MHw%3D&auto=format&fit=crop&w=500&q=60",
-  //   caption:
-  // },
-  // {
-  //   image:
-  //     "https://images.unsplash.com/photo-1608605120319-ccfcacb4c250?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fHBldHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  // },
+  {
+    image:
+      "https://nebula.wsimg.com/8cf88f7339fafaa62acf210751c4920d?AccessKeyId=96C8B0CF55A5FE06885E&disposition=0&alloworigin=1",
+    caption: "Two Months with Buddy!",
+  },
+  {
+    image:
+      "https://i.pinimg.com/originals/12/4f/a3/124fa3859fc9f700db87c660cde1c895.jpg",
+    caption: "Happy Puppy",
+  },
+  {
+    image:
+      "https://puppiesclub.com/wp-content/uploads/2016/03/Shih-Tzu-Dog-Breed-brown.jpg",
+    caption: "Learning to Stay",
+  },
   // {
   //   image:
   //     "https://images.unsplash.com/photo-1585166915828-db195f24e2ba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NzN8fHBldHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",

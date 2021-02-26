@@ -29,7 +29,7 @@ export default function PetProfile() {
     console.log(petId);
     const data = await fetch(`/api/pets/${petId}/appts`);
     const appt = await data.json();
-    setAppt(appt[1]);
+    setAppt(appt[0]);
   };
   const newPetAppt = () => {
     if (!appt) {

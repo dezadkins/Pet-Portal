@@ -59,7 +59,7 @@ const Appointments = () => {
       return (
         // THIS NEEDS TO BE MAPPED **********************
         <div className="box18">
-          <h3 className="appt-title2">Other Appointments</h3>
+          <h3 className="appt-title2">Upcoming Appointments</h3>
           {/* {appt.map((a) => ( */}
           {/* <div> */}
           <div className="appts2">

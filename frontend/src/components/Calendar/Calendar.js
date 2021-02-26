@@ -26,7 +26,7 @@ const Calendar = () => {
     const initArray = [];
     place.forEach((index) => {
       let date = Date.parse(index.datetime);
-      let datePlus1 = date + 172800000;
+      let datePlus1 = date;
       let formattedDate = new Date(datePlus1).toISOString();
       initArray.push({
         title: index.place,

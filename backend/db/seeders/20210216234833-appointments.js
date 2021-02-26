@@ -13,7 +13,7 @@ module.exports = {
     return queryInterface.bulkInsert("Appointments", [
       {
         petId: "1",
-        datetime: "03/01/2021 09:30",
+        datetime: "03/03/2021 09:30",
         location: "58 Main St.",
         place: "Doggy Paws Haircut",
         createdAt,
@@ -21,7 +21,7 @@ module.exports = {
       },
       {
         petId: "1",
-        datetime: "03/21/2021 14:30",
+        datetime: "03/23/2021 14:30",
         location: "24 North East St.",
         place: "Banfield Vet",
         createdAt,

@@ -9,17 +9,22 @@
 
 .pounds {
   grid-area: pounds;
-  /* transform: translate(135px, 85px); */
-  margin-left: 200px;
-  margin-top: 130px;
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 90px;
   transform: rotate(-90deg);
-  border: 1px solid black;
-  height: 20px;
+  height: 40px;
+  width: 100px;
 }
 .inches {
   grid-area: inches;
-  border: 1px solid black;
+  transform: rotate(-90deg);
+  /* border: 1px solid black; */
   height: 20px;
+  width: 100px;
+  margin-left: -120px;
+  margin-top: 90px;
 }
 
 .pet-growth__grid {
@@ -27,7 +32,7 @@
   grid-template-columns: 5% 40% 10% 5% 40%;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-    ". box12 . box13 ."
+    "box12  box13 .  .  ."
     "pounds box14 addData  inches box15 ";
   /* grid-gap: px; */
 }
@@ -49,10 +54,12 @@
 
 .box13 {
   grid-area: box13;
-  transform: translate(-155px, 65px);
+  transform: translate(705px, 65px);
+  /* border: 1px solid black; */
+  /* width: 800px; */
   height: 150px;
   font-family: "Reggae One", cursive;
-  font-size: 50px;
+  font-size: 48px;
   text-shadow: 4px 2px #111010bb;
   color: rgb(214, 245, 57);
 }
@@ -68,7 +75,7 @@
   box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
 
   border-radius: 5px;
-  transform: translate(10px, -55px);
+  transform: translate(-40px, -55px);
 }
 .box15 {
   grid-area: box15;
@@ -82,19 +89,19 @@
   box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15), 0 10px 10px rgba(0, 0, 0, 0.12);
 
   border-radius: 5px;
-  transform: translate(10px, -55px);
+  transform: translate(-140px, -55px);
 }
 .addData {
   grid-area: addData;
-  border: 1px solid black;
-  margin-left: 20px;
+  /* border: 1px solid black; */
+  /* margin-r: 20px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100px;
   height: 390px;
-  transform: translate(65px, -55px);
+  transform: translate(-3px, -55px);
 }
 
 .fa-balance-scale-right {

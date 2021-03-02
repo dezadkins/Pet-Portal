@@ -13,6 +13,13 @@ export default function Footer() {
           <a
             target="_blank"
             rel="noreferrer"
+            href="https://dezadkins.github.io/"
+          >
+            <i className="fa fa-briefcase" />
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
             href="https://github.com/dezadkins/Pet-Portal"
           >
             <i className="fab fa-github-square" />

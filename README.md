@@ -21,6 +21,14 @@ Pet Portal allows you to track and document all of your pets health and life eve
 
 ![](frontend/public/assets/overview.png)
 
+## Pet Health
+
+![](frontend/public/assets/health.png)
+
+## Pet Growth
+
+![](frontend/public/assets/graphs.png)
+
 ## Backend
 
 Database Schema
